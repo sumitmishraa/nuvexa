@@ -10,7 +10,7 @@ const columns = [
     links: [
       { label: "About Nuvexa", href: "/company" },
       { label: "Leadership", href: "/company#leadership" },
-      { label: "Superbeing — Origin", href: "/superbeing" },
+      { label: "Superbeing Nutrition", href: "/superbeing" },
       { label: "Our approach", href: "/approach" },
       { label: "Future vision", href: "/future-vision" },
       { label: "Investors", href: "/investors" },

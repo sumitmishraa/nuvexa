@@ -23,7 +23,7 @@ export const site = {
 export const nav = [
   { label: "Company", href: "/company", note: "Who we are" },
   { label: "Our Brands", href: "/brands", note: "The portfolio" },
-  { label: "Superbeing Nutrition — Origin", href: "/superbeing", note: "The founder's story" },
+  { label: "Superbeing Nutrition", href: "/superbeing", note: "The founder's story" },
   { label: "Approach", href: "/approach", note: "How we build" },
   { label: "Future Vision", href: "/future-vision", note: "Where we are going" },
   { label: "Investors", href: "/investors", note: "Building enduring value" },
