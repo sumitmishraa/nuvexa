@@ -66,7 +66,7 @@ export function MenuOverlay({ open, onClose }: { open: boolean; onClose: () => v
           <div className="container-x grid min-h-svh grid-cols-12 gap-6 pb-10 pt-28 md:pt-32">
             <nav aria-label="Menu" className="col-span-12 lg:col-span-7">
               <ul className="space-y-1">
-                {[{ label: "Home", href: "/", note: "Start here" }, ...nav].map((item, i) => (
+                {[{ label: "Home", href: "/", note: "Start here" }, ...nav, { label: "Contact", href: "/contact", note: "Start a conversation" }].map((item, i) => (
                   <li key={item.href} className="overflow-hidden">
                     <motion.div
                       initial={{ y: "105%" }}
@@ -74,7 +74,7 @@ export function MenuOverlay({ open, onClose }: { open: boolean; onClose: () => v
                       transition={{ duration: 1, delay: 0.25 + i * 0.05, ease: EASE_OUT_EXPO }}
                     >
                       <Link href={item.href} onClick={onClose} className="group flex items-baseline gap-5 py-1.5">
-                        <span className="eyebrow w-8 text-brass">{pad(i)}</span>
+                        <span className="eyebrow w-8 shrink-0 text-brass">{pad(i)}</span>
                         <span className="text-[clamp(2.4rem,6vw,5.2rem)] font-serif leading-[1.02] transition-[transform,color] duration-500 ease-[var(--ease-out-expo)] group-hover:translate-x-3 group-hover:italic group-hover:text-brass-soft">
                           {item.label}
                         </span>

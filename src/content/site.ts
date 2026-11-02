@@ -19,14 +19,15 @@ export const site = {
   },
 } as const;
 
+/** Primary navigation, in the order the client specified. Contact lives in the header button, menu and footer. */
 export const nav = [
-  { label: "Superbeing", href: "/superbeing", note: "Our flagship story" },
   { label: "Company", href: "/company", note: "Who we are" },
   { label: "Our Brands", href: "/brands", note: "The portfolio" },
+  { label: "Superbeing Nutrition — Origin", href: "/superbeing", note: "The founder's story" },
   { label: "Approach", href: "/approach", note: "How we build" },
   { label: "Future Vision", href: "/future-vision", note: "Where we are going" },
+  { label: "Investors", href: "/investors", note: "Building enduring value" },
   { label: "Careers", href: "/careers", note: "Build with us" },
-  { label: "Contact", href: "/contact", note: "Start a conversation" },
 ] as const;
 
 export const enquiryTypes = [

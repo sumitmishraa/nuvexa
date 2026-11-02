@@ -74,9 +74,9 @@ export function Header() {
             <Wordmark />
           </Link>
 
-          <nav aria-label="Primary" className="hidden lg:block">
-            <ul className="flex items-center gap-9 text-[0.82rem] tracking-[0.04em]">
-              {nav.slice(0, 5).map((item) => {
+          <nav aria-label="Primary" className="hidden xl:block">
+            <ul className="flex items-center gap-7 whitespace-nowrap text-[0.8rem] tracking-[0.03em]">
+              {nav.map((item) => {
                 const active = pathname === item.href || pathname.startsWith(`${item.href}/`);
                 return (
                   <li key={item.href}>
