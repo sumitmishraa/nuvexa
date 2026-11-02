@@ -5,11 +5,11 @@ import { useLayoutEffect, useRef, useState } from "react";
 import { motion, useReducedMotion, useScroll, useTransform } from "motion/react";
 import { BrandStage, useBrandReveal } from "@/components/ui/BrandStage";
 import { SectionLabel } from "@/components/ui/SectionLabel";
-import { brands, type Brand } from "@/content/brands";
+import { brandHref, brands, type Brand } from "@/content/brands";
 import { pad } from "@/lib/cn";
 
 function PortfolioCard({ brand, index }: { brand: Brand; index: number }) {
-  const href = `/brands/${brand.slug}`;
+  const href = brandHref(brand);
   const { revealing, onClick } = useBrandReveal(href);
   return (
     <Link

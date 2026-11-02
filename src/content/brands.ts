@@ -3,6 +3,8 @@ export type ArtMotif = "leaf" | "orbit" | "drop" | "mortar" | "paw" | "flask" | 
 
 export type Brand = {
   slug: string;
+  /** Dedicated page, when the brand has one (otherwise /brands/{slug}). */
+  href?: string;
   name: string;
   kind: "brand" | "vertical";
   status: string;
@@ -34,27 +36,28 @@ export type Brand = {
 export const brands: Brand[] = [
   {
     slug: "super-being",
-    name: "Super Being",
+    href: "/superbeing",
+    name: "Superbeing Nutrition",
     kind: "brand",
-    status: "Launching soon",
-    category: "Nutraceuticals · Modern everyday wellness",
-    lifeStage: "Adults",
-    quote: "Modern nutrition for modern everyday wellbeing.",
+    status: "Our flagship",
+    category: "Nutraceuticals · Hyper-specific nutrition",
+    lifeStage: "Women & men",
+    quote: "Your need is specific. Your nutrition should be too.",
     summary:
-      "A nutraceutical brand for adults who want a practical, modern way to support everyday wellbeing — without the noise.",
+      "Hyper-specific, problem-solving nutrition — not the same formulation with a different brand cover. Fifteen months of development, built around the person's actual need.",
     intro: [
-      "Super Being is Nuvexa's nutraceutical brand for adults who want to look after their everyday wellbeing in a way that fits real life. It brings together thoughtful nutrition, convenient formats and clear communication, so that a structured approach to wellness feels understandable rather than overwhelming.",
-      "The brand is designed for the way people actually live today: busy mornings, unpredictable schedules and an endless stream of conflicting advice. Super Being's role is to cut through that — to make good choices simpler to understand, easier to adopt and easier to keep.",
+      "Superbeing Nutrition began with a personal search: for products developed around specific needs, with clear answers about what each one is for, why its ingredients were chosen and how it fits into everyday life.",
+      "Developed over fifteen months with a professional from a pharmaceutical background, every Superbeing product needs a defined purpose — and, where a product is for women or for men, the reason is inside the formula.",
     ],
     need: {
-      title: "Wellness has become confusing.",
+      title: "Familiar formulations under different brand names.",
       body: [
-        "Most adults want to take better care of themselves, but the category often makes it harder than it should be. Labels are dense, claims are loud and routines are difficult to sustain beyond the first few weeks.",
-        "Super Being starts from that frustration. Instead of adding complexity, it aims to remove it — with formats that slot into existing routines and communication that explains, plainly, what a product is for and how to use it.",
+        "There are plenty of choices, but finding clear answers is difficult. The same formulations appear again and again under different labels.",
+        "Superbeing starts from a different question: what would we formulate if we started with the person's actual need?",
       ],
     },
     philosophy:
-      "Wellness should feel simple, practical and relevant to modern life. Rather than making nutrition unnecessarily complicated, Super Being aims to create an accessible experience in which people can better understand their everyday needs and make informed choices.",
+      "Every ingredient should have a reason. Every product should have a purpose. Superbeing is built around your needs, shaped by your voice and formulated with purpose.",
     standsFor: [
       "Modern nutrition",
       "Everyday wellbeing",
@@ -72,7 +75,7 @@ export const brands: Brand[] = [
       { title: "Honest communication", body: "Plain-language guidance on what each product is for and how to use it — no exaggerated promises." },
     ],
     closing:
-      "Super Being brings practical, modern nutrition into everyday life — a more structured, more understandable approach to wellness for contemporary consumers.",
+      "Superbeing Nutrition is built around your needs, shaped by your voice and formulated with purpose — a focused range in which every product earns its place.",
     logo: "/brands/super-being.webp",
     logoBg: "#ffffff",
     mode: "logo",
@@ -379,6 +382,9 @@ export const brands: Brand[] = [
 ];
 
 export const getBrand = (slug: string) => brands.find((b) => b.slug === slug);
+
+/** Where a brand lives on the site: its dedicated page if it has one, otherwise its portfolio page. */
+export const brandHref = (b: Pick<Brand, "slug" | "href">) => b.href ?? `/brands/${b.slug}`;
 
 export const toneStyles: Record<BrandTone, { bg: string; fg: string; accent: string; muted: string }> = {
   sage: { bg: "#5f6f59", fg: "#f2ede3", accent: "#e7dfd0", muted: "#d5dbcc" },

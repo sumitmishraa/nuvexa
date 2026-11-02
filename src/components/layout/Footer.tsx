@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ButtonLink } from "@/components/ui/ButtonLink";
 import { Mark } from "@/components/ui/Logo";
-import { brands } from "@/content/brands";
+import { brandHref, brands } from "@/content/brands";
 import { site } from "@/content/site";
 
 const columns = [
@@ -14,7 +14,7 @@ const columns = [
       { label: "Future vision", href: "/future-vision" },
     ],
   },
-  { title: "Our brands", links: brands.map((b) => ({ label: b.name, href: `/brands/${b.slug}` })) },
+  { title: "Our brands", links: brands.map((b) => ({ label: b.name, href: brandHref(b) })) },
   {
     title: "Connect",
     links: [

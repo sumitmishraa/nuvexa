@@ -5,8 +5,10 @@ All copy lives in `src/content/*.ts`. It expands the original nuvexabio.com text
 ## To confirm
 1. **General enquiries email** — the old site's "General Enquiries" address decodes to `ceo@nuvexabio.com`. Is that intended, or should it be e.g. `hello@` / `info@`?
 2. **Phase 1 wording** — the old About page said Phase 1 covers "India and international markets", while the homepage and Future Vision say India first. The new site says **India first**.
-3. **Brand status** — every brand shows "Launching soon" and verticals show "Future vertical" / "Long-term ambition", matching the old site's "Coming soon". Update when products go live.
-4. **Stats** — the stat band uses only true counts (4 consumer brands, 7 brands & verticals, 6 categories, 3 roadmap phases). Swap in real metrics (customers, cities, SKUs) once they can be published.
+3. **Brand status** — Superbeing Nutrition shows "Our flagship"; the other brands show "Launching soon" and verticals "Future vertical" / "Long-term ambition". Update when products go live.
+4. **Stats** — the stat band uses only true counts (4 consumer brands, 7 brands & verticals, 15 months of Superbeing development, 3 roadmap phases). Swap in real metrics (customers, cities, SKUs) once they can be published.
+7. **Superbeing Nutrition story** — the site's core story (`/superbeing`, home page, Approach, Company) comes from the client document *"SUPERBEING NUTRITION – story telling – 2.11.26 v2"*, kept close to its wording in `src/content/superbeing.ts`. The first-person founder voice is attributed to **Shakeel Ahamed**, as confirmed. No product names, ingredients or benefit claims are shown — add them (with compliant claims) when the range is ready; the "Explore our products" CTA currently points to Contact.
+8. **Superbeing URL** — the flagship lives at `/superbeing`; the old `/brands/super-being` URL redirects there permanently.
 5. **Legal pages** — `/legal/privacy` and `/legal/terms` are structured drafts marked "pending legal review". They need counsel-approved text (the old links were 404s).
 6. **Contact form** — UI only. Validation works; delivery is not connected, and the success message says so. Connect to an email/CRM endpoint before launch.
 

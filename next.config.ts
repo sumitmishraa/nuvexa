@@ -1,8 +1,11 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
   cacheComponents: true,
+  async redirects() {
+    // Superbeing Nutrition has its own flagship page.
+    return [{ source: "/brands/super-being", destination: "/superbeing", permanent: true }];
+  },
   partialPrefetching: true,
   turbopack: {
     rules: {

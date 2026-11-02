@@ -5,7 +5,7 @@ import { useState } from "react";
 import { AnimatePresence, LayoutGroup, motion } from "motion/react";
 import { BrandStage, useBrandReveal } from "@/components/ui/BrandStage";
 import { Mark } from "@/components/ui/Logo";
-import { brands, type Brand } from "@/content/brands";
+import { brandHref, brands, type Brand } from "@/content/brands";
 import { EASE_OUT_EXPO, cn, pad } from "@/lib/cn";
 
 const filters = [
@@ -17,7 +17,7 @@ const filters = [
 type FilterId = (typeof filters)[number]["id"];
 
 function BrandCard({ brand, index }: { brand: Brand; index: number }) {
-  const href = `/brands/${brand.slug}`;
+  const href = brandHref(brand);
   const { revealing, onClick } = useBrandReveal(href);
   return (
     <Link href={href} onClick={onClick} data-cursor="Open" className="group flex h-full flex-col">

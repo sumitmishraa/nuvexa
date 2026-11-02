@@ -8,11 +8,11 @@ import { ParallaxImage } from "@/components/motion/ParallaxImage";
 import { BrandStage } from "@/components/ui/BrandStage";
 import { ButtonLink } from "@/components/ui/ButtonLink";
 import { SectionLabel } from "@/components/ui/SectionLabel";
-import { brands, getBrand, toneStyles } from "@/content/brands";
+import { brandHref, brands, getBrand, toneStyles } from "@/content/brands";
 import { pad } from "@/lib/cn";
 
 export function generateStaticParams() {
-  return brands.map((b) => ({ slug: b.slug }));
+  return brands.filter((b) => !b.href).map((b) => ({ slug: b.slug }));
 }
 
 export async function generateMetadata({ params }: PageProps<"/brands/[slug]">): Promise<Metadata> {
@@ -221,7 +221,7 @@ export default async function BrandPage({ params }: PageProps<"/brands/[slug]">)
 
       {/* Next brand */}
       <section data-theme="dark" aria-label="Next brand" className="bg-ink text-ivory">
-        <Link href={`/brands/${next.slug}`} data-cursor="Next" className="group container-x grid grid-cols-12 items-center gap-6 py-20 md:py-28">
+        <Link href={brandHref(next)} data-cursor="Next" className="group container-x grid grid-cols-12 items-center gap-6 py-20 md:py-28">
           <div className="col-span-12 md:col-span-8">
             <p className="eyebrow mb-6 text-ivory/78">Next in the portfolio</p>
             <p className="display-xl transition-colors duration-500 group-hover:text-brass-soft">

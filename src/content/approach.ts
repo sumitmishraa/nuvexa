@@ -1,50 +1,50 @@
 export const approach = {
   heroTitle: "We do not start with products. We start with problems.",
   heroLede:
-    "Every Nuvexa brand begins as a question about everyday life: what is difficult, confusing or underserved — and what would genuinely help? Our approach is designed to answer that question well, and then to keep answering it as needs evolve.",
+    "Every Nuvexa brand begins as a question about everyday life — and Superbeing Nutrition shows how we answer it: start with the person's actual need, give every ingredient a reason and every product a purpose, and explain it all clearly.",
   method: [
     {
       step: "01",
-      title: "Find the real problem",
-      body: "We look at routines, life stages and recurring frustrations — through consumer research, market intelligence and data — and focus on needs that are real, frequent and poorly served.",
+      title: "Start with the actual need",
+      body: "We look at routines, life stages and recurring frustrations — and ask what we would make if we started with the person's actual need, rather than with a category or an existing formula.",
     },
     {
       step: "02",
-      title: "Design a focused answer",
-      body: "Rather than building around a category, we design high-utility, problem-solving products. Fewer, better, clearer — each one with an obvious reason to exist.",
+      title: "Give every ingredient a reason",
+      body: "Every product needs a defined purpose. Ingredients are chosen for that purpose — the amount studied, who it was studied in, what was measured and how it works with the rest of the formulation.",
     },
     {
       step: "03",
-      title: "Develop it responsibly",
-      body: "Formulation, testing and manufacturing are carried out with specialised, qualified partners, guided by evidence, standardised ingredients and responsible claims.",
+      title: "Put the difference inside the product",
+      body: "No white-label shortcuts: we develop our own formulations with qualified partners, and when a product is for women or for men, the reason is inside the formula — not on the packaging.",
     },
     {
       step: "04",
       title: "Communicate with clarity",
-      body: "We explain what a product is for and how to use it, in plain language. Clear communication is how a brand earns trust that lasts.",
+      body: "Who a product is for, why its key ingredients were selected, how to use it, what the evidence supports and its precautions and limitations — in plain language.",
     },
     {
       step: "05",
-      title: "Learn, refine, scale",
-      body: "Digital-first commerce lets us learn quickly from real behaviour. We refine what works, retire what doesn't and scale what earns repeat demand.",
+      title: "Listen, learn, improve",
+      body: "Consumer conversations, surveys and honest feedback guide our priorities. Where we make meaningful changes, we explain what changed and why.",
     },
   ],
   commitments: [
     {
-      title: "Responsible claims",
-      body: "We only say what we can stand behind. Our communication is designed to inform, never to overpromise — especially in categories as personal as health and wellbeing.",
+      title: "Every ingredient should have a reason",
+      body: "Where we use patented, clinically studied ingredients, we choose them for their science — not for the name on the label — and formulate to reflect the amounts the research identifies.",
     },
     {
-      title: "Qualified partners",
-      body: "We do not currently operate in-house R&D or manufacturing. We work with specialised, qualified development and manufacturing partners, and we manage those relationships closely.",
+      title: "We wanted the difference inside the product",
+      body: "When manufacturers offered their existing formulas under our label, we declined — and kept looking until we found a partner who would help bring our own formulations to life.",
     },
     {
-      title: "Evidence over novelty",
-      body: "New for the sake of new is not innovation. We favour evidence-led formulation and standardised ingredients over trends.",
+      title: "Insight sets priorities; evidence sets decisions",
+      body: "Consumer insights guide what we work on next. Scientific evidence, safety, quality and feasibility guide how we develop it.",
     },
     {
-      title: "Technology with purpose",
-      body: "We use data, market intelligence and artificial intelligence to understand needs earlier and serve people better — always in service of the consumer, never instead of them.",
+      title: "Clear information. Realistic expectations.",
+      body: "Ingredient research supports why we chose an ingredient; it is not a study of our finished product or a promise of guaranteed results. We will always say which is which.",
     },
   ],
 } as const;

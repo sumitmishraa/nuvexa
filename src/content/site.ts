@@ -20,6 +20,7 @@ export const site = {
 } as const;
 
 export const nav = [
+  { label: "Superbeing", href: "/superbeing", note: "Our flagship story" },
   { label: "Company", href: "/company", note: "Who we are" },
   { label: "Our Brands", href: "/brands", note: "The portfolio" },
   { label: "Approach", href: "/approach", note: "How we build" },
@@ -29,6 +30,7 @@ export const nav = [
 ] as const;
 
 export const enquiryTypes = [
+  "Superbeing feedback & ideas",
   "Partnering & business development",
   "Investor relations",
   "Media enquiry",
@@ -39,9 +41,9 @@ export const enquiryTypes = [
 
 /** True, countable facts only — never invented metrics. */
 export const facts = [
-  { value: 4, label: "Consumer brands in the portfolio", note: "Super Being, Super Titans, RUGD Men and Super Envi Intima." },
+  { value: 4, label: "Consumer brands in the portfolio", note: "Superbeing Nutrition, Super Titans, RUGD Men and Super Envi Intima." },
   { value: 7, label: "Brands & verticals in development", note: "Including Modern Ayurveda, Pet Care and Pharmaceuticals." },
-  { value: 6, label: "Everyday categories we build for", note: "Nutrition, kids' nutrition, grooming, intimate wellbeing, Ayurveda and pet care." },
+  { value: 15, label: "Months developing Superbeing", note: "One year and three months of formulation work with a pharmaceutical-background professional." },
   { value: 3, label: "Phases in our long-term roadmap", note: "From digital-first commerce to advanced healthcare." },
 ] as const;
 

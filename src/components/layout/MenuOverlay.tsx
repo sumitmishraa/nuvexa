@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { useLenis } from "@/components/layout/SmoothScroll";
-import { brands } from "@/content/brands";
+import { brandHref, brands } from "@/content/brands";
 import { nav, site } from "@/content/site";
 import { EASE_IN_OUT_QUART, EASE_OUT_EXPO, pad } from "@/lib/cn";
 
@@ -101,7 +101,7 @@ export function MenuOverlay({ open, onClose }: { open: boolean; onClose: () => v
                     {brands.map((b, i) => (
                       <li key={b.slug}>
                         <Link
-                          href={`/brands/${b.slug}`}
+                          href={brandHref(b)}
                           onClick={onClose}
                           onMouseEnter={() => setPreview(i)}
                           onFocus={() => setPreview(i)}

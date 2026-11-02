@@ -59,20 +59,20 @@ export function HomeHero() {
         <div className="container-x">
           <motion.p className="eyebrow mb-8 flex items-center gap-3 text-ivory/80" {...appear(0.2)}>
             <span className="h-px w-10 bg-brass" />
-            Nuvexa Biotech · Bengaluru, India
+            Superbeing Nutrition · by Nuvexa Biotech
           </motion.p>
-          <SplitText as="h1" trigger="load" delay={0.25} className="display-hero max-w-[15ch]" text={"Building trusted brands.\n*Solving everyday*\nhealth needs."} />
+          <SplitText as="h1" trigger="load" delay={0.25} className="display-hero max-w-[22ch]" text={"Your need is specific.\n*Your nutrition*\n*should be too.*"} />
           <div className="mt-12 grid grid-cols-12 items-end gap-6 border-t border-ivory/15 pt-8">
-            <motion.p className="lede col-span-12 max-w-[46ch] text-ivory/80 md:col-span-6" {...appear(0.9)}>
-              A next-generation consumer health company building differentiated brands around real, recurring needs — across nutrition, grooming, intimate
-              wellbeing, modern Ayurveda and pet care.
+            <motion.p className="lede col-span-12 max-w-[46ch] text-ivory/85 md:col-span-6" {...appear(0.9)}>
+              Hyper-specific, problem-solving products — not the same formulation with a different brand cover. Built around your needs, shaped by your
+              voice, formulated with purpose.
             </motion.p>
             <motion.div className="col-span-12 flex flex-wrap items-center gap-4 md:col-span-6 md:justify-end" {...appear(1.05)}>
-              <ButtonLink href="/brands" variant="ivory">
-                Explore our brands
+              <ButtonLink href="/superbeing" variant="ivory">
+                Discover Superbeing
               </ButtonLink>
-              <ButtonLink href="/approach" variant="outline-light">
-                Our approach
+              <ButtonLink href="/company" variant="outline-light">
+                Our story
               </ButtonLink>
             </motion.div>
           </div>

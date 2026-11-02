@@ -7,7 +7,7 @@ import { CinematicHero } from "@/components/sections/CinematicHero";
 export const metadata: Metadata = {
   title: "Our Brands",
   description:
-    "Super Being, Super Titans, RUGD Men and Super Envi Intima — plus emerging verticals in Modern Ayurveda, Pet Care and Pharmaceuticals.",
+    "Superbeing Nutrition, Super Titans, RUGD Men and Super Envi Intima — plus emerging verticals in Modern Ayurveda, Pet Care and Pharmaceuticals.",
 };
 
 export default function BrandsPage() {
