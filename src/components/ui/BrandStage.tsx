@@ -1,10 +1,10 @@
 "use client";
 
-import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { AnimatePresence, motion, useMotionValue, useReducedMotion, useSpring, useTransform } from "motion/react";
 import { useSiteReady } from "@/components/layout/Preloader";
+import { Photo } from "@/components/ui/Photo";
 import type { Brand } from "@/content/brands";
 import { EASE_OUT_EXPO, cn } from "@/lib/cn";
 
@@ -105,14 +105,7 @@ export function BrandStage({
               isLogo ? "inset-[9%] group-hover/stage:scale-[1.04]" : "inset-0 group-hover/stage:scale-[1.06]",
             )}
           >
-            <Image
-              src={brand.logo}
-              alt={isLogo ? `${brand.name} logo` : brand.imageAlt ?? `${brand.name} — ${brand.category}`}
-              fill
-              sizes={sizes}
-              priority={priority}
-              className={isLogo ? "object-contain" : "object-cover"}
-            />
+            <Photo src={brand.logo} alt={isLogo ? `${brand.name} logo` : brand.imageAlt ?? `${brand.name} — ${brand.category}`} sizes={sizes} priority={priority} contain={isLogo} />
           </div>
         </motion.div>
 

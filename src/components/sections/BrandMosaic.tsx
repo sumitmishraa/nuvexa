@@ -1,49 +1,40 @@
 "use client";
 
-import Image from "next/image";
-import { motion, useReducedMotion } from "motion/react";
+import { motion } from "motion/react";
 import { useSiteReady } from "@/components/layout/Preloader";
+import { Photo } from "@/components/ui/Photo";
+import { Mark } from "@/components/ui/Logo";
 import { getBrand } from "@/content/brands";
-import { EASE_OUT_EXPO, cn } from "@/lib/cn";
+import { heroSizes } from "@/content/heroes";
+import { EASE_OUT_EXPO } from "@/lib/cn";
 
-/* Seven brand visuals as one composed wall: verticals as photographs, consumer brands as their marks. */
-const tiles = [
-  { slug: "modern-ayurveda", area: "md:col-start-1 md:row-span-2" },
-  { slug: "super-being", area: "" },
-  { slug: "super-titans", area: "" },
-  { slug: "pet-care", area: "md:col-span-2" },
-  { slug: "rugd-men", area: "" },
-  { slug: "super-envi-intima", area: "" },
-  { slug: "pharmaceuticals", area: "md:col-span-2" },
-];
+const slugs = ["modern-ayurveda", "super-being", "super-titans", "pet-care", "rugd-men", "super-envi-intima", "pharmaceuticals"];
 
+/* Seven brand visuals as one even wall of squares, matching the tiles' own shape, so nothing is cropped. */
 export function BrandMosaic() {
-  const reduce = useReducedMotion();
   const ready = useSiteReady();
+  const arrive = (i: number) => ({
+    initial: { opacity: 0, y: 36 },
+    animate: ready ? { opacity: 1, y: 0 } : undefined,
+    transition: { duration: 1.1, delay: 0.3 + i * 0.12, ease: EASE_OUT_EXPO },
+  });
   return (
-    <div className="grid h-full w-full grid-cols-2 gap-2 bg-ink p-2 md:grid-cols-5 md:grid-rows-2 md:gap-3 md:p-3">
-      {tiles.map((t, i) => {
-        const brand = getBrand(t.slug)!;
+    <div className="grid grid-cols-2 gap-2 md:grid-cols-4 md:gap-3">
+      {slugs.map((slug, i) => {
+        const brand = getBrand(slug)!;
         const logo = brand.mode === "logo";
         return (
-          <motion.div
-            key={t.slug}
-            className={cn("relative min-h-28 overflow-hidden rounded-[1rem]", t.area)}
-            style={{ background: brand.logoBg }}
-            initial={reduce ? false : { opacity: 0, scale: 0.92 }}
-            animate={ready ? { opacity: 1, scale: 1 } : undefined}
-            transition={{ duration: 1.2, delay: 0.45 + i * 0.08, ease: EASE_OUT_EXPO }}
-          >
-            <Image
-              src={brand.logo}
-              alt={logo ? `${brand.name} logo` : brand.name}
-              fill
-              sizes="(min-width: 768px) 40vw, 50vw"
-              className={logo ? "object-contain p-[6%]" : "object-cover"}
-            />
+          <motion.div key={slug} className="relative aspect-square overflow-hidden rounded-[1rem]" style={{ background: brand.logoBg }} {...arrive(i)}>
+            <Photo src={brand.logo} alt={logo ? `${brand.name} logo` : brand.name} sizes={heroSizes.mosaic} priority contain={logo} className={logo ? "p-[6%]" : undefined} />
           </motion.div>
         );
       })}
+      <motion.div className="flex aspect-square flex-col justify-between rounded-[1rem] bg-ink-soft p-5 md:p-7" {...arrive(slugs.length)}>
+        <Mark className="h-7 w-7 text-brass" strokeWidth={1.2} />
+        <p className="display-md">
+          Seven ways we serve <em className="italic text-brass-soft">everyday health.</em>
+        </p>
+      </motion.div>
     </div>
   );
 }

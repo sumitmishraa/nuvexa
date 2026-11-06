@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
+import { RevealPhoto } from "@/components/motion/RevealPhoto";
 import { Reveal, RevealGroup, RevealItem } from "@/components/motion/Reveal";
 import { SplitText } from "@/components/motion/SplitText";
-import { CinematicHero } from "@/components/sections/CinematicHero";
+import { PageHero } from "@/components/sections/PageHero";
 import { Roadmap } from "@/components/sections/Roadmap";
 import { StatBand } from "@/components/sections/StatBand";
 import { ButtonLink } from "@/components/ui/ButtonLink";
 import { Mark } from "@/components/ui/Logo";
+import { Photo } from "@/components/ui/Photo";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { company } from "@/content/company";
 import { investors as inv } from "@/content/investors";
@@ -18,19 +20,21 @@ export const metadata: Metadata = {
     "Nuvexa's investment thesis, partner-led business model, growth roadmap and principles — and how to reach us about investor relations.",
 };
 
+const thesisPhotos = ["/media/daily-organiser.webp", "/media/powder-scoop.webp", "/media/warehouse-aisle.webp", "/media/capsules.webp"];
+
 export default function InvestorsPage() {
   return (
     <>
-      <CinematicHero
+      <PageHero
+        variant="pan"
         eyebrow="Investors"
         title={inv.heroTitle}
         lede={inv.heroLede}
-        image="/media/investors.webp"
-        imageAlt="A calm boardroom library with a green marble table, bound reports and a brass lamp in morning light"
+        photos={[{ src: "/media/glass-boardroom.webp", alt: "A meeting in a glass-walled boardroom with tall windows overlooking the city" }]}
       />
 
       {/* 01 · Thesis */}
-      <section data-theme="light" aria-labelledby="thesis-heading" className="bg-ivory py-28 text-ink md:py-40">
+      <section data-theme="light" aria-labelledby="thesis-heading" className="bg-ivory py-20 text-ink md:py-28">
         <div className="container-x">
           <div className="mb-16 grid grid-cols-12 gap-6">
             <SectionLabel index="01" className="col-span-12 mb-6 text-ink-muted md:col-span-4">
@@ -40,15 +44,18 @@ export default function InvestorsPage() {
               <h2 id="thesis-heading" className="sr-only">
                 Investment thesis
               </h2>
-              <SplitText as="p" className="display-xl max-w-[18ch]" text={"Four reasons we believe\nin *what we are building.*"} />
+              <SplitText as="p" className="display-xl" text={"Four reasons we believe\nin *what we are building.*"} />
             </div>
           </div>
           <RevealGroup className="grid gap-5 md:grid-cols-2">
             {inv.thesis.map((t, i) => (
-              <RevealItem key={t.title} className="flex min-h-72 flex-col justify-between rounded-[1.5rem] border border-ink/12 bg-paper p-8 md:p-10">
-                <span className="font-serif text-5xl font-semibold text-brass">{pad(i + 1)}</span>
-                <div>
-                  <h3 className="display-md mb-4">{t.title}</h3>
+              <RevealItem key={t.title} className="group overflow-hidden rounded-[1.5rem] border border-ink/12 bg-paper">
+                <div className="relative aspect-[16/9] overflow-hidden bg-ivory-deep">
+                  <Photo src={thesisPhotos[i]} alt="" sizes="(min-width: 768px) 46vw, 92vw" className="transition-transform duration-700 ease-[var(--ease-out-expo)] group-hover:scale-105" />
+                </div>
+                <div className="p-8 md:p-10">
+                  <span className="font-serif text-4xl font-semibold text-brass">{pad(i + 1)}</span>
+                  <h3 className="display-md mb-4 mt-4">{t.title}</h3>
                   <p className="text-ink-muted">{t.body}</p>
                 </div>
               </RevealItem>
@@ -58,7 +65,7 @@ export default function InvestorsPage() {
       </section>
 
       {/* 02 · Business model */}
-      <section data-theme="dark" aria-labelledby="model-heading" className="bg-ink py-28 text-ivory md:py-40">
+      <section data-theme="dark" aria-labelledby="model-heading" className="bg-ink py-20 text-ivory md:py-28">
         <div className="container-x grid grid-cols-12 gap-6">
           <div className="col-span-12 lg:col-span-6">
             <SectionLabel index="02" className="mb-8 text-ivory/78">
@@ -75,9 +82,18 @@ export default function InvestorsPage() {
               ))}
             </RevealGroup>
           </div>
-          <div className="col-span-12 grid gap-5 sm:grid-cols-2 lg:col-span-5 lg:col-start-8 lg:grid-cols-1">
+          <div className="col-span-12 mt-10 flex flex-col lg:col-span-5 lg:col-start-8 lg:mt-0">
+            {/* Moving pulses show the working link between what Nuvexa owns and where it partners. */}
+            <div aria-hidden="true" className="order-2 flex items-center justify-center gap-4 py-4">
+              <span className="relative block h-16 w-2 overflow-hidden rounded-full bg-ivory/12">
+                {[0, 1, 2].map((n) => (
+                  <span key={n} className="absolute left-0 top-0 block h-2 w-2 rounded-full bg-brass" style={{ animation: `flow-pulse 2.4s linear ${n * 0.8}s infinite` }} />
+                ))}
+              </span>
+              <span className="eyebrow text-ivory/78">Managed closely by Nuvexa</span>
+            </div>
             {inv.model.pillars.map((col, i) => (
-              <Reveal key={col.title} delay={i * 0.1} className={i === 0 ? "rounded-[1.5rem] bg-ivory p-8 text-ink" : "rounded-[1.5rem] border border-ivory/15 p-8"}>
+              <Reveal key={col.title} delay={i * 0.1} className={i === 0 ? "order-1 rounded-[1.5rem] bg-ivory p-8 text-ink" : "order-3 rounded-[1.5rem] border border-ivory/15 p-8"}>
                 <p className={i === 0 ? "eyebrow mb-5 text-[#74562f]" : "eyebrow mb-5 text-brass-soft"}>{col.title}</p>
                 <ul className="space-y-3">
                   {col.items.map((it) => (
@@ -94,14 +110,21 @@ export default function InvestorsPage() {
       </section>
 
       {/* 03 · Numbers */}
-      <section data-theme="light" aria-labelledby="numbers-heading" className="bg-ivory py-28 text-ink md:py-36">
+      <section data-theme="light" aria-labelledby="numbers-heading" className="bg-ivory py-20 text-ink md:py-28">
         <div className="container-x">
-          <SectionLabel index="03" className="mb-8 text-ink-muted">
-            In numbers
-          </SectionLabel>
-          <h2 id="numbers-heading" className="display-lg mb-14 max-w-[22ch]">
-            Where we stand <em className="italic text-brass">today.</em>
-          </h2>
+          <div className="mb-12 grid grid-cols-12 items-end gap-x-6 gap-y-8">
+            <div className="col-span-12 lg:col-span-5">
+              <SectionLabel index="03" className="mb-8 text-ink-muted">
+                In numbers
+              </SectionLabel>
+              <h2 id="numbers-heading" className="display-lg max-w-[14ch]">
+                Where we stand <em className="italic text-brass">today.</em>
+              </h2>
+            </div>
+            <div className="relative col-span-12 aspect-[16/9] overflow-hidden rounded-[1.5rem] bg-ink lg:col-span-7">
+              <RevealPhoto src="/media/boardroom-table.webp" alt="A team gathered along a long table in a bright meeting room" sizes="(min-width: 1024px) 56vw, 100vw" />
+            </div>
+          </div>
           <StatBand />
         </div>
       </section>
@@ -126,7 +149,7 @@ export default function InvestorsPage() {
       </section>
 
       {/* 05 · Principles */}
-      <section data-theme="light" aria-labelledby="principles-heading" className="bg-ivory py-28 text-ink md:py-40">
+      <section data-theme="light" aria-labelledby="principles-heading" className="bg-ivory py-20 text-ink md:py-28">
         <div className="container-x grid grid-cols-12 gap-6">
           <div className="col-span-12 lg:col-span-5">
             <div className="lg:sticky lg:top-32">
@@ -155,7 +178,7 @@ export default function InvestorsPage() {
       </section>
 
       {/* 06 · Leadership */}
-      <section data-theme="light" aria-labelledby="leader-heading" className="bg-ivory-deep py-28 text-ink md:py-36">
+      <section data-theme="light" aria-labelledby="leader-heading" className="bg-ivory-deep py-20 text-ink md:py-28">
         <div className="container-x grid grid-cols-12 items-center gap-6">
           <Reveal className="col-span-12 lg:col-span-4">
             <div data-theme="dark" className="flex aspect-[4/5] flex-col justify-between rounded-[1.5rem] bg-ink p-8 text-ivory">
@@ -189,7 +212,7 @@ export default function InvestorsPage() {
       </section>
 
       {/* 07 · Investor relations */}
-      <section data-theme="dark" aria-labelledby="ir-heading" className="bg-ink py-28 text-ivory md:py-40">
+      <section data-theme="dark" aria-labelledby="ir-heading" className="bg-ink py-20 text-ivory md:py-28">
         <div className="container-x">
           <p className="eyebrow mb-8 text-ivory/78">
             <span className="text-brass">07</span> — Investor relations

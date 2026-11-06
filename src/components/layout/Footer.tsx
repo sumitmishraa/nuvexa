@@ -91,7 +91,7 @@ export function Footer() {
 
       <div aria-hidden="true" className="container-x select-none pb-6">
         <div className="flex items-end justify-between gap-4 text-ivory/[0.06]">
-          <svg viewBox="0 0 1000 300" className="w-[78%]">
+          <svg viewBox="0 0 1270 300" className="w-[78%]">
             <text x="0" y="272" fill="currentColor" fontSize="360" letterSpacing="-14" style={{ fontFamily: "var(--font-serif)" }}>
               Nuvexa
             </text>

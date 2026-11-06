@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useReducedMotion } from "motion/react";
+import { motion } from "motion/react";
 import { Reveal } from "@/components/motion/Reveal";
 import { SplitText } from "@/components/motion/SplitText";
 import { ButtonLink } from "@/components/ui/ButtonLink";
@@ -12,11 +12,10 @@ import { EASE_OUT_EXPO } from "@/lib/cn";
  * `compact` is the home-page teaser; the full chapter lives on /superbeing.
  */
 export function WeDeclined({ compact = false, index = "05" }: { compact?: boolean; index?: string }) {
-  const reduce = useReducedMotion();
   const { title, setup, answer, after, commitment } = superbeing.declined;
 
   return (
-    <section data-theme="dark" aria-labelledby="declined-heading" className="relative overflow-hidden bg-ink py-28 text-ivory md:py-40">
+    <section data-theme="dark" aria-labelledby="declined-heading" className="relative overflow-hidden bg-ink py-20 text-ivory md:py-28">
       <div className="container-x">
         <p className="eyebrow mb-10 text-ivory/78">
           <span className="text-brass">{index}</span> — {title}
@@ -40,7 +39,7 @@ export function WeDeclined({ compact = false, index = "05" }: { compact?: boolea
                 <motion.span
                   aria-hidden="true"
                   className="absolute left-0 top-1/2 h-[3px] w-full origin-left bg-clay"
-                  initial={reduce ? false : { scaleX: 0 }}
+                  initial={{ scaleX: 0 }}
                   whileInView={{ scaleX: 1 }}
                   viewport={{ once: true, margin: "0px 0px -20% 0px" }}
                   transition={{ duration: 0.9, delay: 0.3, ease: EASE_OUT_EXPO }}

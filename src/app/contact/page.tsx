@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Reveal } from "@/components/motion/Reveal";
 import { SplitText } from "@/components/motion/SplitText";
-import { CinematicHero } from "@/components/sections/CinematicHero";
+import { PageHero } from "@/components/sections/PageHero";
 import { ContactForm } from "@/components/sections/ContactForm";
 import { Mark } from "@/components/ui/Logo";
 import { site } from "@/content/site";
@@ -14,14 +14,14 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <>
-    <CinematicHero
+    <PageHero
+      variant="rise"
       eyebrow="Contact"
       title={"Let's start a\n*conversation.*"}
       lede="For partnerships and business development, investor relations, media, medical information, careers or general questions — we would be glad to hear from you, here in Bengaluru."
-      image="/media/contact.webp"
-      imageAlt="A great rain tree spreading over green lawns in Cubbon Park, Bengaluru"
+      photos={[{ src: "/media/office-conversation.webp", alt: "Three colleagues talking on low sofas beside tall office windows" }]}
     />
-    <section data-theme="light" className="bg-ivory pb-28 pt-20 text-ink md:pb-40 md:pt-28">
+    <section data-theme="light" className="bg-ivory pb-20 pt-14 text-ink md:pb-28 md:pt-20">
       <div className="container-x grid grid-cols-12 gap-x-6 gap-y-16">
         <div className="col-span-12 lg:col-span-5">
           <Reveal>

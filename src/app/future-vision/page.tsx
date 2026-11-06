@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
+import { RevealPhoto } from "@/components/motion/RevealPhoto";
 import { Reveal } from "@/components/motion/Reveal";
 import { CtaPair } from "@/components/sections/CtaPair";
 import { JourneyScroll } from "@/components/sections/JourneyScroll";
-import { CinematicHero } from "@/components/sections/CinematicHero";
+import { PageHero } from "@/components/sections/PageHero";
 import { Roadmap } from "@/components/sections/Roadmap";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { getBrand } from "@/content/brands";
@@ -17,28 +18,31 @@ export default function FutureVisionPage() {
   const pharma = getBrand("pharmaceuticals")!;
   return (
     <>
-      <CinematicHero
+      <PageHero
+        variant="curtain"
         eyebrow="Future vision"
         title={"Building for\nthe *long term.*"}
         lede={vision.heroLede}
-        image="/brands/pharmaceuticals.webp"
-        imageAlt="A modern laboratory with glass flasks, vials and capsules beside a microscope"
-        imagePosition="center 60%"
+        photos={[{ src: "/media/analyser-hall.webp", alt: "" }]}
+        video="/media/video/analyser-hall.mp4"
       />
 
       {/* Today */}
-      <section data-theme="light" aria-labelledby="today-heading" className="bg-ivory py-28 text-ink md:py-40">
-        <div className="container-x grid grid-cols-12 gap-6">
-          <SectionLabel index="01" className="col-span-12 text-ink-muted md:col-span-4">
-            Current operations
-          </SectionLabel>
-          <div className="col-span-12 md:col-span-8">
-            <h2 id="today-heading" className="display-lg mb-10 max-w-[18ch]">
+      <section data-theme="light" aria-labelledby="today-heading" className="bg-ivory py-20 text-ink md:py-28">
+        <div className="container-x grid grid-cols-12 items-center gap-x-6 gap-y-10">
+          <div className="col-span-12 lg:col-span-7">
+            <SectionLabel index="01" className="mb-8 text-ink-muted">
+              Current operations
+            </SectionLabel>
+            <h2 id="today-heading" className="display-lg mb-8 max-w-[18ch]">
               {vision.today.title}. <em className="italic text-brass">Openly.</em>
             </h2>
             <Reveal>
               <p className="lede max-w-[58ch] text-ink-muted">{vision.today.body}</p>
             </Reveal>
+          </div>
+          <div className="relative col-span-12 aspect-[3/2] overflow-hidden rounded-[1.5rem] bg-ink lg:col-span-5">
+            <RevealPhoto src="/media/cleanroom.webp" alt="Technicians in protective suits working in a bright cleanroom" sizes="(min-width: 1024px) 40vw, 100vw" />
           </div>
         </div>
       </section>
@@ -46,9 +50,9 @@ export default function FutureVisionPage() {
       <JourneyScroll />
 
       {/* Pharma ambition */}
-      <section data-theme="light" aria-labelledby="pharma-heading" className="bg-ivory-deep py-28 text-ink md:py-40">
-        <div className="container-x grid grid-cols-12 items-center gap-6">
-          <div className="col-span-12 lg:col-span-10">
+      <section data-theme="light" aria-labelledby="pharma-heading" className="bg-ivory-deep py-20 text-ink md:py-28">
+        <div className="container-x grid grid-cols-12 items-center gap-x-6 gap-y-10">
+          <div className="col-span-12 lg:col-span-7">
             <SectionLabel index="03" className="mb-8 text-ink-muted">
               The long-term ambition
             </SectionLabel>
@@ -58,13 +62,16 @@ export default function FutureVisionPage() {
             <Reveal>
               <p className="lede mb-10 text-ink-muted">{pharma.intro[1]}</p>
             </Reveal>
-            <ul className="grid grid-cols-2 gap-px overflow-hidden rounded-[1.25rem] bg-ink/10">
+            <ul className="grid gap-px overflow-hidden rounded-[1.25rem] bg-ink/10 sm:grid-cols-2">
               {pharma.focusAreas!.map((f) => (
                 <li key={f} className="bg-ivory-deep p-6">
                   <span className="display-md">{f}</span>
                 </li>
               ))}
             </ul>
+          </div>
+          <div className="relative col-span-12 aspect-[3/2] overflow-hidden rounded-[1.5rem] bg-ink lg:col-span-5">
+            <RevealPhoto src="/media/microscope-closeup.webp" alt="A researcher looking through a large microscope, with culture dishes on the bench behind" sizes="(min-width: 1024px) 40vw, 100vw" />
           </div>
         </div>
       </section>

@@ -14,7 +14,7 @@ const sections = [
 
 export default function TermsPage() {
   return (
-    <section data-theme="light" className="bg-ivory pb-28 pt-40 text-ink md:pt-48">
+    <section data-theme="light" className="bg-ivory pb-20 pt-40 text-ink md:pt-48">
       <div className="container-x grid grid-cols-12 gap-6">
         <div className="col-span-12 md:col-span-4">
           <p className="eyebrow mb-6 text-brass">Legal</p>

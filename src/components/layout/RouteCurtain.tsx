@@ -26,9 +26,9 @@ export function RouteCurtain() {
       className="pointer-events-none fixed inset-0 z-[95] flex items-center justify-center bg-ink text-brass"
       initial={{ clipPath: "inset(0% 0% 0% 0%)" }}
       animate={{ clipPath: "inset(0% 0% 100% 0%)" }}
-      transition={{ duration: 0.95, delay: 0.12, ease: EASE_IN_OUT_QUART }}
+      transition={{ duration: 0.48, delay: 0.05, ease: EASE_IN_OUT_QUART }}
     >
-      <motion.span initial={{ opacity: 1 }} animate={{ opacity: 0 }} transition={{ duration: 0.35 }}>
+      <motion.span initial={{ opacity: 1 }} animate={{ opacity: 0 }} transition={{ duration: 0.2 }}>
         <Mark className="h-10 w-10" strokeWidth={1.2} />
       </motion.span>
     </motion.div>

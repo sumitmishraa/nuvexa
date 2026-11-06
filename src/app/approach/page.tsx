@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import { Reveal, RevealGroup, RevealItem } from "@/components/motion/Reveal";
+import { RevealGroup, RevealItem } from "@/components/motion/Reveal";
 import { SplitText } from "@/components/motion/SplitText";
-import { WordReveal } from "@/components/motion/WordReveal";
 import { CtaPair } from "@/components/sections/CtaPair";
 import { OperatingModel } from "@/components/sections/OperatingModel";
-import { CinematicHero } from "@/components/sections/CinematicHero";
+import { MethodSteps } from "@/components/sections/MethodSteps";
+import { PageHero } from "@/components/sections/PageHero";
 import { Pillars } from "@/components/sections/Pillars";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { approach } from "@/content/approach";
@@ -17,48 +17,47 @@ export const metadata: Metadata = {
 export default function ApproachPage() {
   return (
     <>
-      <CinematicHero
+      <PageHero
+        variant="trio"
         eyebrow="Our approach"
         title={"We start with *problems,*\nnot products."}
         lede={approach.heroLede}
-        image="/media/approach.webp"
-        imageAlt="Hands arranging botanical samples, seeds and glass vials on paper with pencil diagrams"
+        photos={[
+          { src: "/media/sample-rack.webp", alt: "Gloved hands placing a sample in a green rack at a laboratory bench" },
+          { src: "/media/tablet-coating.webp", alt: "Pale pink tablets turning inside a coating machine" },
+          { src: "/media/beaker.webp", alt: "A gloved hand holding up a glass beaker of clear liquid" },
+        ]}
       />
 
       {/* Method */}
-      <section data-theme="light" aria-labelledby="method-heading" className="bg-ivory pb-28 text-ink md:pb-40">
+      <section data-theme="light" aria-labelledby="method-heading" className="bg-ivory pb-20 text-ink md:pb-28">
         <div className="container-x">
           <div className="mb-16 grid grid-cols-12 gap-6 border-t border-ink/12 pt-16 md:mb-20 md:pt-24">
             <SectionLabel index="01" className="col-span-12 text-ink-muted md:col-span-4">
               The method
             </SectionLabel>
-            <SplitText as="h2" className="display-xl col-span-12 max-w-[16ch] md:col-span-8" text={"From everyday need\nto *trusted brand.*"} />
+            <SplitText as="h2" className="display-xl col-span-12 md:col-span-8" text={"From everyday need\nto *trusted brand.*"} />
           </div>
-          <ol className="border-t border-ink/12">
-            {approach.method.map((m) => (
-              <li key={m.step} className="group border-b border-ink/12">
-                <Reveal className="grid grid-cols-12 gap-6 py-10 md:py-14">
-                  <span className="col-span-2 font-serif text-4xl text-brass md:col-span-1 md:text-5xl">{m.step}</span>
-                  <h3 className="display-md col-span-10 transition-transform duration-500 group-hover:translate-x-2 md:col-span-5">{m.title}</h3>
-                  <p className="col-span-12 text-ink-muted md:col-span-5 md:col-start-8">{m.body}</p>
-                </Reveal>
-              </li>
-            ))}
-          </ol>
+          <MethodSteps />
         </div>
       </section>
 
-      <WordReveal
-        theme="dark"
-        eyebrow="Why it matters"
-        text="Brands that solve real problems earn something no campaign can buy: *repeat* trust, kept one honest promise at a time."
-      />
+      <section data-theme="dark" aria-label="Why it matters" className="bg-ink py-20 text-ivory md:py-28">
+        <div className="container-x">
+          <p className="eyebrow mb-8 text-ivory/80">Why it matters</p>
+          <SplitText
+            as="p"
+            className="display-lg"
+            text={"Brands that solve real problems earn\nsomething no campaign can buy: *repeat*\n*trust,* kept one honest promise at a time."}
+          />
+        </div>
+      </section>
 
       <Pillars />
       <OperatingModel index="05" />
 
       {/* Commitments */}
-      <section data-theme="light" aria-labelledby="commit-heading" className="bg-ivory py-28 text-ink md:py-40">
+      <section data-theme="light" aria-labelledby="commit-heading" className="bg-ivory py-20 text-ink md:py-28">
         <div className="container-x">
           <div className="mb-16 grid grid-cols-12 gap-6">
             <SectionLabel index="06" className="col-span-12 text-ink-muted md:col-span-4">

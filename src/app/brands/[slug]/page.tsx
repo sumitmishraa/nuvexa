@@ -4,7 +4,8 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Reveal, RevealGroup, RevealItem } from "@/components/motion/Reveal";
 import { SplitText } from "@/components/motion/SplitText";
-import { ParallaxImage } from "@/components/motion/ParallaxImage";
+import { PhotoBand } from "@/components/sections/PhotoBand";
+import { photoFile } from "@/lib/photoFile";
 import { BrandStage } from "@/components/ui/BrandStage";
 import { ButtonLink } from "@/components/ui/ButtonLink";
 import { SectionLabel } from "@/components/ui/SectionLabel";
@@ -22,7 +23,7 @@ export async function generateMetadata({ params }: PageProps<"/brands/[slug]">):
   return {
     title: brand.name,
     description: brand.summary,
-    openGraph: brand.image ? { images: [{ url: brand.image, alt: brand.imageAlt }] } : undefined,
+    openGraph: brand.image ? { images: [{ url: photoFile(brand.image, 1600), alt: brand.imageAlt }] } : undefined,
   };
 }
 
@@ -41,7 +42,7 @@ export default async function BrandPage({ params }: PageProps<"/brands/[slug]">)
   return (
     <>
       {/* Hero */}
-      <section data-theme="light" className="bg-ivory pb-20 pt-32 text-ink md:pt-40">
+      <section data-theme="light" className="bg-ivory pb-20 pt-32 text-ink md:pt-28">
         <div className="container-x grid grid-cols-12 gap-x-6 gap-y-12">
           <div className="col-span-12 flex flex-col lg:col-span-6">
             <div>
@@ -68,20 +69,16 @@ export default async function BrandPage({ params }: PageProps<"/brands/[slug]">)
             </Reveal>
           </div>
           <div className="col-span-12 lg:col-span-6">
-            <BrandStage brand={brand} entrance priority className="aspect-square rounded-[1.75rem] lg:aspect-auto lg:h-[74svh]" sizes="(min-width: 1024px) 48vw, 100vw" />
+            <BrandStage brand={brand} entrance priority className="aspect-square rounded-[1.75rem]" sizes="(min-width: 1024px) 48vw, 100vw" />
           </div>
         </div>
       </section>
 
       {/* Lifestyle photography, where the brand has it */}
-      {brand.image ? (
-        <section data-theme="dark" aria-hidden="true" className="relative h-[72svh] overflow-hidden bg-ink">
-          <ParallaxImage src={brand.image} alt="" sizes="100vw" />
-        </section>
-      ) : null}
+      {brand.image ? <PhotoBand src={brand.image} /> : null}
 
       {/* Introduction */}
-      <section data-theme="light" aria-labelledby="intro-heading" className="bg-ivory pb-28 text-ink md:pb-36">
+      <section data-theme="light" aria-labelledby="intro-heading" className="bg-ivory pb-20 text-ink md:pb-36">
         <div className="container-x grid grid-cols-12 gap-6 border-t border-ink/12 pt-16">
           <SectionLabel index="01" className="col-span-12 text-ink-muted md:col-span-4">
             <span id="intro-heading">Introducing {brand.name}</span>
@@ -97,7 +94,7 @@ export default async function BrandPage({ params }: PageProps<"/brands/[slug]">)
       </section>
 
       {/* The need */}
-      <section data-theme="dark" aria-labelledby="need-heading" className="py-28 md:py-40" style={{ background: "#0e1e19", color: "#f2ede3" }}>
+      <section data-theme="dark" aria-labelledby="need-heading" className="py-20 md:py-28" style={{ background: "#0e1e19", color: "#f2ede3" }}>
         <div className="container-x grid grid-cols-12 gap-6">
           <SectionLabel index="02" className="col-span-12 mb-6 text-ivory/75 md:col-span-4">
             The need
@@ -116,7 +113,7 @@ export default async function BrandPage({ params }: PageProps<"/brands/[slug]">)
       </section>
 
       {/* Philosophy */}
-      <section data-theme={philosophyTheme} aria-labelledby="philosophy-heading" className="py-28 md:py-40" style={{ background: philosophy.bg, color: philosophy.fg }}>
+      <section data-theme={philosophyTheme} aria-labelledby="philosophy-heading" className="py-20 md:py-28" style={{ background: philosophy.bg, color: philosophy.fg }}>
         <div className="container-x">
           <p id="philosophy-heading" className="eyebrow mb-12 opacity-85">
             <span className={philosophyTheme === "light" ? "text-brass" : ""}>03</span> — Brand philosophy
@@ -143,7 +140,7 @@ export default async function BrandPage({ params }: PageProps<"/brands/[slug]">)
 
       {/* Focus areas (pharmaceuticals) */}
       {brand.focusAreas ? (
-        <section data-theme="dark" aria-labelledby="focus-heading" className="bg-ink py-28 text-ivory md:py-36">
+        <section data-theme="dark" aria-labelledby="focus-heading" className="bg-ink py-20 text-ivory md:py-28">
           <div className="container-x">
             <h2 id="focus-heading" className="eyebrow mb-12 text-ivory/75">
               Long-term focus areas
@@ -161,7 +158,7 @@ export default async function BrandPage({ params }: PageProps<"/brands/[slug]">)
       ) : null}
 
       {/* What it stands for + who it's for */}
-      <section data-theme="light" aria-labelledby="stands-heading" className="bg-ivory py-28 text-ink md:py-40">
+      <section data-theme="light" aria-labelledby="stands-heading" className="bg-ivory py-20 text-ink md:py-28">
         <div className="container-x grid grid-cols-12 gap-6">
           <div className="col-span-12 lg:col-span-5">
             <SectionLabel index="04" className="mb-8 text-ink-muted">
@@ -189,7 +186,7 @@ export default async function BrandPage({ params }: PageProps<"/brands/[slug]">)
       </section>
 
       {/* The Nuvexa way */}
-      <section data-theme="light" aria-labelledby="way-heading" className="bg-ivory-deep py-28 text-ink md:py-36">
+      <section data-theme="light" aria-labelledby="way-heading" className="bg-ivory-deep py-20 text-ink md:py-28">
         <div className="container-x">
           <div className="mb-14 flex flex-wrap items-end justify-between gap-6">
             <div>

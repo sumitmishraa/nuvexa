@@ -1,39 +1,67 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { Marquee } from "@/components/motion/Marquee";
-import { ParallaxImage } from "@/components/motion/ParallaxImage";
+import { RevealPhoto } from "@/components/motion/RevealPhoto";
 import { Reveal, RevealGroup, RevealItem } from "@/components/motion/Reveal";
 import { SplitText } from "@/components/motion/SplitText";
-import { WordReveal } from "@/components/motion/WordReveal";
-import { CinematicHero } from "@/components/sections/CinematicHero";
+import { PageHero } from "@/components/sections/PageHero";
+import { PhotoBand } from "@/components/sections/PhotoBand";
+import { PhotoRibbon } from "@/components/sections/PhotoRibbon";
 import { MonthsRail } from "@/components/sections/superbeing/MonthsRail";
 import { WeDeclined } from "@/components/sections/superbeing/WeDeclined";
 import { ButtonLink } from "@/components/ui/ButtonLink";
 import { Mark } from "@/components/ui/Logo";
+import { Photo } from "@/components/ui/Photo";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { brandHref, getBrand } from "@/content/brands";
 import { company } from "@/content/company";
 import { superbeing as sb } from "@/content/superbeing";
 import { pad } from "@/lib/cn";
+import { photoFile } from "@/lib/photoFile";
+import { renderInline } from "@/lib/renderInline";
 
 export const metadata: Metadata = {
   title: "Superbeing Nutrition",
   description: `${sb.headline} ${sb.promise}`,
-  openGraph: { images: [{ url: sb.image, alt: sb.imageAlt }] },
+  openGraph: { images: [{ url: photoFile(sb.image, 1600), alt: sb.imageAlt }] },
 };
+
+const lensPhotos = ["/media/beaker.webp", "/media/consumer-conversation.webp", "/media/data-review.webp", "/media/sample-rack.webp"];
+
+const ribbonRows = [
+  ["/media/powder-morning.webp", "/media/capsules.webp", "/media/daily-organiser.webp", "/media/powder-pale.webp", "/media/tablet-coating.webp"],
+  ["/media/pipette-work.webp", "/media/powder-scoop.webp", "/media/filling-line.webp", "/media/beaker.webp", "/media/microscope-study.webp"],
+];
 
 export default function SuperbeingPage() {
   const next = getBrand("super-titans")!;
 
   return (
     <>
-      <CinematicHero eyebrow="Superbeing Nutrition" title={"Your need is specific.\n*Your nutrition should be too.*"} lede={sb.promise} image={sb.image} imageAlt={sb.imageAlt} />
+      <PageHero
+        variant="grow"
+        eyebrow="Superbeing Nutrition"
+        title={"Your need is specific.\n*Your nutrition*\n*should be too.*"}
+        lede={sb.promise}
+        photos={[{ src: sb.image, alt: sb.imageAlt, position: "center 62%" }]}
+      />
 
       {/* 01 · Origin */}
-      <WordReveal eyebrow={`01 — ${sb.origin.eyebrow}`} text={sb.origin.text} />
-      <section data-theme="light" aria-labelledby="question-heading" className="bg-ivory pb-28 text-ink md:pb-40">
-        <div className="container-x grid grid-cols-12 gap-6 border-t border-ink/12 pt-16 md:pt-24">
+      <section data-theme="light" aria-label={sb.origin.eyebrow} className="bg-ivory py-20 text-ink md:py-28">
+        <div className="container-x grid grid-cols-12 items-center gap-x-6 gap-y-10">
+          <div className="col-span-12 lg:col-span-7">
+            <p className="eyebrow mb-8 text-ink-muted">01 — {sb.origin.eyebrow}</p>
+            <Reveal>
+              <p className="display-lg max-w-[26ch]">{renderInline(sb.origin.text)}</p>
+            </Reveal>
+          </div>
+          <div className="relative col-span-12 aspect-[3/2] overflow-hidden rounded-[1.5rem] bg-ink lg:col-span-5">
+            <RevealPhoto src="/media/capsules.webp" alt="A small pile of olive-green capsules on a pale surface" sizes="(min-width: 1024px) 40vw, 100vw" />
+          </div>
+        </div>
+      </section>
+      <section data-theme="light" aria-labelledby="question-heading" className="bg-ivory pb-20 text-ink md:pb-28">
+        <div className="container-x grid grid-cols-12 gap-6 border-t border-ink/12 pt-12 md:pt-16">
           <div className="col-span-12 md:col-span-4">
             <div className="flex items-center gap-4">
               <div className="relative h-16 w-16 overflow-hidden rounded-xl" style={{ background: "#ffffff" }}>
@@ -53,7 +81,7 @@ export default function SuperbeingPage() {
             <h2 id="question-heading" className="sr-only">
               {sb.origin.question}
             </h2>
-            <SplitText as="p" className="display-xl mt-12 max-w-[20ch]" text={"“What would we formulate\nif we started with the\n*person’s actual need?*”"} />
+            <SplitText as="p" className="display-xl mt-12" text={"“What would we formulate\nif we started with the\n*person’s actual need?*”"} />
             <Reveal delay={0.2}>
               <p className="lede mt-10 font-semibold">{sb.origin.after}</p>
             </Reveal>
@@ -65,10 +93,8 @@ export default function SuperbeingPage() {
       <MonthsRail />
 
       {/* 03 · Selected for their science */}
-      <section data-theme="dark" aria-hidden="true" className="relative h-[70svh] overflow-hidden bg-ink">
-        <ParallaxImage src="/media/formulation.webp" alt="" sizes="100vw" />
-      </section>
-      <section data-theme="light" aria-labelledby="science-heading" className="bg-ivory py-28 text-ink md:py-40">
+      <PhotoBand src="/media/pipette-hood.webp" video="/media/video/pipette-hood.mp4" />
+      <section data-theme="light" aria-labelledby="science-heading" className="bg-ivory py-20 text-ink md:py-28">
         <div className="container-x">
           <div className="grid grid-cols-12 gap-6">
             <SectionLabel index="03" className="col-span-12 mb-6 text-ink-muted md:col-span-4">
@@ -90,10 +116,13 @@ export default function SuperbeingPage() {
           <p className="eyebrow mb-6 mt-20 text-ink-muted">For every ingredient, we reviewed</p>
           <RevealGroup className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {sb.ingredients.lenses.map((l, i) => (
-              <RevealItem key={l.title} className="flex min-h-64 flex-col justify-between rounded-[1.25rem] border border-ink/12 bg-paper p-7">
-                <span className="font-serif text-5xl font-semibold text-brass">{pad(i + 1)}</span>
-                <div>
-                  <h3 className="display-md mb-3">{l.title}</h3>
+              <RevealItem key={l.title} className="group overflow-hidden rounded-[1.25rem] border border-ink/12 bg-paper">
+                <div className="relative aspect-[3/2] overflow-hidden bg-ivory-deep">
+                  <Photo src={lensPhotos[i]} alt="" sizes="(min-width: 1024px) 23vw, (min-width: 640px) 46vw, 92vw" className="transition-transform duration-700 ease-[var(--ease-out-expo)] group-hover:scale-105" />
+                </div>
+                <div className="p-6">
+                  <span className="font-serif text-3xl font-semibold text-brass">{pad(i + 1)}</span>
+                  <h3 className="display-md mb-3 mt-3">{l.title}</h3>
                   <p className="text-ink-muted">{l.body}</p>
                 </div>
               </RevealItem>
@@ -124,7 +153,7 @@ export default function SuperbeingPage() {
       </section>
 
       {/* 04 · Built on biology */}
-      <section data-theme="light" aria-labelledby="biology-heading" className="bg-ivory-deep py-28 text-ink md:py-40">
+      <section data-theme="light" aria-labelledby="biology-heading" className="bg-ivory-deep py-20 text-ink md:py-28">
         <div className="container-x">
           <div className="mb-16 grid grid-cols-12 gap-6">
             <SectionLabel index="04" className="col-span-12 mb-6 text-ink-muted md:col-span-4">
@@ -173,7 +202,7 @@ export default function SuperbeingPage() {
       <WeDeclined />
 
       {/* 06 · Everyday life */}
-      <section data-theme="light" aria-labelledby="everyday-heading" className="bg-ivory pt-28 text-ink md:pt-40">
+      <section data-theme="light" aria-labelledby="everyday-heading" className="bg-ivory pt-20 text-ink md:pt-28">
         <div className="container-x grid grid-cols-12 gap-6">
           <SectionLabel index="06" className="col-span-12 mb-6 text-ink-muted md:col-span-4">
             Everyday life
@@ -192,12 +221,12 @@ export default function SuperbeingPage() {
           </div>
         </div>
         <div className="container-x mt-16">
-          <div className="relative h-[60svh] overflow-hidden rounded-[1.5rem] bg-ink">
-            <ParallaxImage src="/media/everyday.webp" alt="A calm morning counter with a glass of water, a shaker, a small jar with a scoop, fruit, keys and a notebook" sizes="100vw" />
+          <div className="relative aspect-[3/2] overflow-hidden rounded-[1.5rem] bg-ink md:aspect-[16/9]">
+            <RevealPhoto src="/media/powder-morning.webp" alt="A scoop of pale nutrition powder on a wooden table in soft morning light" sizes="(min-width: 768px) 92vw, 100vw" />
           </div>
         </div>
         <div className="mt-16 overflow-hidden border-y border-ink/10 bg-ivory-deep py-12">
-          <Marquee items={sb.everyday.fragments} duration={52} />
+          <PhotoRibbon words={sb.everyday.fragments} rows={ribbonRows} duration={60} />
         </div>
         <div className="container-x py-16 md:py-20">
           <Reveal>
@@ -207,7 +236,7 @@ export default function SuperbeingPage() {
       </section>
 
       {/* 07 · Your voice */}
-      <section data-theme="dark" aria-labelledby="voice-heading" className="bg-ink-soft py-28 text-ivory md:py-40">
+      <section data-theme="dark" aria-labelledby="voice-heading" className="bg-ink-soft py-20 text-ivory md:py-28">
         <div className="container-x">
           <div className="mb-16 grid grid-cols-12 gap-6">
             <SectionLabel index="07" className="col-span-12 mb-6 text-ivory/78 md:col-span-4">
@@ -252,7 +281,7 @@ export default function SuperbeingPage() {
       </section>
 
       {/* 08 · Honest feedback */}
-      <section data-theme="light" aria-labelledby="feedback-heading" className="bg-ivory py-28 text-ink md:py-40">
+      <section data-theme="light" aria-labelledby="feedback-heading" className="bg-ivory py-20 text-ink md:py-28">
         <div className="container-x grid grid-cols-12 gap-6">
           <div className="col-span-12 lg:col-span-5">
             <div className="lg:sticky lg:top-32">
@@ -284,7 +313,7 @@ export default function SuperbeingPage() {
       </section>
 
       {/* 09 · Clear information */}
-      <section data-theme="light" aria-labelledby="clarity-heading" className="bg-ivory-deep py-28 text-ink md:py-40">
+      <section data-theme="light" aria-labelledby="clarity-heading" className="bg-ivory-deep py-20 text-ink md:py-28">
         <div className="container-x">
           <div className="mb-14 grid grid-cols-12 gap-6">
             <SectionLabel index="09" className="col-span-12 mb-6 text-ink-muted md:col-span-4">
@@ -320,7 +349,7 @@ export default function SuperbeingPage() {
       </section>
 
       {/* 10 · Commitment */}
-      <section data-theme="dark" aria-labelledby="commitment-heading" className="bg-ink py-28 text-ivory md:py-40">
+      <section data-theme="dark" aria-labelledby="commitment-heading" className="bg-ink py-20 text-ivory md:py-28">
         <div className="container-x grid grid-cols-12 gap-6">
           <div className="col-span-12 md:col-span-2">
             <Mark className="h-12 w-12 text-brass" strokeWidth={1.1} />

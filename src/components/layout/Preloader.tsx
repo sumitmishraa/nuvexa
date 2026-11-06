@@ -1,8 +1,13 @@
 "use client";
 
 import { useEffect, useState, useSyncExternalStore } from "react";
-import { AnimatePresence, motion } from "motion/react";
+import { AnimatePresence, MotionGlobalConfig, motion } from "motion/react";
 import { EASE_IN_OUT_QUART, EASE_OUT_EXPO } from "@/lib/cn";
+
+/* Every page loads this module, so reduced-motion visitors land on each animation's final state at once. */
+if (typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  MotionGlobalConfig.skipAnimations = true;
+}
 
 /* A tiny global "site is ready" signal so hero animations begin as the curtain lifts. */
 let ready = false;

@@ -1,65 +1,99 @@
 "use client";
 
-import { useRef } from "react";
-import { motion, useReducedMotion, useScroll, useTransform, type MotionValue } from "motion/react";
+import { useId, useState } from "react";
+import { motion, useReducedMotion } from "motion/react";
+import { Photo } from "@/components/ui/Photo";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { pillars } from "@/content/site";
+import { EASE_OUT_EXPO, cn } from "@/lib/cn";
 
-type Pillar = (typeof pillars)[number];
+const photos: Record<string, { src: string; alt: string }> = {
+  Science: { src: "/media/scientist-microscope.webp", alt: "A scientist in a white coat and blue gloves studying a sample through a microscope" },
+  "Consumer insight": { src: "/media/consumer-conversation.webp", alt: "Two women in conversation on a pale sofa, one taking notes as the other talks" },
+  "Technology & AI": { src: "/media/data-review.webp", alt: "Two colleagues in white coats reviewing data together on a pair of monitors" },
+  "Disciplined execution": { src: "/media/filling-line.webp", alt: "White bottles moving along an automated filling line beneath a steel hopper" },
+  "Brand building": { src: "/media/brand-strategy.webp", alt: "Two colleagues planning at a desk in front of a chalkboard covered in strategy notes" },
+};
 
-function Card({ index, total, progress, pillar }: { index: number; total: number; progress: MotionValue<number>; pillar: Pillar }) {
+/** Five disciplines as a list: choosing one opens its text and brings its large photograph forward. */
+export function Pillars({ index = "04" }: { index?: string }) {
+  const [active, setActive] = useState(0);
   const reduce = useReducedMotion();
-  // Every card recedes by the same step for each card that lands on top of it; the last stays full size.
-  const scale = useTransform(progress, [index / total, 1], [1, 1 - (total - 1 - index) * 0.04]);
-  return (
-    // Identical height and spacing for every card, so all five pin, overlap and settle the same way.
-    <div className="sticky mb-[18vh]" style={{ top: `calc(14vh + ${index * 28}px)` }}>
-      <motion.article
-        style={reduce ? undefined : { scale }}
-        className="relative grid h-[66svh] w-full origin-top grid-cols-12 content-center gap-6 overflow-hidden rounded-[1.5rem] border border-ink/10 bg-paper p-8 shadow-[0_-24px_60px_-40px_rgba(14,30,25,0.4)] md:h-[54svh] md:p-14"
-      >
-        <span className="col-span-12 font-serif text-[clamp(4rem,10vw,9rem)] leading-none text-brass md:col-span-4">{pillar.index}</span>
-        <div className="col-span-12 flex flex-col justify-end md:col-span-8">
-          <h3 className="display-lg mb-6">{pillar.title}</h3>
-          <p className="lede max-w-[48ch] text-ink-muted">{pillar.body}</p>
-        </div>
-        <svg aria-hidden="true" viewBox="0 0 200 200" className="pointer-events-none absolute -right-16 -top-16 h-72 w-72 text-ink/[0.07]">
-          <circle cx="100" cy="100" r="90" fill="none" stroke="currentColor" />
-          <circle cx="100" cy="100" r="60" fill="none" stroke="currentColor" />
-          <circle cx="100" cy="100" r="30" fill="none" stroke="currentColor" />
-        </svg>
-      </motion.article>
-    </div>
-  );
-}
+  const baseId = useId();
 
-/** Five pillars stacked as sticky cards; earlier cards recede as later ones arrive. */
-export function Pillars() {
-  const ref = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end end"] });
   return (
-    <section data-theme="light" aria-labelledby="pillars-heading" className="bg-ivory text-ink">
-      <div className="container-x pt-28 md:pt-40">
-        <div className="grid grid-cols-12 gap-6">
-          <SectionLabel index="04" className="col-span-12 mb-6 text-ink-muted md:col-span-4">
-            How we build
-          </SectionLabel>
-          <div className="col-span-12 md:col-span-8">
-            <h2 id="pillars-heading" className="display-xl max-w-[18ch]">
-              Five disciplines. <em className="italic text-brass">One standard.</em>
+    <section data-theme="light" aria-labelledby="pillars-heading" className="bg-ivory py-20 text-ink md:py-28">
+      <div className="container-x">
+        <div className="grid grid-cols-12 items-end gap-x-6 gap-y-8">
+          <div className="col-span-12 lg:col-span-7">
+            <SectionLabel index={index} className="mb-8 text-ink-muted">
+              How we build
+            </SectionLabel>
+            <h2 id="pillars-heading" className="display-xl">
+              Five disciplines.
+              <br />
+              <em className="italic text-brass">One standard.</em>
             </h2>
-            <p className="lede mt-8 max-w-[52ch] text-ink-muted">
-              Nuvexa combines science, consumer insight, technology and artificial intelligence, disciplined execution and brand building — to create trusted
-              products for consumers and enduring value for partners and shareholders.
-            </p>
           </div>
+          <p className="lede col-span-12 text-ink-muted lg:col-span-5">
+            Nuvexa combines science, consumer insight, technology and artificial intelligence, disciplined execution and brand building — to create trusted
+            products for consumers and enduring value for partners and shareholders.
+          </p>
         </div>
-        <div ref={ref} className="relative pb-28 pt-16 md:pb-40 md:pt-24">
-          {pillars.map((p, i) => (
-            <Card key={p.title} index={i} total={pillars.length} progress={scrollYProgress} pillar={p} />
-          ))}
-          {/* Tail: gives the final card the same pinned hold the others get before the section releases. */}
-          <div aria-hidden="true" className="h-[24vh]" />
+
+        <div className="mt-12 grid grid-cols-12 items-start gap-6 md:mt-16">
+          <ul className="col-span-12 border-t border-ink/12 lg:col-span-5">
+            {pillars.map((p, i) => {
+              const open = i === active;
+              const panelId = `${baseId}-${i}`;
+              return (
+                <li key={p.title} className="border-b border-ink/12">
+                  <h3>
+                    <button
+                      type="button"
+                      aria-expanded={open}
+                      aria-controls={panelId}
+                      onClick={() => setActive(i)}
+                      className="group flex w-full items-baseline gap-5 py-5 text-left md:py-6"
+                    >
+                      <span className={cn("eyebrow transition-colors duration-500", open ? "text-brass" : "text-ink-muted")}>{p.index}</span>
+                      <span className={cn("display-md transition-all duration-500 group-hover:translate-x-1", !open && "text-ink/70 group-hover:text-ink")}>{p.title}</span>
+                    </button>
+                  </h3>
+                  <div
+                    id={panelId}
+                    inert={!open}
+                    className={cn("grid transition-[grid-template-rows] duration-700 ease-[var(--ease-out-expo)]", open ? "grid-rows-[1fr]" : "grid-rows-[0fr]")}
+                  >
+                    <div className="min-h-0 overflow-hidden">
+                      <p className="body-copy max-w-[46ch] pb-6 pl-[2.6rem] text-ink-muted">{p.body}</p>
+                      <div className="relative mb-6 aspect-[3/2] overflow-hidden rounded-[1.25rem] bg-ink lg:hidden">
+                        <Photo src={photos[p.title].src} alt={photos[p.title].alt} sizes="100vw" />
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              );
+            })}
+          </ul>
+
+          <div className="relative col-span-7 col-start-6 hidden aspect-[3/2] overflow-hidden rounded-[1.5rem] bg-ink lg:block">
+            {pillars.map((p, i) => {
+              const on = i === active;
+              return (
+                <motion.div
+                  key={p.title}
+                  aria-hidden={!on}
+                  className="absolute inset-0"
+                  initial={false}
+                  animate={{ opacity: on ? 1 : 0, scale: on || reduce ? 1 : 1.04 }}
+                  transition={{ duration: reduce ? 0 : 0.9, ease: EASE_OUT_EXPO }}
+                >
+                  <Photo src={photos[p.title].src} alt={on ? photos[p.title].alt : ""} sizes="(min-width: 1024px) 56vw, 1px" />
+                </motion.div>
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>

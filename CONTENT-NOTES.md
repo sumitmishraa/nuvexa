@@ -16,19 +16,46 @@ All copy lives in `src/content/*.ts`. It expands the original nuvexabio.com text
 ## Assets
 - **Brand logos** — taken from the current site (1254×1254 PNGs with their own background colours). Vector (SVG) versions would look sharper.
 - **Brand cards** use the brands' own tiles: the four consumer brands show their logos on their native background colour, and the three verticals (Ayurveda, Pet Care, Pharmaceuticals) show their existing photographs from the current site. The click "brand reveal" animation is code (Motion), not video.
-- **Photography generated with ElevenLabs** (free plan: ~3 images/day, one at a time; video needs a paid plan). All 1280×720 — regenerate at higher resolution or replace with commissioned photography before launch:
-  - `media/hero-leaf.webp` — Home hero (leaf, droplet, glass "molecules")
-  - `media/super-being.webp`, `media/super-titans.webp` — brand lifestyle bands
-  - `media/company.webp` — Company hero (limestone interior, olive tree)
-  - `media/careers.webp` — Careers hero (brand studio table)
-  - `media/approach.webp` — Approach hero (hands arranging botanical samples)
-- **Stock photography** — `media/contact.webp` (Contact hero) is "A large tree sitting in the middle of a lush green park" by Nithin Purple, Cubbon Park, Bengaluru — Unsplash License (free for commercial use, attribution appreciated): https://unsplash.com/photos/a-large-tree-sitting-in-the-middle-of-a-lush-green-park-nuIpe_EumH4
-- **Future Vision hero** reuses the Pharmaceuticals lab photograph from the current site.
 - **Founder portrait** — the Leadership section shows a typographic "SA" monogram card until an official portrait is supplied.
+- **Modern Ayurveda tile** — this existing brand tile still shows leaves and herbs. It suits the vertical, but please confirm you are happy with it, given the move away from botanical imagery elsewhere.
 
-### Still to generate when ElevenLabs credits allow (shared suffix: "Forest-ink and warm ivory palette, brass highlights, soft directional window light, shallow depth of field, subtle film grain. No text, no logos, no packaging, no people.")
-- RUGD Men lifestyle band — dark slate with water droplets, wooden shaving brush, charcoal towel, steam, brushed brass bowl; hard side light.
-- Super Envi Intima lifestyle band — draped ivory silk, a blush petal on still water in a ceramic dish; serene, discreet.
-- Contact (bespoke) — Bengaluru rain-tree canopy in morning mist and golden light.
-- Future Vision (bespoke) — glass sphere on dark green stone with molecular light patterns, brass horizon.
-- Hero film (paid plan) — 10s seamless macro of a droplet rolling along a leaf vein, glass spheres drifting out of focus.
+## Photography
+All photographs in `public/media/` are real stock photographs from Unsplash, under the [Unsplash License](https://unsplash.com/license): free for commercial use, attribution appreciated but not required. Each has a light shared colour treatment; the Careers team photograph is also cropped.
+
+Four silent background videos in `public/media/video/` are free stock clips from Pexels, under the [Pexels License](https://www.pexels.com/license/) (free for commercial use, attribution not required). Their poster stills are frames from the same clips. Clip page and creator names should be recorded before launch if credit is wanted: `pipette-plate.mp4` (Pexels video 3195394, Home hero), `analyser-hall.mp4` (8381327, Future Vision hero), `pipette-hood.mp4` (8863360, Superbeing), `gloves-lab.mp4` (8485791, the "Testing" step of How Nuvexa works today).
+
+Full-size photo masters live in `assets/`. After replacing or adding one, run `node scripts/optimize-images.mjs` to regenerate the served sizes.
+
+**These images and videos are illustrative.** They do not show Nuvexa's own people, products or premises, and Nuvexa does not operate in-house R&D or manufacturing. In particular, the laboratory, cleanroom, production and warehouse images represent the wider science and supply world, not Nuvexa facilities, and the capsule and powder images are not Nuvexa products. Please replace them with commissioned or partner-approved photography and real product shots when available.
+
+Please also confirm that the people pictured are acceptable for a health brand's use. The Unsplash License does not include separate model or property releases.
+
+| File | Used on | Photographer | Source |
+|---|---|---|---|
+| `lab-glassware.webp` | Home hero, 404, share image (`og.jpg`) | Hans Reniers | [Unsplash](https://unsplash.com/photos/three-clear-beakers-placed-on-tabletop-lQGJCMY5qcM) |
+| `daily-organiser.webp` | Home | Laurynas Me | [Unsplash](https://unsplash.com/photos/person-about-to-pick-medicine-from-medicine-organizer-1TL8AoEDj_c) |
+| `scientist-microscope.webp` | Disciplines: Science | Trust "Tru" Katsande | [Unsplash](https://unsplash.com/photos/woman-looking-on-microscope-inside-room-6q5QG8iIgRo) |
+| `consumer-conversation.webp` | Disciplines: Consumer insight | Vitaly Gariev | [Unsplash](https://unsplash.com/photos/two-women-talking-in-a-modern-office-setting-QxkvMblcaJ0) |
+| `data-review.webp` | Disciplines: Technology & AI | Accuray | [Unsplash](https://unsplash.com/photos/medical-professionals-reviewing-digital-imaging-MFSEP2g4YS0) |
+| `filling-line.webp` | Disciplines: Disciplined execution | Mina Rad | [Unsplash](https://unsplash.com/photos/bottles-being-filled-on-an-automated-production-line-GiuvVfcNFzY) |
+| `brand-strategy.webp` | Disciplines: Brand building | Vitaly Gariev | [Unsplash](https://unsplash.com/photos/two-people-collaborating-at-a-desk-with-a-laptop-FXVt6t0tkmI) |
+| `microscope-study.webp` | Company hero | Lucas Vasques | [Unsplash](https://unsplash.com/photos/man-sight-on-white-microscope-9vnACvX2748) |
+| `lab-bench.webp` | Company | Trnava University | [Unsplash](https://unsplash.com/photos/laboratory-workbench-with-microscope-and-equipment-_9xRHrMOjeg) |
+| `production-hall.webp` | Company | Petr | [Unsplash](https://unsplash.com/photos/white-and-green-metal-stand-KR9j7uqFhnI) |
+| `warehouse-aisle.webp` | Our Brands | Junseong Lee | [Unsplash](https://unsplash.com/photos/a-large-warehouse-filled-with-lots-of-boxes-WKMOPVvlLvo) |
+| `powder-scoop.webp` | Superbeing hero, Home | Alex Saks | [Unsplash](https://unsplash.com/photos/a-scoop-of-powder-sitting-on-top-of-a-table-MUlIfSNODXE) |
+| `capsules.webp` | Superbeing | Diamond Rehab Thailand | [Unsplash](https://unsplash.com/photos/a-pile-of-yellow-pills-sitting-on-top-of-a-table-_xoVogHqGkI) |
+| `pipette-work.webp` | Superbeing | Julia Koblitz | [Unsplash](https://unsplash.com/photos/scientist-using-pipette-with-test-tubes-in-lab-RlOAwXt2fEA) |
+| `powder-morning.webp` | Superbeing | Alex Saks | [Unsplash](https://unsplash.com/photos/a-scoop-of-protein-powder-on-a-wooden-surface-wxtscG-05wo) |
+| `powder-pale.webp` | Super Titans | Alex Saks | [Unsplash](https://unsplash.com/photos/a-scoop-of-powder-and-a-scoop-of-powder-on-a-white-background-iYWf4PEd-lI) |
+| `sample-rack.webp` | Approach hero | CDC | [Unsplash](https://unsplash.com/photos/person-in-white-long-sleeve-shirt-and-blue-denim-jeans-holding-pink-yarn-rHCNMH9Vlmw) |
+| `tablet-coating.webp` | Approach hero | Sulyok Img | [Unsplash](https://unsplash.com/photos/small-pink-pills-tumbling-on-a-machine-surface-YsrHdAE9cFw) |
+| `beaker.webp` | Approach hero | RephiLe water | [Unsplash](https://unsplash.com/photos/gloved-hand-holding-laboratory-beaker-cuqp2Jzz_lY) |
+| `research-lab.webp` | Future Vision hero | ThisisEngineering | [Unsplash](https://unsplash.com/photos/scientist-using-laptop-in-laboratory-8yS04veb1TQ) |
+| `cleanroom.webp` | Future Vision | TECNIC Bioprocess Solutions | [Unsplash](https://unsplash.com/photos/workers-in-protective-suits-inside-a-cleanroom-k2H_b2AEqbg) |
+| `microscope-closeup.webp` | Future Vision | National Cancer Institute | [Unsplash](https://unsplash.com/photos/scientist-using-microscope-in-laboratory-JxoWb7wHqnA) |
+| `glass-boardroom.webp` | Investors hero | Rodeo Project Management Software | [Unsplash](https://unsplash.com/photos/people-sitting-on-chair-inside-building-ONe-snuCaqQ) |
+| `boardroom-table.webp` | Investors | Christina @ wocintechchat.com | [Unsplash](https://unsplash.com/photos/people-having-meeting-on-rectangular-brown-table-ftCWdZOFZqo) |
+| `team-office.webp` | Careers hero | Sable Flow | [Unsplash](https://unsplash.com/photos/people-in-sunlit-office-workspace-meeting-KHpjeuaWOec) |
+| `team-review.webp` | Careers hero | Vitaly Gariev | [Unsplash](https://unsplash.com/photos/two-people-looking-at-data-on-a-laptop-screen-t3RACFVYRlk) |
+| `office-conversation.webp` | Contact hero | TienDat Nguyen | [Unsplash](https://unsplash.com/photos/2-women-sitting-on-black-sofa-WY5kuE0R4-k) |

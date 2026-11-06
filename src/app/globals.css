@@ -196,6 +196,33 @@ body::after {
   }
 }
 
+@keyframes step-progress {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes flow-pulse {
+  from {
+    transform: translateY(-10px);
+  }
+  to {
+    transform: translateY(74px);
+  }
+}
+
+@keyframes hero-pan {
+  from {
+    transform: translate3d(-3.5%, 0, 0);
+  }
+  to {
+    transform: translate3d(3.5%, 0, 0);
+  }
+}
+
 @keyframes drift {
   0%,
   100% {
@@ -208,6 +235,12 @@ body::after {
 
 /* ───────────────────────── Reduced motion ───────────────────────── */
 @media (prefers-reduced-motion: reduce) {
+  /* Scroll-linked elements rest on their final state. Beats the inline styles Motion writes. */
+  [data-scroll-linked] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
   *,
   *::before,
   *::after {

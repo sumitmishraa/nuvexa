@@ -1,14 +1,15 @@
 "use client";
 
 import { Fragment, useRef } from "react";
-import { motion, useReducedMotion, useScroll, useTransform, type MotionValue } from "motion/react";
+import { motion, useScroll, useTransform, type MotionValue } from "motion/react";
+import { RevealPhoto } from "@/components/motion/RevealPhoto";
 import { cn } from "@/lib/cn";
 
 /*
  * Adapted from the 21st.dev / Motion "Scroll word reveal" example:
- * a sticky stage whose words ink in one by one as the page scrolls past.
+ * the words ink in one by one as the statement passes through the view. The page keeps scrolling normally.
  */
-const REST_OPACITY = 0.14;
+const REST_OPACITY = 0.18;
 const REVEAL_SPAN = 0.82;
 const WORD_WINDOW = 0.16;
 
@@ -21,7 +22,7 @@ function Word({ word, progress, index, count, accent }: { word: string; progress
   const [start, end] = range(index, count);
   const opacity = useTransform(progress, [start, end], [REST_OPACITY, 1]);
   return (
-    <motion.span aria-hidden="true" style={{ opacity }} className={cn(accent && "italic text-brass")}>
+    <motion.span aria-hidden="true" data-scroll-linked style={{ opacity }} className={cn(accent && "italic text-brass")}>
       {word}
     </motion.span>
   );
@@ -30,56 +31,43 @@ function Word({ word, progress, index, count, accent }: { word: string; progress
 export function WordReveal({
   text,
   eyebrow,
+  image,
+  imageAlt,
   className,
-  theme = "light",
 }: {
   /** Wrap words in *asterisks* to set them as brass italics. */
   text: string;
   eyebrow?: string;
+  image: string;
+  imageAlt: string;
   className?: string;
-  theme?: "light" | "dark";
 }) {
-  const ref = useRef<HTMLElement>(null);
-  const reduce = useReducedMotion();
-  const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end end"] });
+  const ref = useRef<HTMLParagraphElement>(null);
+  const { scrollYProgress } = useScroll({ target: ref, offset: ["start 85%", "end 50%"] });
   const tokens = text.split(" ");
   const plain = text.replace(/\*/g, "");
 
   return (
-    <section
-      ref={ref}
-      data-theme={theme}
-      className={cn("relative", reduce ? "h-auto" : "h-[220vh]", theme === "dark" ? "bg-ink text-ivory" : "bg-ivory text-ink", className)}
-    >
-      <div className={cn("flex items-center", reduce ? "py-32" : "sticky top-0 h-svh")}>
-        <div className="container-x grid grid-cols-12 gap-6">
-          <div className="col-span-12 flex items-start gap-6 md:col-span-1" aria-hidden="true">
-            <div className="hidden h-40 w-px overflow-hidden bg-current/15 md:block">
-              <motion.span className="block h-full w-full origin-top bg-brass" style={{ scaleY: reduce ? 1 : scrollYProgress }} />
-            </div>
-          </div>
-          <div className="col-span-12 md:col-span-10">
-            {eyebrow ? <p className={cn("eyebrow mb-10", theme === "dark" ? "text-ivory/80" : "text-ink-muted")}>{eyebrow}</p> : null}
-            <p className="display-lg max-w-[22ch] md:max-w-[26ch]">
-              <span className="sr-only">{plain}</span>
-              {tokens.map((token, i) => {
-                const accent = token.startsWith("*") || token.endsWith("*") || token.endsWith("*.") || token.endsWith("*,");
-                const word = token.replace(/\*/g, "");
-                return (
-                  <Fragment key={`${word}-${i}`}>
-                    {reduce ? (
-                      <span aria-hidden="true" className={cn(accent && "italic text-brass")}>
-                        {word}
-                      </span>
-                    ) : (
-                      <Word word={word} progress={scrollYProgress} index={i} count={tokens.length} accent={accent} />
-                    )}
-                    {i < tokens.length - 1 ? " " : null}
-                  </Fragment>
-                );
-              })}
-            </p>
-          </div>
+    <section data-theme="light" className={cn("bg-ivory py-20 text-ink md:py-28", className)}>
+      <div className="container-x grid grid-cols-12 items-center gap-x-6 gap-y-10">
+        <div className="col-span-12 lg:col-span-7">
+          {eyebrow ? <p className="eyebrow mb-8 text-ink-muted">{eyebrow}</p> : null}
+          <p ref={ref} className="display-lg max-w-[24ch]">
+            <span className="sr-only">{plain}</span>
+            {tokens.map((token, i) => {
+              const accent = token.startsWith("*") || token.endsWith("*") || token.endsWith("*.") || token.endsWith("*,");
+              const word = token.replace(/\*/g, "");
+              return (
+                <Fragment key={`${word}-${i}`}>
+                  <Word word={word} progress={scrollYProgress} index={i} count={tokens.length} accent={accent} />
+                  {i < tokens.length - 1 ? " " : null}
+                </Fragment>
+              );
+            })}
+          </p>
+        </div>
+        <div className="relative col-span-12 aspect-[3/2] overflow-hidden rounded-[1.5rem] bg-ink lg:col-span-5">
+          <RevealPhoto src={image} alt={imageAlt} sizes="(min-width: 1024px) 40vw, 100vw" />
         </div>
       </div>
     </section>

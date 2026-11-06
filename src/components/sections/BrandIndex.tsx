@@ -21,7 +21,7 @@ function BrandCard({ brand, index }: { brand: Brand; index: number }) {
   const { revealing, onClick } = useBrandReveal(href);
   return (
     <Link href={href} onClick={onClick} data-cursor="Open" className="group flex h-full flex-col">
-      <BrandStage brand={brand} revealing={revealing} className="aspect-[4/5] w-full rounded-[1.25rem]" sizes="(min-width: 1024px) 23vw, (min-width: 640px) 46vw, 92vw" />
+      <BrandStage brand={brand} revealing={revealing} className="aspect-square w-full rounded-[1.25rem]" sizes="(min-width: 1024px) 23vw, (min-width: 640px) 46vw, 92vw" />
       <div className="flex flex-1 flex-col pt-6">
         <div className="flex items-center justify-between gap-3">
           <p className="eyebrow text-brass">{pad(index + 1)}</p>
@@ -44,7 +44,7 @@ function InviteCard() {
     <Link
       href="/contact"
       data-cursor="Open"
-      className="group relative flex aspect-[4/5] flex-col justify-between overflow-hidden rounded-[1.25rem] bg-ink p-7 text-ivory"
+      className="group relative flex aspect-square flex-col justify-between overflow-hidden rounded-[1.25rem] bg-ink p-7 text-ivory"
     >
       <Mark className="h-8 w-8 text-brass transition-transform duration-700 group-hover:rotate-90" strokeWidth={1.2} />
       <div>
@@ -67,7 +67,7 @@ export function BrandIndex() {
   const visible = brands.filter((b) => filter === "all" || b.kind === filter);
 
   return (
-    <section data-theme="light" aria-label="Brand portfolio" className="bg-ivory pb-28 pt-20 text-ink md:pb-40 md:pt-28">
+    <section data-theme="light" aria-label="Brand portfolio" className="bg-ivory pb-20 pt-20 text-ink md:pb-28 md:pt-28">
       <div className="container-x">
         <div className="mb-14 flex flex-wrap items-end justify-between gap-6 border-b border-ink/10 pb-8">
           <div>

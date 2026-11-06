@@ -5,8 +5,8 @@
 export const superbeing = {
   name: "Superbeing Nutrition",
   href: "/superbeing",
-  image: "/media/super-being.webp",
-  imageAlt: "A ceramic bowl of oats and seeds beside a glass of water and a halved citrus on a green stone table in morning light.",
+  image: "/media/powder-scoop.webp",
+  imageAlt: "A scoop tipped on its side with fine nutrition powder spilling across a cream surface.",
 
   promise: "Hyper-specific, problem-solving products — not the same formulation with a different brand cover.",
   headline: "Your need is specific. Your nutrition should be too.",

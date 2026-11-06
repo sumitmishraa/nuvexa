@@ -1,24 +1,11 @@
 "use client";
 
-import { Fragment } from "react";
-import { motion, useReducedMotion } from "motion/react";
+import { motion } from "motion/react";
 import { useSiteReady } from "@/components/layout/Preloader";
 import { EASE_OUT_EXPO, cn } from "@/lib/cn";
+import { renderInline } from "@/lib/renderInline";
 
 type Tag = "h1" | "h2" | "h3" | "p";
-
-/** Renders `*phrase*` as an italic serif accent. */
-function renderInline(line: string) {
-  return line.split(/(\*[^*]+\*)/g).map((part, i) =>
-    part.startsWith("*") && part.endsWith("*") ? (
-      <em key={i} className="italic text-brass">
-        {part.slice(1, -1)}
-      </em>
-    ) : (
-      <Fragment key={i}>{part}</Fragment>
-    ),
-  );
-}
 
 /**
  * Masked line-by-line reveal. Lines are authored with "\n" so the typography is art-directed,
@@ -37,7 +24,6 @@ export function SplitText({
   trigger?: "load" | "view";
   delay?: number;
 }) {
-  const reduce = useReducedMotion();
   const ready = useSiteReady();
   const lines = text.split("\n");
   const plain = text.replace(/\*/g, "").replace(/\n/g, " ");
@@ -51,7 +37,7 @@ export function SplitText({
   return (
     <Tag
       className={cn(className)}
-      initial={reduce ? false : "hidden"}
+      initial="hidden"
       {...animateProps}
       variants={{ hidden: {}, show: { transition: { staggerChildren: 0.09, delayChildren: delay } } }}
     >

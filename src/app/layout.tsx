@@ -5,6 +5,7 @@ import { Cursor } from "@/components/layout/Cursor";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { Preloader } from "@/components/layout/Preloader";
+import { PreloadPages } from "@/components/layout/PreloadPages";
 import { RouteCurtain } from "@/components/layout/RouteCurtain";
 import { SmoothScroll } from "@/components/layout/SmoothScroll";
 import { site } from "@/content/site";
@@ -38,7 +39,7 @@ export const metadata: Metadata = {
     siteName: site.legalName,
     title: `${site.name} — ${site.tagline}`,
     description: site.description,
-    images: [{ url: "/media/hero-leaf.webp", width: 1280, height: 720, alt: "A dew-covered leaf in warm light" }],
+    images: [{ url: "/media/og.jpg", width: 1200, height: 630, alt: "Clear laboratory glassware on a white bench" }],
   },
 };
 
@@ -62,6 +63,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           <Footer />
         </SmoothScroll>
         <Preloader />
+        <PreloadPages />
         <RouteCurtain />
         <Cursor />
       </body>
