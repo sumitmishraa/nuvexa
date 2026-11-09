@@ -8,6 +8,7 @@ import { PageHero } from "@/components/sections/PageHero";
 import { Pillars } from "@/components/sections/Pillars";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { approach } from "@/content/approach";
+import { slot } from "@/lib/slot";
 
 export const metadata: Metadata = {
   title: "Our Approach",
@@ -23,9 +24,9 @@ export default function ApproachPage() {
         title={"We start with *problems,*\nnot products."}
         lede={approach.heroLede}
         photos={[
-          { src: "/media/sample-rack.webp", alt: "Gloved hands placing a sample in a green rack at a laboratory bench" },
-          { src: "/media/tablet-coating.webp", alt: "Pale pink tablets turning inside a coating machine" },
-          { src: "/media/beaker.webp", alt: "A gloved hand holding up a glass beaker of clear liquid" },
+          slot("approach-need"),
+          slot("approach-ingredient"),
+          slot("approach-product"),
         ]}
       />
 
@@ -53,8 +54,8 @@ export default function ApproachPage() {
         </div>
       </section>
 
-      <Pillars />
-      <OperatingModel index="05" />
+      <Pillars set="approach" />
+      <OperatingModel index="05" variant="story" />
 
       {/* Commitments */}
       <section data-theme="light" aria-labelledby="commit-heading" className="bg-ivory py-20 text-ink md:py-28">

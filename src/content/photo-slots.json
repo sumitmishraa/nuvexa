@@ -1,0 +1,422 @@
+{
+  "home-conviction": {
+    "ratio": 1.5,
+    "alt": "A mother pours water while her son eats breakfast and the family dog rests on the kitchen floor",
+    "fallback": "daily-organiser",
+    "fallbackAlt": "A hand taking a capsule from a seven-day organiser",
+    "prompt": "A calm morning in a modern Bengaluru apartment kitchen: a woman in her thirties pours a glass of water while her young son eats breakfast at the counter and a golden retriever rests nearby."
+  },
+  "home-flagship": {
+    "ratio": 1.5,
+    "alt": "An unlabelled nutrition jar and scoop on a breakfast table beside oats and a glass of water",
+    "fallback": "powder-scoop",
+    "fallbackAlt": "A scoop tipped on its side with fine nutrition powder spilling across a cream surface",
+    "prompt": "A matte off-white unlabelled nutrition jar with its lid off and a small scoop of fine pale powder on a pale stone breakfast table, beside a bowl of oats with berries and a glass of water, still life, subject centred."
+  },
+  "home-science": {
+    "ratio": 1.5,
+    "alt": "A formulation scientist weighing powder on an analytical balance",
+    "fallback": "scientist-microscope",
+    "fallbackAlt": "A scientist studying a sample through a microscope",
+    "prompt": "An Indian woman formulation scientist in a white lab coat, safety glasses and nitrile gloves weighing a fine white powder on an analytical balance in a bright modern laboratory, subject centred."
+  },
+  "home-insight": {
+    "ratio": 1.5,
+    "alt": "A researcher taking notes as a woman describes her daily routine at home",
+    "fallback": "consumer-conversation",
+    "fallbackAlt": "Two women in conversation, one taking notes",
+    "prompt": "Consumer research at home: an Indian woman researcher with an open notebook listens to a middle-aged Indian woman describing her daily routine, both seated on a sofa in a bright living room, subject centred."
+  },
+  "home-technology": {
+    "ratio": 1.5,
+    "alt": "An analyst studying demand charts on a large monitor",
+    "fallback": "u194",
+    "fallbackAlt": "Charts of weekly activity on an analytics dashboard",
+    "prompt": "A young Indian analyst studying abstract line charts and graphs on a large monitor at a clean desk in a bright modern office with plants, seen over the shoulder, subject centred."
+  },
+  "home-execution": {
+    "ratio": 1.5,
+    "alt": "An operator checking unlabelled bottles on a packing line",
+    "fallback": "filling-line",
+    "fallbackAlt": "White bottles moving along an automated filling line",
+    "prompt": "A clean contract manufacturing packing line: plain unlabelled white supplement bottles on a stainless steel conveyor while an operator in a hairnet, mask and gloves inspects one bottle, subject centred."
+  },
+  "home-brand": {
+    "ratio": 1.5,
+    "alt": "A brand team reviewing blank packaging mock-ups and colour swatches",
+    "fallback": "brand-strategy",
+    "fallbackAlt": "Two colleagues planning in front of a chalkboard of notes",
+    "prompt": "A small Indian brand team of three around a studio table reviewing blank packaging mock-up boxes and colour swatches in sage, ivory and brass, pointing and discussing, subject centred."
+  },
+  "company-hero": {
+    "ratio": 1.5,
+    "alt": "A small team talking around a table in a bright Bengaluru office",
+    "fallback": "microscope-study",
+    "fallbackAlt": "A scientist looking through a microscope",
+    "prompt": "A small Indian team of four in a bright modern Bengaluru office with large windows and plants, gathered around a wooden table with laptops, one person explaining, subject centred."
+  },
+  "company-story": {
+    "ratio": 1.5,
+    "alt": "A founder's desk with sketches of product ideas, a laptop and a glass of chai",
+    "fallback": "u128",
+    "fallbackAlt": "Hands taking notes around a wooden table in a planning meeting",
+    "prompt": "A founder's desk by a window in early morning, no people: an open notebook with hand-drawn product sketches and arrows, a pen, a laptop, chai in a glass, a few plain unlabelled sample jars, subject centred."
+  },
+  "value-consumer": {
+    "ratio": 1.5,
+    "alt": "A woman at home reading the back of a product jar from a delivery box",
+    "fallback": "u253",
+    "fallbackAlt": "A specialist listening closely as a young woman talks",
+    "prompt": "A young Indian woman at home opening a plain unbranded delivery box on her dining table, reading the back of a plain unlabelled product jar, subject centred."
+  },
+  "value-trust": {
+    "ratio": 1.5,
+    "alt": "A quality specialist holding a sample vial up to the light",
+    "fallback": "beaker",
+    "fallbackAlt": "A gloved hand holding up a glass beaker",
+    "prompt": "A quality-control specialist in a white coat and gloves holds a small clear glass sample vial up to the window light to inspect it, in a calm bright quality laboratory, subject centred."
+  },
+  "value-execution": {
+    "ratio": 1.5,
+    "alt": "A team planning a launch timeline on a wall of notes",
+    "fallback": "team-office",
+    "fallbackAlt": "A small team planning at a pinboard in a sunlit office",
+    "prompt": "An Indian team of three in an office planning a product launch on a wall of sticky notes arranged in a clear timeline, one person moving a note, subject centred."
+  },
+  "value-innovation": {
+    "ratio": 1.5,
+    "alt": "A researcher reading and marking printed studies at a desk",
+    "fallback": "u39",
+    "fallbackAlt": "Scientists in a laboratory reviewing equipment together",
+    "prompt": "An Indian woman researcher in glasses at a desk reading printed scientific study papers and marking passages with a pencil, books and a laptop beside her, subject centred."
+  },
+  "value-agility": {
+    "ratio": 1.5,
+    "alt": "A team in a quick standing huddle around a laptop",
+    "fallback": "u191",
+    "fallbackAlt": "A team gathered around a laptop, solving a problem together",
+    "prompt": "Four Indian colleagues in a quick standing huddle around a laptop on a high table in a bright office, energetic and focused, subject centred."
+  },
+  "value-longterm": {
+    "ratio": 1.5,
+    "alt": "An experienced leader mentoring a younger colleague over plans",
+    "fallback": "u141",
+    "fallbackAlt": "Colleagues in a calm, long-range planning discussion",
+    "prompt": "A senior Indian businessman mentoring a young Indian woman colleague, both looking at printed plans on a table in a calm office by a window, subject centred."
+  },
+  "company-band": {
+    "ratio": 1.778,
+    "alt": "",
+    "fallback": "production-hall",
+    "fallbackAlt": "",
+    "prompt": "A spotless nutraceutical manufacturing hall with stainless steel blending and capsule-filling machines, operators in white gowns and hairnets working in the distance, wide view."
+  },
+  "brands-band": {
+    "ratio": 1.778,
+    "alt": "Hands packing an online order into a plain box",
+    "fallback": "warehouse-aisle",
+    "fallbackAlt": "A long warehouse aisle with boxed stock on tall racks",
+    "prompt": "Hands of a packer placing a plain unlabelled product jar into a plain kraft delivery box with tissue paper on a clean packing table, shelves of plain boxes softly blurred behind, wide view."
+  },
+  "titans-band": {
+    "ratio": 1.778,
+    "alt": "A young girl drinking a glass of milk at breakfast with fruit on the table",
+    "fallback": "u247",
+    "fallbackAlt": "A doctor talking with a mother and her young son",
+    "prompt": "A cheerful Indian girl of about eight drinking a glass of chocolate milk at a breakfast table with fruit and a school bag beside her, morning light, wide view."
+  },
+  "sb-hero": {
+    "ratio": 1.778,
+    "alt": "A scoop of fine nutrition powder beside an unlabelled jar on a pale stone surface",
+    "fallback": "powder-morning",
+    "fallbackAlt": "A scoop of pale nutrition powder on a wooden table in morning light",
+    "prompt": "A matte sage scoop of fine pale nutrition powder tipped onto a pale stone surface beside a plain unlabelled jar, minimal still life, generous space, wide view."
+  },
+  "sb-origin": {
+    "ratio": 1.5,
+    "alt": "A man reading the back of a supplement tub closely",
+    "fallback": "u265",
+    "fallbackAlt": "A pharmacist reading a product label in a pharmacy aisle",
+    "prompt": "An Indian man in his thirties at his kitchen counter reading the back of a plain unlabelled supplement tub closely, thoughtful expression, subject centred."
+  },
+  "lens-amount": {
+    "ratio": 1.5,
+    "alt": "A precise amount of powder measured on a laboratory balance",
+    "fallback": "beaker",
+    "fallbackAlt": "A gloved hand holding up a glass beaker",
+    "prompt": "Close-up of a gloved hand using a small spatula to place fine powder onto the weighing dish of a precise laboratory balance, subject centred."
+  },
+  "lens-people": {
+    "ratio": 1.5,
+    "alt": "Adults of different ages walking together in a park in the morning",
+    "fallback": "u147",
+    "fallbackAlt": "Adults of different ages talking together in a bright lounge",
+    "prompt": "A group of Indian adults of different ages, men and women, walking together in a green city park in the morning, natural and relaxed, subject centred."
+  },
+  "lens-measured": {
+    "ratio": 1.5,
+    "alt": "A researcher reviewing charts in a printed study",
+    "fallback": "u204",
+    "fallbackAlt": "A team reviewing printed charts on a table",
+    "prompt": "Close-up of a researcher's hands holding a pen over printed study pages with simple bar charts and graphs on a desk, no readable text, subject centred."
+  },
+  "lens-fit": {
+    "ratio": 1.5,
+    "alt": "Ingredient powders in small glass dishes arranged on a bench",
+    "fallback": "u4",
+    "fallbackAlt": "Test tubes, a petri dish and coloured flasks on a white bench",
+    "prompt": "Several small clear glass dishes holding different ingredient powders and granules in natural colours, neatly arranged on a white laboratory bench, top-down three-quarter view, subject centred."
+  },
+  "sb-everyday": {
+    "ratio": 1.778,
+    "alt": "A woman mixing a nutrition drink in her kitchen before work",
+    "fallback": "daily-organiser",
+    "fallbackAlt": "A hand taking a capsule from a seven-day organiser",
+    "prompt": "An Indian woman in work clothes mixing a nutrition drink in a shaker bottle at her kitchen counter in the morning before work, bag and keys beside her, wide view."
+  },
+  "approach-need": {
+    "ratio": 1.5,
+    "alt": "A woman thinking about her health at the start of her day",
+    "fallback": "u248",
+    "fallbackAlt": "A doctor talking with a smiling patient",
+    "prompt": "An Indian woman sitting by a window in the morning with a cup of tea, looking thoughtful as she checks her phone, calm home setting, subject centred."
+  },
+  "approach-ingredient": {
+    "ratio": 1.5,
+    "alt": "Capsules and ingredient powders in glass dishes",
+    "fallback": "capsules",
+    "fallbackAlt": "A small pile of olive-green capsules",
+    "prompt": "Close-up of empty clear capsules, a few filled capsules and small glass dishes of fine ingredient powders on a pale stone surface, subject centred."
+  },
+  "approach-product": {
+    "ratio": 1.5,
+    "alt": "Finished unlabelled jars and bottles lined up on a shelf",
+    "fallback": "u88",
+    "fallbackAlt": "Sealed vials arranged in trays on a production line",
+    "prompt": "A row of finished plain unlabelled amber glass bottles and matte white jars neatly lined up on a light wooden shelf, minimal, subject centred."
+  },
+  "method-need": {
+    "ratio": 1.5,
+    "alt": "A researcher listening to a family describe their routines",
+    "fallback": "u258",
+    "fallbackAlt": "A clinician listening to a woman's questions",
+    "prompt": "An Indian researcher with a notebook listening to a couple describe their family's daily routines at their dining table, subject centred."
+  },
+  "method-reason": {
+    "ratio": 1.5,
+    "alt": "A scientist comparing ingredient samples and taking notes",
+    "fallback": "u29",
+    "fallbackAlt": "A scientist examining a separating funnel in a fume hood",
+    "prompt": "An Indian male scientist in a lab coat comparing two ingredient samples in small glass jars and writing notes in a notebook at a laboratory bench, subject centred."
+  },
+  "method-difference": {
+    "ratio": 1.5,
+    "alt": "A formulation being mixed in a laboratory",
+    "fallback": "tablet-coating",
+    "fallbackAlt": "Pale pink tablets turning inside a coating machine",
+    "prompt": "A gloved hand pouring fine powder into a glass beaker on a magnetic stirrer in a bright formulation laboratory, close-up, subject centred."
+  },
+  "method-clarity": {
+    "ratio": 1.5,
+    "alt": "A designer laying out a clear product information leaflet",
+    "fallback": "u245",
+    "fallbackAlt": "A specialist writing clear notes on a clipboard",
+    "prompt": "An Indian designer at a desk laying out a clean product information leaflet with simple icons and blocks, printed proofs beside the screen, no readable text, subject centred."
+  },
+  "method-listen": {
+    "ratio": 1.5,
+    "alt": "A team reading customer feedback together on a laptop",
+    "fallback": "u197",
+    "fallbackAlt": "A team reading feedback together on a screen",
+    "prompt": "Two Indian colleagues reading customer feedback messages together on a laptop in a bright office, one pointing at the screen, no readable text, subject centred."
+  },
+  "approach-science": {
+    "ratio": 1.5,
+    "alt": "A researcher examining a sample through a microscope",
+    "fallback": "u32",
+    "fallbackAlt": "Two scientists working at a microscope",
+    "prompt": "An Indian male researcher in a lab coat and gloves adjusting a modern microscope to examine a sample slide in a bright laboratory, subject centred."
+  },
+  "approach-insight": {
+    "ratio": 1.5,
+    "alt": "A small group discussing a product around a table",
+    "fallback": "u140",
+    "fallbackAlt": "A small group discussing ideas around a table",
+    "prompt": "A small focus group of five Indian adults of different ages around a table sharing opinions about plain unlabelled product samples, a moderator taking notes, subject centred."
+  },
+  "approach-technology": {
+    "ratio": 1.5,
+    "alt": "Hands on a laptop showing a data dashboard",
+    "fallback": "u195",
+    "fallbackAlt": "Data charts on a monitor in a busy office",
+    "prompt": "Close-up of hands on a laptop showing an abstract data dashboard with charts, on a wooden desk with a notebook and coffee, no readable text, subject centred."
+  },
+  "approach-execution": {
+    "ratio": 1.5,
+    "alt": "A planner checking stock levels on a tablet in a warehouse",
+    "fallback": "u222",
+    "fallbackAlt": "Tall warehouse racks of packed stock",
+    "prompt": "An Indian woman supply planner holding a tablet and checking stock on racks of plain boxes in a clean, bright warehouse, subject centred."
+  },
+  "approach-brand": {
+    "ratio": 1.5,
+    "alt": "A product being photographed in a studio",
+    "fallback": "u136",
+    "fallbackAlt": "A team presenting a plan at a whiteboard",
+    "prompt": "A photographer in a small studio photographing a plain unlabelled product jar on a pale set with softboxes, seen from behind the camera, subject centred."
+  },
+  "step-insight": {
+    "ratio": 1.5,
+    "alt": "A researcher showing a short survey on a tablet to a shopper",
+    "fallback": "u198",
+    "fallbackAlt": "A team gathered around a laptop reviewing research",
+    "prompt": "An Indian researcher showing a short survey on a tablet to a young Indian woman shopper in a bright cafe, both engaged, no readable text, subject centred."
+  },
+  "step-formulation": {
+    "ratio": 1.5,
+    "alt": "A partner scientist preparing a formulation with a pipette",
+    "fallback": "pipette-work",
+    "fallbackAlt": "A gloved hand using a pipette over sample tubes",
+    "prompt": "A scientist in a lab coat and gloves using a pipette to add a clear liquid into a glass beaker of pale mixture in a bright formulation laboratory, subject centred."
+  },
+  "step-manufacturing": {
+    "ratio": 1.5,
+    "alt": "A capsule-filling machine at a manufacturing partner",
+    "fallback": "u83",
+    "fallbackAlt": "Production staff in masks and hairnets at a manufacturing line",
+    "prompt": "Close-up of a stainless steel capsule-filling machine with pale capsules in a clean manufacturing facility, an operator's gloved hand adjusting it, subject centred."
+  },
+  "step-commerce": {
+    "ratio": 1.5,
+    "alt": "A customer receiving an online order at her door",
+    "fallback": "u227",
+    "fallbackAlt": "Open cardboard boxes ready for packing orders",
+    "prompt": "A young Indian woman at her apartment door receiving a plain kraft delivery box from a courier, smiling, subject centred."
+  },
+  "fv-today": {
+    "ratio": 1.5,
+    "alt": "Technicians in protective suits working at a partner cleanroom",
+    "fallback": "cleanroom",
+    "fallbackAlt": "Technicians in protective suits in a cleanroom",
+    "prompt": "Two technicians in white protective suits, hoods and masks working at stainless steel equipment in a bright pharmaceutical cleanroom, subject centred."
+  },
+  "fv-science": {
+    "ratio": 1.5,
+    "alt": "A researcher studying cell cultures under a microscope",
+    "fallback": "microscope-closeup",
+    "fallbackAlt": "A researcher looking through a microscope",
+    "prompt": "An Indian woman biotechnology researcher in a lab coat looking through an inverted microscope at cell culture flasks in a modern research laboratory, subject centred."
+  },
+  "phase-ecommerce": {
+    "ratio": 1.5,
+    "alt": "Online orders packed and stacked for dispatch",
+    "fallback": "u234",
+    "fallbackAlt": "Sealed delivery boxes piled together",
+    "prompt": "Neat stacks of plain kraft delivery parcels on a packing table in a bright fulfilment centre, a worker scanning a parcel, subject centred."
+  },
+  "phase-offline": {
+    "ratio": 1.5,
+    "alt": "A pharmacist arranging products on a pharmacy shelf",
+    "fallback": "u264",
+    "fallbackAlt": "A pharmacist arranging products on a pharmacy shelf",
+    "prompt": "An Indian pharmacist in a white coat arranging plain unlabelled health products on the shelves of a bright modern pharmacy, subject centred."
+  },
+  "phase-advanced": {
+    "ratio": 1.5,
+    "alt": "A scientist working with a bioreactor in a research laboratory",
+    "fallback": "research-lab",
+    "fallbackAlt": "A researcher at a long bench of laboratory apparatus",
+    "prompt": "A scientist in a lab coat monitoring a glass bioreactor vessel with tubing in an advanced biotechnology research laboratory, subject centred."
+  },
+  "inv-hero": {
+    "ratio": 1.778,
+    "alt": "A glass-walled boardroom overlooking the city",
+    "fallback": "glass-boardroom",
+    "fallbackAlt": "A meeting in a glass-walled boardroom",
+    "prompt": "A calm modern boardroom with a long table and glass walls overlooking the Bengaluru skyline at golden hour, three executives in conversation at the far end, wide view."
+  },
+  "thesis-needs": {
+    "ratio": 1.778,
+    "alt": "A family sharing breakfast on a weekday morning",
+    "fallback": "u189",
+    "fallbackAlt": "Capsules sorted into a daily organiser",
+    "prompt": "An Indian family of three generations sharing breakfast on a weekday morning at a sunlit dining table, wide view."
+  },
+  "thesis-flagship": {
+    "ratio": 1.778,
+    "alt": "An unlabelled supplement jar beside formulation notes",
+    "fallback": "powder-pale",
+    "fallbackAlt": "A measuring scoop in pale nutrition powder",
+    "prompt": "A plain matte unlabelled supplement jar on a desk beside handwritten formulation notes, a small glass dish of powder and a pen, no readable text, wide view."
+  },
+  "thesis-digital": {
+    "ratio": 1.778,
+    "alt": "A shopper placing an order on her phone",
+    "fallback": "u243",
+    "fallbackAlt": "Hands typing on a laptop beside a stethoscope",
+    "prompt": "Close-up of a young Indian woman's hands holding a smartphone showing an abstract shopping app checkout screen, on a sofa at home, no readable text, wide view."
+  },
+  "thesis-portfolio": {
+    "ratio": 1.778,
+    "alt": "A family of every age with their dog in a park",
+    "fallback": "u249",
+    "fallbackAlt": "A doctor talking with an older patient",
+    "prompt": "An Indian family of every age, grandparents, parents and a child, walking with their dog in a sunny park, wide view."
+  },
+  "inv-numbers": {
+    "ratio": 1.778,
+    "alt": "Leaders reviewing a printed report around a table",
+    "fallback": "boardroom-table",
+    "fallbackAlt": "A team along a long table in a meeting room",
+    "prompt": "Three Indian business leaders reviewing a printed report with charts around a table in a bright meeting room, no readable text, wide view."
+  },
+  "careers-team": {
+    "ratio": 1.778,
+    "alt": "A young team collaborating around a whiteboard",
+    "fallback": "u199",
+    "fallbackAlt": "A team meeting around a long table with laptops",
+    "prompt": "A young diverse Indian team of four collaborating around a whiteboard of diagrams in a bright modern office, laughing naturally, wide view."
+  },
+  "careers-one": {
+    "ratio": 1.778,
+    "alt": "Two colleagues working through an idea at a laptop",
+    "fallback": "team-review",
+    "fallbackAlt": "Two colleagues reviewing charts on a laptop",
+    "prompt": "Two young Indian colleagues, a man and a woman, working through an idea together at a laptop in a sunlit office corner, wide view."
+  },
+  "principle-outcome": {
+    "ratio": 1.778,
+    "alt": "A team member presenting her plan to colleagues",
+    "fallback": "u134",
+    "fallbackAlt": "A colleague presenting to a full meeting room",
+    "prompt": "A young Indian woman confidently presenting her plan to three colleagues in a small bright meeting room, wide view."
+  },
+  "principle-consumer": {
+    "ratio": 1.778,
+    "alt": "A team member talking with a shopper",
+    "fallback": "u131",
+    "fallbackAlt": "A team talking with people over a meal",
+    "prompt": "A young Indian team member in smart casual clothes talking with an older woman shopper outside a neighbourhood store, listening attentively, wide view."
+  },
+  "principle-discipline": {
+    "ratio": 1.778,
+    "alt": "A planner working through a weekly plan at her desk",
+    "fallback": "u220",
+    "fallbackAlt": "An analyst working through data at his desk",
+    "prompt": "A focused young Indian woman at a tidy desk working through a weekly plan in a notebook beside a laptop, calm office, wide view."
+  },
+  "principle-together": {
+    "ratio": 1.778,
+    "alt": "Colleagues sharing lunch and conversation",
+    "fallback": "u201",
+    "fallbackAlt": "Colleagues working side by side on laptops",
+    "prompt": "A group of young Indian colleagues sharing lunch and conversation at a long table in a bright office cafe, relaxed, wide view."
+  },
+  "contact-hero": {
+    "ratio": 1.5,
+    "alt": "A welcoming meeting lounge in a bright office",
+    "fallback": "office-conversation",
+    "fallbackAlt": "Three colleagues talking on low sofas beside tall windows",
+    "prompt": "A welcoming, bright meeting lounge in a modern Bengaluru office with soft sofas, plants and a coffee table, two people about to greet a visitor, subject centred."
+  }
+}

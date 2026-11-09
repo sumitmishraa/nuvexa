@@ -24,11 +24,11 @@ export function PhotoBand({
   return (
     <section data-theme="light" aria-label={label} aria-hidden={label ? undefined : true} className={cn("bg-ivory py-10 md:py-14", className)}>
       <div className="container-x">
-        <div data-theme="dark" className="relative aspect-[3/2] overflow-hidden rounded-[1.5rem] bg-ink md:aspect-[16/9]">
+        <div data-theme="dark" className="relative aspect-[16/9] overflow-hidden rounded-[1.25rem] bg-ink md:rounded-[1.5rem]">
           {video ? <VideoLoop src={video} poster={src} sizes={sizes} position={position} /> : <RevealPhoto src={src} alt={alt} sizes={sizes} position={position} />}
           {children ? (
-            <div className="absolute inset-0 flex items-end bg-[linear-gradient(to_top,rgba(14,30,25,0.86),rgba(14,30,25,0.08)_60%)] p-6 md:p-12">
-              <div className="display-lg text-ivory">{children}</div>
+            <div className="absolute inset-0 flex items-end bg-[linear-gradient(to_top,rgba(14,30,25,0.86),rgba(14,30,25,0.08)_60%)] p-5 md:p-12">
+              <div className="display-md text-ivory md:display-lg">{children}</div>
             </div>
           ) : null}
         </div>

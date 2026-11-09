@@ -3,21 +3,21 @@ import type { Metadata } from "next";
 import { Reveal } from "@/components/motion/Reveal";
 import { SplitText } from "@/components/motion/SplitText";
 import { PageHero } from "@/components/sections/PageHero";
-import { PhotoRibbon } from "@/components/sections/PhotoRibbon";
+import { Marquee } from "@/components/motion/Marquee";
 import { ButtonLink } from "@/components/ui/ButtonLink";
 import { Photo } from "@/components/ui/Photo";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { careers } from "@/content/careers";
 import { site, values } from "@/content/site";
 import { pad } from "@/lib/cn";
+import { slot } from "@/lib/slot";
 
 export const metadata: Metadata = {
   title: "Careers",
   description: "Join an entrepreneurial, execution-focused team building trusted consumer health brands for the long term.",
 };
 
-const principlePhotos = ["/media/team-office.webp", "/media/consumer-conversation.webp", "/media/filling-line.webp", "/media/office-conversation.webp"];
-const lookingForPhotos = ["/media/brand-strategy.webp", "/media/consumer-conversation.webp", "/media/team-review.webp", "/media/data-review.webp"];
+const principlePhotos = [slot("principle-outcome"), slot("principle-consumer"), slot("principle-discipline"), slot("principle-together")];
 
 export default function CareersPage() {
   return (
@@ -28,8 +28,8 @@ export default function CareersPage() {
         title={"Build brands that\n*matter* — with us."}
         lede={careers.heroLede}
         photos={[
-          { src: "/media/team-office.webp", alt: "A small team talking through ideas at a pinboard in a sunlit office" },
-          { src: "/media/team-review.webp", alt: "Two colleagues reviewing charts together on a laptop" },
+          slot("careers-team"),
+          slot("careers-one"),
         ]}
       />
 
@@ -63,7 +63,7 @@ export default function CareersPage() {
             {careers.principles.map((p, i) => (
               <Reveal key={p.title} y={0} delay={i * 0.15} className="group overflow-hidden rounded-[1.5rem] bg-ivory-deep">
                 <div className="relative aspect-[16/9] overflow-hidden">
-                  <Photo src={principlePhotos[i]} alt="" sizes="(min-width: 768px) 46vw, 92vw" className="transition-transform duration-700 ease-[var(--ease-out-expo)] group-hover:scale-105" />
+                  <Photo src={principlePhotos[i].src} alt="" sizes="(min-width: 768px) 46vw, 92vw" className="transition-transform duration-700 ease-[var(--ease-out-expo)] group-hover:scale-105" />
                 </div>
                 <div className="p-8 md:p-10">
                   <p className="eyebrow mb-4 text-brass">{pad(i + 1)}</p>
@@ -77,7 +77,7 @@ export default function CareersPage() {
       </section>
 
       <section data-theme="light" aria-label="Our values" className="overflow-hidden border-y border-ink/10 bg-ivory-deep py-14 text-ink">
-        <PhotoRibbon words={values.map((v) => v.title)} duration={58} />
+        <Marquee items={values.map((v) => v.title)} duration={58} />
       </section>
 
       {/* Who we look for + open application */}
@@ -88,13 +88,10 @@ export default function CareersPage() {
               Who we look for
             </SectionLabel>
             <ul className="border-t border-ink/12">
-              {careers.lookingFor.map((l, i) => (
-                <li key={l} className="group border-b border-ink/12 py-6">
-                  <Reveal className="flex items-center justify-between gap-5">
+              {careers.lookingFor.map((l) => (
+                <li key={l} className="border-b border-ink/12 py-6">
+                  <Reveal>
                     <p className="display-md">{l}</p>
-                    <span aria-hidden="true" className="relative block aspect-[3/2] w-0 shrink-0 overflow-hidden rounded-xl transition-all duration-500 ease-[var(--ease-out-expo)] group-hover:w-28">
-                      <Photo src={lookingForPhotos[i]} alt="" sizes="112px" />
-                    </span>
                   </Reveal>
                 </li>
               ))}

@@ -5,6 +5,7 @@ import { PageHero } from "@/components/sections/PageHero";
 import { ContactForm } from "@/components/sections/ContactForm";
 import { Mark } from "@/components/ui/Logo";
 import { site } from "@/content/site";
+import { slot } from "@/lib/slot";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -19,7 +20,7 @@ export default function ContactPage() {
       eyebrow="Contact"
       title={"Let's start a\n*conversation.*"}
       lede="For partnerships and business development, investor relations, media, medical information, careers or general questions — we would be glad to hear from you, here in Bengaluru."
-      photos={[{ src: "/media/office-conversation.webp", alt: "Three colleagues talking on low sofas beside tall office windows" }]}
+      photos={[slot("contact-hero")]}
     />
     <section data-theme="light" className="bg-ivory pb-20 pt-14 text-ink md:pb-28 md:pt-20">
       <div className="container-x grid grid-cols-12 gap-x-6 gap-y-16">

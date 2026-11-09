@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import { PhotoBand } from "@/components/sections/PhotoBand";
+import { slot } from "@/lib/slot";
+
+const band = slot("brands-band");
 import { BrandIndex } from "@/components/sections/BrandIndex";
 import { CtaPair } from "@/components/sections/CtaPair";
 import { BrandMosaic } from "@/components/sections/BrandMosaic";
@@ -22,7 +25,7 @@ export default function BrandsPage() {
         visual={<BrandMosaic />}
       />
       <BrandIndex />
-      <PhotoBand src="/media/warehouse-aisle.webp" alt="A long warehouse aisle with boxed stock on tall racks to either side" label="Each brand begins with a real need" className="pt-0 md:pt-0">
+      <PhotoBand src={band.src} alt={band.alt} label="Each brand begins with a real need" className="pt-0 md:pt-0">
         Each one begins with <em className="italic text-brass-soft">a real, recurring need.</em>
       </PhotoBand>
       <CtaPair />

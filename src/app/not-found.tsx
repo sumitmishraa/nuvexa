@@ -5,7 +5,7 @@ export default function NotFound() {
   return (
     <section data-theme="dark" className="relative flex min-h-svh items-center overflow-hidden bg-ink text-ivory">
       <div aria-hidden="true" className="absolute inset-0">
-        <Image src="/media/lab-glassware.webp" alt="" fill sizes="(min-width: 1024px) 100vw, 380vw" className="object-cover object-[60%_center] opacity-70" />
+        <Image src="/media/pipette-plate.webp" alt="" fill sizes="(min-width: 1024px) 100vw, 380vw" className="object-cover object-[60%_center] opacity-70" />
         <div className="absolute inset-0 bg-ink/65" />
       </div>
       <div className="container-x relative py-40">

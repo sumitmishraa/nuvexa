@@ -6,16 +6,17 @@ import { Photo } from "@/components/ui/Photo";
 import { VideoLoop } from "@/components/ui/VideoLoop";
 import { operatingModel } from "@/content/site";
 import { cn, pad } from "@/lib/cn";
+import { slot } from "@/lib/slot";
 
 const SECONDS = 6;
 const SIZES = "(min-width: 1024px) 56vw, 100vw";
 
 const media: { src: string; video?: string; alt: string }[] = [
-  { src: "/media/consumer-conversation.webp", alt: "Two women in conversation, one taking notes as the other talks" },
-  { src: "/media/pipette-work.webp", alt: "A gloved hand using a pipette over a row of sample tubes" },
+  slot("step-insight"),
+  slot("step-formulation"),
   { src: "/media/gloves-lab.webp", video: "/media/video/gloves-lab.mp4", alt: "" },
-  { src: "/media/filling-line.webp", alt: "White bottles moving along an automated filling line" },
-  { src: "/media/warehouse-aisle.webp", alt: "A long warehouse aisle with boxed stock on tall racks" },
+  slot("step-manufacturing"),
+  slot("step-commerce"),
 ];
 
 /** The five steps as a story that plays by itself: each step brings its own picture, and a bar shows the time left. */

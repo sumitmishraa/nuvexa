@@ -8,6 +8,10 @@ import { Roadmap } from "@/components/sections/Roadmap";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { getBrand } from "@/content/brands";
 import { vision } from "@/content/vision";
+import { slot } from "@/lib/slot";
+
+const today = slot("fv-today");
+const science = slot("fv-science");
 
 export const metadata: Metadata = {
   title: "Future Vision",
@@ -42,7 +46,7 @@ export default function FutureVisionPage() {
             </Reveal>
           </div>
           <div className="relative col-span-12 aspect-[3/2] overflow-hidden rounded-[1.5rem] bg-ink lg:col-span-5">
-            <RevealPhoto src="/media/cleanroom.webp" alt="Technicians in protective suits working in a bright cleanroom" sizes="(min-width: 1024px) 40vw, 100vw" />
+            <RevealPhoto src={today.src} alt={today.alt} sizes="(min-width: 1024px) 40vw, 100vw" />
           </div>
         </div>
       </section>
@@ -71,12 +75,12 @@ export default function FutureVisionPage() {
             </ul>
           </div>
           <div className="relative col-span-12 aspect-[3/2] overflow-hidden rounded-[1.5rem] bg-ink lg:col-span-5">
-            <RevealPhoto src="/media/microscope-closeup.webp" alt="A researcher looking through a large microscope, with culture dishes on the bench behind" sizes="(min-width: 1024px) 40vw, 100vw" />
+            <RevealPhoto src={science.src} alt={science.alt} sizes="(min-width: 1024px) 40vw, 100vw" />
           </div>
         </div>
       </section>
 
-      <Roadmap index="04" showLink={false} />
+      <Roadmap index="04" showLink={false} photos />
 
       <section data-theme="light" aria-label="Closing thought" className="bg-ivory py-24 text-ink md:py-32">
         <div className="container-x">

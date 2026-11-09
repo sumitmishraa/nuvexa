@@ -6,7 +6,7 @@ import { Reveal, RevealGroup, RevealItem } from "@/components/motion/Reveal";
 import { SplitText } from "@/components/motion/SplitText";
 import { PageHero } from "@/components/sections/PageHero";
 import { PhotoBand } from "@/components/sections/PhotoBand";
-import { PhotoRibbon } from "@/components/sections/PhotoRibbon";
+import { Marquee } from "@/components/motion/Marquee";
 import { MonthsRail } from "@/components/sections/superbeing/MonthsRail";
 import { WeDeclined } from "@/components/sections/superbeing/WeDeclined";
 import { ButtonLink } from "@/components/ui/ButtonLink";
@@ -18,6 +18,7 @@ import { company } from "@/content/company";
 import { superbeing as sb } from "@/content/superbeing";
 import { pad } from "@/lib/cn";
 import { photoFile } from "@/lib/photoFile";
+import { slot } from "@/lib/slot";
 import { renderInline } from "@/lib/renderInline";
 
 export const metadata: Metadata = {
@@ -26,12 +27,9 @@ export const metadata: Metadata = {
   openGraph: { images: [{ url: photoFile(sb.image, 1600), alt: sb.imageAlt }] },
 };
 
-const lensPhotos = ["/media/beaker.webp", "/media/consumer-conversation.webp", "/media/data-review.webp", "/media/sample-rack.webp"];
-
-const ribbonRows = [
-  ["/media/powder-morning.webp", "/media/capsules.webp", "/media/daily-organiser.webp", "/media/powder-pale.webp", "/media/tablet-coating.webp"],
-  ["/media/pipette-work.webp", "/media/powder-scoop.webp", "/media/filling-line.webp", "/media/beaker.webp", "/media/microscope-study.webp"],
-];
+const lensPhotos = [slot("lens-amount"), slot("lens-people"), slot("lens-measured"), slot("lens-fit")];
+const origin = slot("sb-origin");
+const everyday = slot("sb-everyday");
 
 export default function SuperbeingPage() {
   const next = getBrand("super-titans")!;
@@ -56,7 +54,7 @@ export default function SuperbeingPage() {
             </Reveal>
           </div>
           <div className="relative col-span-12 aspect-[3/2] overflow-hidden rounded-[1.5rem] bg-ink lg:col-span-5">
-            <RevealPhoto src="/media/capsules.webp" alt="A small pile of olive-green capsules on a pale surface" sizes="(min-width: 1024px) 40vw, 100vw" />
+            <RevealPhoto src={origin.src} alt={origin.alt} sizes="(min-width: 1024px) 40vw, 100vw" />
           </div>
         </div>
       </section>
@@ -118,7 +116,7 @@ export default function SuperbeingPage() {
             {sb.ingredients.lenses.map((l, i) => (
               <RevealItem key={l.title} className="group overflow-hidden rounded-[1.25rem] border border-ink/12 bg-paper">
                 <div className="relative aspect-[3/2] overflow-hidden bg-ivory-deep">
-                  <Photo src={lensPhotos[i]} alt="" sizes="(min-width: 1024px) 23vw, (min-width: 640px) 46vw, 92vw" className="transition-transform duration-700 ease-[var(--ease-out-expo)] group-hover:scale-105" />
+                  <Photo src={lensPhotos[i].src} alt="" sizes="(min-width: 1024px) 23vw, (min-width: 640px) 46vw, 92vw" className="transition-transform duration-700 ease-[var(--ease-out-expo)] group-hover:scale-105" />
                 </div>
                 <div className="p-6">
                   <span className="font-serif text-3xl font-semibold text-brass">{pad(i + 1)}</span>
@@ -221,12 +219,12 @@ export default function SuperbeingPage() {
           </div>
         </div>
         <div className="container-x mt-16">
-          <div className="relative aspect-[3/2] overflow-hidden rounded-[1.5rem] bg-ink md:aspect-[16/9]">
-            <RevealPhoto src="/media/powder-morning.webp" alt="A scoop of pale nutrition powder on a wooden table in soft morning light" sizes="(min-width: 768px) 92vw, 100vw" />
+          <div className="relative aspect-[16/9] overflow-hidden rounded-[1.5rem] bg-ink">
+            <RevealPhoto src={everyday.src} alt={everyday.alt} sizes="(min-width: 768px) 92vw, 100vw" />
           </div>
         </div>
         <div className="mt-16 overflow-hidden border-y border-ink/10 bg-ivory-deep py-12">
-          <PhotoRibbon words={sb.everyday.fragments} rows={ribbonRows} duration={60} />
+          <Marquee items={sb.everyday.fragments} duration={60} />
         </div>
         <div className="container-x py-16 md:py-20">
           <Reveal>

@@ -1,8 +1,9 @@
+import { OperatingLine } from "@/components/sections/OperatingLine";
 import { StoryStepper } from "@/components/sections/StoryStepper";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 
-/** The partner-led operating model, told as five steps that play through by themselves. */
-export function OperatingModel({ index = "05" }: { index?: string }) {
+/** The partner-led operating model: a photographed story on Approach, a drawn line elsewhere, so no page repeats its pictures. */
+export function OperatingModel({ index = "05", variant = "line" }: { index?: string; variant?: "story" | "line" }) {
   return (
     <section data-theme="light" aria-labelledby="model-heading" className="bg-ivory-deep py-20 text-ink md:py-28">
       <div className="container-x">
@@ -22,7 +23,7 @@ export function OperatingModel({ index = "05" }: { index?: string }) {
             qualified partners for development, testing and manufacturing — managed closely, end to end.
           </p>
         </div>
-        <StoryStepper />
+        {variant === "story" ? <StoryStepper /> : <OperatingLine />}
       </div>
     </section>
   );

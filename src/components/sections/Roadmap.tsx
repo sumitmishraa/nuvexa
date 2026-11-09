@@ -8,15 +8,15 @@ import { Photo } from "@/components/ui/Photo";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { company } from "@/content/company";
 import { cn } from "@/lib/cn";
+import { slot } from "@/lib/slot";
 
-const phasePhotos = [
-  { src: "/media/warehouse-aisle.webp", alt: "A long warehouse aisle with boxed stock on tall racks" },
-  { src: "/media/daily-organiser.webp", alt: "A hand taking a capsule from a seven-day organiser" },
-  { src: "/media/research-lab.webp", alt: "A researcher working at a long bench of laboratory apparatus" },
-];
+const phasePhotos = [slot("phase-ecommerce"), slot("phase-offline"), slot("phase-advanced")];
 
-/** Three-phase roadmap: a brass spine draws itself, and the photograph changes as each phase comes into view. */
-export function Roadmap({ index = "06", showLink = true }: { index?: string; showLink?: boolean }) {
+/**
+ * Three-phase roadmap: a brass spine draws itself. With `photos` (Future Vision only, so no page repeats them)
+ * the photograph changes as each phase comes into view.
+ */
+export function Roadmap({ index = "06", showLink = true, photos = false }: { index?: string; showLink?: boolean; photos?: boolean }) {
   const ref = useRef<HTMLOListElement>(null);
   const [active, setActive] = useState(0);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start 75%", "end 55%"] });
@@ -39,13 +39,15 @@ export function Roadmap({ index = "06", showLink = true }: { index?: string; sho
             <p className="mt-5 max-w-[46ch] text-ivory/78">
               Each phase is unlocked by the one before it — as our brands achieve product-market fit, repeat demand and sustainable scale.
             </p>
-            <div className="relative mt-7 hidden aspect-[3/2] overflow-hidden rounded-[1.25rem] bg-ink-soft lg:block">
-              {phasePhotos.map((photo, i) => (
-                <div key={photo.src} className={cn("absolute inset-0 transition-opacity duration-700", i === active ? "opacity-100" : "opacity-0")}>
-                  <Photo src={photo.src} alt={i === active ? photo.alt : ""} sizes="(min-width: 1024px) 40vw, 1px" />
-                </div>
-              ))}
-            </div>
+            {photos ? (
+              <div className="relative mt-7 hidden aspect-[3/2] overflow-hidden rounded-[1.25rem] bg-ink-soft lg:block">
+                {phasePhotos.map((photo, i) => (
+                  <div key={photo.src} className={cn("absolute inset-0 transition-opacity duration-700", i === active ? "opacity-100" : "opacity-0")}>
+                    <Photo src={photo.src} alt={i === active ? photo.alt : ""} sizes="(min-width: 1024px) 40vw, 1px" />
+                  </div>
+                ))}
+              </div>
+            ) : null}
             {showLink ? (
               <div className="mt-7">
                 <ButtonLink href="/future-vision" variant="outline-light">
@@ -60,15 +62,17 @@ export function Roadmap({ index = "06", showLink = true }: { index?: string; sho
             <motion.div className="h-full w-full origin-top bg-brass" data-scroll-linked style={{ scaleY: scrollYProgress }} />
           </div>
           {company.roadmap.map((p, i) => (
-            <li key={p.phase} className="relative pb-20 pl-10 last:pb-0 md:pl-16 lg:flex lg:min-h-[62svh] lg:flex-col lg:justify-center lg:pb-0">
-              <span aria-hidden="true" className={cn("absolute -left-[5px] top-3 h-[11px] w-[11px] rounded-full border border-brass transition-colors duration-500 lg:top-1/2", i <= active ? "bg-brass" : "bg-ink")} />
+            <li key={p.phase} className={cn("relative pb-20 pl-10 last:pb-0 md:pl-16", photos && "lg:flex lg:min-h-[62svh] lg:flex-col lg:justify-center lg:pb-0")}>
+              <span aria-hidden="true" className={cn("absolute -left-[5px] top-3 h-[11px] w-[11px] rounded-full border border-brass transition-colors duration-500", photos && "lg:top-1/2", i <= active ? "bg-brass" : "bg-ink")} />
               <Reveal>
                 <p className="eyebrow mb-4 text-brass">{p.phase}</p>
                 <h3 className="display-lg mb-5">{p.title}</h3>
                 <p className="lede max-w-[44ch] text-ivory/80">{p.body}</p>
-                <div className="relative mt-6 aspect-[3/2] overflow-hidden rounded-[1.25rem] bg-ink-soft lg:hidden">
-                  <Photo src={phasePhotos[i].src} alt="" sizes="(min-width: 1024px) 1px, 90vw" />
-                </div>
+                {photos ? (
+                  <div className="relative mt-6 aspect-[3/2] overflow-hidden rounded-[1.25rem] bg-ink-soft lg:hidden">
+                    <Photo src={phasePhotos[i].src} alt="" sizes="(min-width: 1024px) 1px, 90vw" />
+                  </div>
+                ) : null}
               </Reveal>
             </li>
           ))}

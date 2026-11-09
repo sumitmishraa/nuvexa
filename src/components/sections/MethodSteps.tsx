@@ -5,14 +5,9 @@ import { motion, useScroll } from "motion/react";
 import { RevealPhoto } from "@/components/motion/RevealPhoto";
 import { Reveal } from "@/components/motion/Reveal";
 import { approach } from "@/content/approach";
+import { slot } from "@/lib/slot";
 
-const stepPhotos = [
-  { src: "/media/consumer-conversation.webp", alt: "Two women in conversation, one taking notes" },
-  { src: "/media/capsules.webp", alt: "A small pile of olive-green capsules" },
-  { src: "/media/pipette-work.webp", alt: "A gloved hand using a pipette over sample tubes" },
-  { src: "/media/brand-strategy.webp", alt: "Two colleagues planning in front of a chalkboard of notes" },
-  { src: "/media/team-review.webp", alt: "Two colleagues reviewing charts on a laptop" },
-];
+const stepPhotos = [slot("method-need"), slot("method-reason"), slot("method-difference"), slot("method-clarity"), slot("method-listen")];
 
 /** The method as numbered steps, each opening with its own photograph, joined by a line that draws as the page scrolls. */
 export function MethodSteps() {

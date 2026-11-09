@@ -117,7 +117,7 @@ function Grow({ eyebrow, title, lede, photo }: Copy & { photo: Photo }) {
       </div>
       <div className="container-x">
         <motion.div
-          className="relative aspect-[3/2] overflow-hidden rounded-[1.5rem] bg-ivory-deep md:aspect-[16/9]"
+          className="relative aspect-[16/9] overflow-hidden rounded-[1.5rem] bg-ivory-deep"
           {...enter({ clipPath: "inset(10% 14% 0% 14% round 24px)" }, { clipPath: "inset(0% 0% 0% 0% round 24px)" }, 1.9, 0.35)}
         >
           <Fill photo={photo} sizes={heroSizes.grow} />
@@ -163,7 +163,7 @@ function Curtain({ eyebrow, title, lede, photo, video }: Copy & { photo: Photo; 
   const ready = useSiteReady();
   return (
     <section data-theme="dark" className="relative overflow-hidden bg-ink text-ivory md:flex md:h-svh md:min-h-[640px] md:items-end">
-      <div className="relative aspect-[3/2] overflow-hidden md:absolute md:inset-0 md:aspect-auto">
+      <div className="relative aspect-[16/9] overflow-hidden md:absolute md:inset-0 md:aspect-auto">
         {video ? <VideoLoop src={video} poster={photo.src} sizes={heroSizes.full} priority position={photo.position} /> : <Fill photo={photo} sizes={heroSizes.full} />}
         <div aria-hidden="true" className="absolute inset-0 hidden bg-[linear-gradient(to_top,rgba(14,30,25,0.92)_8%,rgba(14,30,25,0.55)_48%,rgba(14,30,25,0.18)_100%)] md:block" />
         <div aria-hidden="true" className="absolute inset-x-0 top-0 h-40 bg-[linear-gradient(to_bottom,rgba(14,30,25,0.72),rgba(14,30,25,0))]" />
@@ -193,7 +193,7 @@ function Pan({ eyebrow, title, lede, photo }: Copy & { photo: Photo }) {
   const { enter } = useEntrance();
   return (
     <section data-theme="dark" className="relative overflow-hidden bg-ink text-ivory md:flex md:h-svh md:min-h-[640px] md:items-end">
-      <motion.div className="relative aspect-[4/3] overflow-hidden md:absolute md:inset-0 md:aspect-auto" {...enter({ opacity: 0 }, { opacity: 1 }, 2.2, 0)}>
+      <motion.div className="relative aspect-[16/9] overflow-hidden md:absolute md:inset-0 md:aspect-auto" {...enter({ opacity: 0 }, { opacity: 1 }, 2.2, 0)}>
         <div className="absolute inset-y-0 -inset-x-[6%]" style={{ animation: "hero-pan 32s ease-in-out infinite alternate" }}>
           <Fill photo={photo} sizes={heroSizes.pan} />
         </div>
@@ -232,7 +232,7 @@ function Overlap({ eyebrow, title, lede, photos }: Copy & { photos: Photo[] }) {
           <Lede text={lede} className="mt-8 max-w-[48ch]" />
         </div>
         <div className="col-span-12 lg:col-span-6">
-          <motion.div className="relative aspect-[15/8] w-[86%] overflow-hidden rounded-[1.25rem] bg-ivory-deep" {...enter({ x: -56, opacity: 0 }, { x: 0, opacity: 1 }, 1.8, 0.2)}>
+          <motion.div className="relative aspect-[16/9] w-[86%] overflow-hidden rounded-[1.25rem] bg-ivory-deep" {...enter({ x: -56, opacity: 0 }, { x: 0, opacity: 1 }, 1.8, 0.2)}>
             <Fill photo={back} sizes={heroSizes.overlapBack} />
           </motion.div>
           <motion.div

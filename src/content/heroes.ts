@@ -16,22 +16,22 @@ export const heroSizes = {
 /** The first-screen images of each page, warmed before the visitor arrives. */
 export const routeHeroes: Record<string, { src: string; sizes: string }[]> = {
   "/": [{ src: "/media/pipette-plate.webp", sizes: heroSizes.home }],
-  "/company": [{ src: "/media/microscope-study.webp", sizes: heroSizes.split }],
+  "/company": [{ src: "/media/company-hero.webp", sizes: heroSizes.split }],
   "/brands": ["modern-ayurveda", "super-being", "super-titans", "pet-care", "rugd-men", "super-envi-intima", "pharmaceuticals"].map((name) => ({
     src: `/brands/${name}.webp`,
     sizes: heroSizes.mosaic,
   })),
-  "/superbeing": [{ src: "/media/powder-scoop.webp", sizes: heroSizes.grow }],
+  "/superbeing": [{ src: "/media/sb-hero.webp", sizes: heroSizes.grow }],
   "/approach": [
-    { src: "/media/sample-rack.webp", sizes: heroSizes.trioLarge },
-    { src: "/media/tablet-coating.webp", sizes: heroSizes.trioSmall },
-    { src: "/media/beaker.webp", sizes: heroSizes.trioSmall },
+    { src: "/media/approach-need.webp", sizes: heroSizes.trioLarge },
+    { src: "/media/approach-ingredient.webp", sizes: heroSizes.trioSmall },
+    { src: "/media/approach-product.webp", sizes: heroSizes.trioSmall },
   ],
   "/future-vision": [{ src: "/media/analyser-hall.webp", sizes: heroSizes.full }],
-  "/investors": [{ src: "/media/glass-boardroom.webp", sizes: heroSizes.pan }],
+  "/investors": [{ src: "/media/inv-hero.webp", sizes: heroSizes.pan }],
   "/careers": [
-    { src: "/media/team-office.webp", sizes: heroSizes.overlapBack },
-    { src: "/media/team-review.webp", sizes: heroSizes.overlapFront },
+    { src: "/media/careers-team.webp", sizes: heroSizes.overlapBack },
+    { src: "/media/careers-one.webp", sizes: heroSizes.overlapFront },
   ],
-  "/contact": [{ src: "/media/office-conversation.webp", sizes: heroSizes.rise }],
+  "/contact": [{ src: "/media/contact-hero.webp", sizes: heroSizes.rise }],
 };

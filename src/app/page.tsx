@@ -6,7 +6,7 @@ import { WordReveal } from "@/components/motion/WordReveal";
 import { CtaPair } from "@/components/sections/CtaPair";
 import { HomeHero } from "@/components/sections/HomeHero";
 import { OperatingModel } from "@/components/sections/OperatingModel";
-import { PhotoRibbon } from "@/components/sections/PhotoRibbon";
+import { Marquee } from "@/components/motion/Marquee";
 import { Pillars } from "@/components/sections/Pillars";
 import { PortfolioScroll } from "@/components/sections/PortfolioScroll";
 import { Roadmap } from "@/components/sections/Roadmap";
@@ -17,6 +17,10 @@ import { SectionLabel } from "@/components/ui/SectionLabel";
 import { company } from "@/content/company";
 import { values } from "@/content/site";
 import { superbeing as sb } from "@/content/superbeing";
+import { slot } from "@/lib/slot";
+
+const conviction = slot("home-conviction");
+const flagship = slot("home-flagship");
 
 export default function HomePage() {
   return (
@@ -26,8 +30,8 @@ export default function HomePage() {
       <WordReveal
         eyebrow="01 — Our conviction"
         text="Everyday health is full of small, recurring *needs* — in our routines, at every life stage, and for the pets we share our homes with. That is where every Nuvexa brand begins."
-        image="/media/daily-organiser.webp"
-        imageAlt="A hand taking a capsule from a seven-day organiser on a dark table"
+        image={conviction.src}
+        imageAlt={conviction.alt}
       />
 
       {/* Who we are */}
@@ -72,7 +76,7 @@ export default function HomePage() {
       <section data-theme="dark" aria-labelledby="flagship-heading" className="bg-ink-soft text-ivory">
         <div className="grid md:grid-cols-2">
           <div className="relative aspect-[3/2] overflow-hidden">
-            <RevealPhoto src={sb.image} alt={sb.imageAlt} sizes="(min-width: 768px) 50vw, 100vw" />
+            <RevealPhoto src={flagship.src} alt={flagship.alt} sizes="(min-width: 768px) 50vw, 100vw" />
           </div>
           <div className="flex flex-col items-start justify-center px-[var(--gutter)] py-14 md:py-20">
             <p className="eyebrow mb-6 text-brass">Our flagship</p>
@@ -91,12 +95,12 @@ export default function HomePage() {
 
       <PortfolioScroll />
       <Pillars />
-      <OperatingModel />
+      <OperatingModel variant="line" />
       <Roadmap />
 
       {/* Values ribbon */}
-      <section data-theme="light" aria-label="Our values" className="overflow-hidden border-y border-ink/10 bg-ivory-deep py-14 text-ink md:py-20">
-        <PhotoRibbon words={values.map((v) => v.title)} />
+      <section data-theme="light" aria-label="Our values" className="overflow-hidden border-y border-ink/10 bg-ivory-deep py-16 text-ink md:py-24">
+        <Marquee items={values.map((v) => v.title)} duration={56} />
       </section>
 
       {/* Founder's note */}

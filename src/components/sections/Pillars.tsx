@@ -6,17 +6,17 @@ import { Photo } from "@/components/ui/Photo";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { pillars } from "@/content/site";
 import { EASE_OUT_EXPO, cn } from "@/lib/cn";
+import { slot } from "@/lib/slot";
 
-const photos: Record<string, { src: string; alt: string }> = {
-  Science: { src: "/media/scientist-microscope.webp", alt: "A scientist in a white coat and blue gloves studying a sample through a microscope" },
-  "Consumer insight": { src: "/media/consumer-conversation.webp", alt: "Two women in conversation on a pale sofa, one taking notes as the other talks" },
-  "Technology & AI": { src: "/media/data-review.webp", alt: "Two colleagues in white coats reviewing data together on a pair of monitors" },
-  "Disciplined execution": { src: "/media/filling-line.webp", alt: "White bottles moving along an automated filling line beneath a steel hopper" },
-  "Brand building": { src: "/media/brand-strategy.webp", alt: "Two colleagues planning at a desk in front of a chalkboard covered in strategy notes" },
+/** Each page that shows the disciplines gets its own five photographs, in the same order as the list. */
+const sets = {
+  home: [slot("home-science"), slot("home-insight"), slot("home-technology"), slot("home-execution"), slot("home-brand")],
+  approach: [slot("approach-science"), slot("approach-insight"), slot("approach-technology"), slot("approach-execution"), slot("approach-brand")],
 };
 
 /** Five disciplines as a list: choosing one opens its text and brings its large photograph forward. */
-export function Pillars({ index = "04" }: { index?: string }) {
+export function Pillars({ index = "04", set = "home" }: { index?: string; set?: keyof typeof sets }) {
+  const photos = sets[set];
   const [active, setActive] = useState(0);
   const reduce = useReducedMotion();
   const baseId = useId();
@@ -68,7 +68,7 @@ export function Pillars({ index = "04" }: { index?: string }) {
                     <div className="min-h-0 overflow-hidden">
                       <p className="body-copy max-w-[46ch] pb-6 pl-[2.6rem] text-ink-muted">{p.body}</p>
                       <div className="relative mb-6 aspect-[3/2] overflow-hidden rounded-[1.25rem] bg-ink lg:hidden">
-                        <Photo src={photos[p.title].src} alt={photos[p.title].alt} sizes="100vw" />
+                        <Photo src={photos[i].src} alt={photos[i].alt} sizes="100vw" />
                       </div>
                     </div>
                   </div>
@@ -89,7 +89,7 @@ export function Pillars({ index = "04" }: { index?: string }) {
                   animate={{ opacity: on ? 1 : 0, scale: on || reduce ? 1 : 1.04 }}
                   transition={{ duration: reduce ? 0 : 0.9, ease: EASE_OUT_EXPO }}
                 >
-                  <Photo src={photos[p.title].src} alt={on ? photos[p.title].alt : ""} sizes="(min-width: 1024px) 56vw, 1px" />
+                  <Photo src={photos[i].src} alt={on ? photos[i].alt : ""} sizes="(min-width: 1024px) 56vw, 1px" />
                 </motion.div>
               );
             })}

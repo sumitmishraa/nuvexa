@@ -13,6 +13,7 @@ import { company } from "@/content/company";
 import { investors as inv } from "@/content/investors";
 import { site } from "@/content/site";
 import { pad } from "@/lib/cn";
+import { slot } from "@/lib/slot";
 
 export const metadata: Metadata = {
   title: "Investors",
@@ -20,7 +21,8 @@ export const metadata: Metadata = {
     "Nuvexa's investment thesis, partner-led business model, growth roadmap and principles — and how to reach us about investor relations.",
 };
 
-const thesisPhotos = ["/media/daily-organiser.webp", "/media/powder-scoop.webp", "/media/warehouse-aisle.webp", "/media/capsules.webp"];
+const thesisPhotos = [slot("thesis-needs"), slot("thesis-flagship"), slot("thesis-digital"), slot("thesis-portfolio")];
+const numbers = slot("inv-numbers");
 
 export default function InvestorsPage() {
   return (
@@ -30,7 +32,7 @@ export default function InvestorsPage() {
         eyebrow="Investors"
         title={inv.heroTitle}
         lede={inv.heroLede}
-        photos={[{ src: "/media/glass-boardroom.webp", alt: "A meeting in a glass-walled boardroom with tall windows overlooking the city" }]}
+        photos={[slot("inv-hero")]}
       />
 
       {/* 01 · Thesis */}
@@ -51,7 +53,7 @@ export default function InvestorsPage() {
             {inv.thesis.map((t, i) => (
               <RevealItem key={t.title} className="group overflow-hidden rounded-[1.5rem] border border-ink/12 bg-paper">
                 <div className="relative aspect-[16/9] overflow-hidden bg-ivory-deep">
-                  <Photo src={thesisPhotos[i]} alt="" sizes="(min-width: 768px) 46vw, 92vw" className="transition-transform duration-700 ease-[var(--ease-out-expo)] group-hover:scale-105" />
+                  <Photo src={thesisPhotos[i].src} alt="" sizes="(min-width: 768px) 46vw, 92vw" className="transition-transform duration-700 ease-[var(--ease-out-expo)] group-hover:scale-105" />
                 </div>
                 <div className="p-8 md:p-10">
                   <span className="font-serif text-4xl font-semibold text-brass">{pad(i + 1)}</span>
@@ -122,7 +124,7 @@ export default function InvestorsPage() {
               </h2>
             </div>
             <div className="relative col-span-12 aspect-[16/9] overflow-hidden rounded-[1.5rem] bg-ink lg:col-span-7">
-              <RevealPhoto src="/media/boardroom-table.webp" alt="A team gathered along a long table in a bright meeting room" sizes="(min-width: 1024px) 56vw, 100vw" />
+              <RevealPhoto src={numbers.src} alt={numbers.alt} sizes="(min-width: 1024px) 56vw, 100vw" />
             </div>
           </div>
           <StatBand />

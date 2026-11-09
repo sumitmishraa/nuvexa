@@ -14,20 +14,17 @@ import { SectionLabel } from "@/components/ui/SectionLabel";
 import { company } from "@/content/company";
 import { values } from "@/content/site";
 import { pad } from "@/lib/cn";
+import { slot } from "@/lib/slot";
 
 export const metadata: Metadata = {
   title: "Company",
   description: "Nuvexa is a digital-first consumer health and personal care company, building trusted brands around real, recurring needs.",
 };
 
-const valuePhotos = [
-  "/media/consumer-conversation.webp",
-  "/media/sample-rack.webp",
-  "/media/filling-line.webp",
-  "/media/microscope-closeup.webp",
-  "/media/team-office.webp",
-  "/media/research-lab.webp",
-];
+const valuePhotos = [slot("value-consumer"), slot("value-trust"), slot("value-execution"), slot("value-innovation"), slot("value-agility"), slot("value-longterm")];
+const hero = slot("company-hero");
+const story = slot("company-story");
+const band = slot("company-band");
 
 export default function CompanyPage() {
   return (
@@ -37,7 +34,7 @@ export default function CompanyPage() {
         eyebrow="About Nuvexa"
         title={"A digital-first\nconsumer health &\n*personal care* company."}
         lede={company.heroLede}
-        photos={[{ src: "/media/microscope-study.webp", alt: "A scientist in a white coat and hairnet looking through a microscope", position: "40% center" }]}
+        photos={[hero]}
       />
 
       {/* Story */}
@@ -48,7 +45,7 @@ export default function CompanyPage() {
               Our story
             </SectionLabel>
             <div className="relative mt-8 hidden aspect-[3/2] overflow-hidden rounded-[1.25rem] bg-ivory-deep md:block">
-              <RevealPhoto src="/media/lab-bench.webp" alt="A laboratory bench with a microscope and analytical instruments in a bright room" sizes="(min-width: 768px) 30vw, 1px" />
+              <RevealPhoto src={story.src} alt={story.alt} sizes="(min-width: 768px) 30vw, 1px" />
             </div>
           </div>
           <div className="col-span-12 md:col-span-8">
@@ -104,7 +101,7 @@ export default function CompanyPage() {
             {values.map((v, i) => (
               <RevealItem key={v.title} className="group">
                 <div className="relative mb-6 aspect-[3/2] overflow-hidden rounded-[1.25rem] bg-ivory-deep">
-                  <Photo src={valuePhotos[i]} alt="" sizes="(min-width: 1024px) 30vw, (min-width: 768px) 46vw, 92vw" className="transition-transform duration-700 ease-[var(--ease-out-expo)] group-hover:scale-105" />
+                  <Photo src={valuePhotos[i].src} alt="" sizes="(min-width: 1024px) 30vw, (min-width: 768px) 46vw, 92vw" className="transition-transform duration-700 ease-[var(--ease-out-expo)] group-hover:scale-105" />
                 </div>
                 <p className="eyebrow mb-3 text-brass">{pad(i + 1)}</p>
                 <h3 className="display-md mb-3 transition-transform duration-500 group-hover:translate-x-1">{v.title}</h3>
@@ -157,11 +154,11 @@ export default function CompanyPage() {
         </div>
       </section>
 
-      <OperatingModel index="04" />
+      <OperatingModel index="04" variant="line" />
       <Roadmap index="05" />
 
       {/* Image interlude */}
-      <PhotoBand src="/media/production-hall.webp" label="Everyday health, thoughtfully built">
+      <PhotoBand src={band.src} label="Everyday health, thoughtfully built">
         Everyday health, <em className="italic text-brass-soft">thoughtfully built.</em>
       </PhotoBand>
 
