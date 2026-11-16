@@ -11,7 +11,7 @@ import { PageHero } from "@/components/sections/PageHero";
 export const metadata: Metadata = {
   title: "Our Brands",
   description:
-    "Superbeing Nutrition, Super Titans, RUGD Men and Super Envi Intima — plus emerging verticals in Modern Ayurveda, Pet Care and Pharmaceuticals.",
+    "Pharmaceuticals at our core, alongside Superbeing Nutrition, Super Titans, RUGD Men, Super Envi Intima and emerging verticals in Modern Ayurveda and Pet Care.",
 };
 
 export default function BrandsPage() {
@@ -20,8 +20,8 @@ export default function BrandsPage() {
       <PageHero
         variant="mosaic"
         eyebrow="Our brands"
-        title={"Digital-first\nconsumer health,\n*for every life stage.*"}
-        lede="We are building e-commerce-led brands in India across nutraceuticals, kids' nutrition, men's grooming and intimate wellbeing — with emerging verticals in modern Ayurveda, pet care and, in the longer term, pharmaceuticals. Each one begins with a real, recurring need."
+        title={"Science-led\npharmaceuticals &\n*everyday health.*"}
+        lede="Pharmaceuticals are at the core of Nuvexa. Alongside them, we build e-commerce-led brands in India across nutraceuticals, kids' nutrition, men's grooming and intimate wellbeing, with emerging verticals in modern Ayurveda and pet care. Each one begins with a real, recurring need."
         visual={<BrandMosaic />}
       />
       <BrandIndex />

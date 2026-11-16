@@ -8,7 +8,7 @@ import { getBrand } from "@/content/brands";
 import { heroSizes } from "@/content/heroes";
 import { EASE_OUT_EXPO } from "@/lib/cn";
 
-const slugs = ["modern-ayurveda", "super-being", "super-titans", "pet-care", "rugd-men", "super-envi-intima", "pharmaceuticals"];
+const slugs = ["pharmaceuticals", "super-being", "super-titans", "modern-ayurveda", "rugd-men", "super-envi-intima", "pet-care"];
 
 /* Seven brand visuals as one even wall of squares, matching the tiles' own shape, so nothing is cropped. */
 export function BrandMosaic() {

@@ -12,7 +12,7 @@ import { slot } from "@/lib/slot";
 
 export const metadata: Metadata = {
   title: "Our Approach",
-  description: "How Nuvexa builds brands: problem-first, evidence-led, partner-powered and communicated with clarity.",
+  description: "How Nuvexa builds brands: problem-first, evidence-led, science-driven and communicated with clarity.",
 };
 
 export default function ApproachPage() {

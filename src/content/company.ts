@@ -1,17 +1,17 @@
 export const company = {
-  heroTitle: "A digital-first consumer health and personal care company.",
+  heroTitle: "A science-led pharmaceutical and consumer health company.",
   heroLede:
-    "Nuvexa builds differentiated brands around real, recurring needs — across nutrition, grooming, intimate wellbeing, modern Ayurveda and pet care — with a long-term ambition to grow into a diversified health and life-sciences enterprise.",
+    "Pharmaceuticals are at the core of Nuvexa. Alongside them, we build differentiated consumer health brands around real, recurring needs — across nutrition, grooming, intimate wellbeing, modern Ayurveda and pet care.",
   story: [
     "Nuvexa Biotech Pvt. Ltd. was founded in Bengaluru with a simple conviction: the most enduring brands are built around problems, not products. Everyday health is full of small, recurring needs — in our routines, at every life stage and for the pets we share our homes with — and many of them are still poorly served.",
     "Superbeing Nutrition is the clearest expression of that conviction. It began with our founder's own search for supplements developed around specific needs — and a refusal to put a familiar formulation under a new label. Fifteen months of development later, every Superbeing product has a defined purpose, and every ingredient a reason.",
-    "Today, Nuvexa is focused on building high-potential brands through e-commerce and digital-first channels in India. Product development, testing and manufacturing are managed through specialised external partners, allowing us to concentrate on what we believe matters most: deep consumer insight, responsible formulation and brands people can trust.",
-    "As our brands earn product-market fit, repeat demand and sustainable scale, we plan to extend into offline retail, pharmacies, healthcare professional networks, institutional channels and international markets — and, over the longer term, to build capabilities in pharmaceuticals, R&D and advanced manufacturing.",
+    "Today, pharmaceuticals sit at the core of Nuvexa: a science-led focus on quality, innovation and meaningful patient needs. Alongside it, we build high-potential consumer health brands through e-commerce and digital-first channels in India, concentrating on deep consumer insight, responsible formulation and brands people can trust.",
+    "As we grow, we plan to extend into offline retail, pharmacies, healthcare professional networks, institutional channels and international markets — and to deepen our pharmaceutical capabilities in R&D and advanced manufacturing.",
   ],
   mission:
-    "To build trusted, relevant consumer health and personal care brands that make specialised solutions more accessible through modern commerce.",
+    "To make quality, science-led healthcare more accessible — through pharmaceuticals at our core and trusted consumer health brands built around real, recurring needs.",
   vision:
-    "To evolve from a digital-first consumer brands company into a diversified health and life-sciences enterprise with pharmaceutical R&D and manufacturing capabilities for regulated and rest-of-world markets.",
+    "To become a diversified pharmaceutical and life-sciences enterprise with R&D and manufacturing capabilities for regulated and rest-of-world markets.",
   founder: {
     name: "Shakeel Ahamed",
     role: "Founder & CEO",

@@ -11,7 +11,7 @@ import { EASE_OUT_EXPO, cn, pad } from "@/lib/cn";
 const filters = [
   { id: "all", label: "All", count: brands.length },
   { id: "brand", label: "Consumer brands", count: brands.filter((b) => b.kind === "brand").length },
-  { id: "vertical", label: "Emerging verticals", count: brands.filter((b) => b.kind === "vertical").length },
+  { id: "vertical", label: "Verticals", count: brands.filter((b) => b.kind === "vertical").length },
 ] as const;
 
 type FilterId = (typeof filters)[number]["id"];
@@ -61,7 +61,7 @@ function InviteCard() {
   );
 }
 
-/** The full portfolio on one aligned grid: consumer brands on the first row, emerging verticals on the second. */
+/** The full portfolio on one aligned grid, led by Pharmaceuticals, our core focus. */
 export function BrandIndex() {
   const [filter, setFilter] = useState<FilterId>("all");
   const visible = brands.filter((b) => filter === "all" || b.kind === filter);

@@ -9,6 +9,10 @@ export const investors = {
 
   thesis: [
     {
+      title: "Pharmaceuticals at the core",
+      body: "Pharmaceuticals are Nuvexa's central focus — science-led healthcare built around quality, innovation and meaningful patient needs, alongside four consumer brands and emerging verticals in Modern Ayurveda and Pet Care.",
+    },
+    {
       title: "Real, recurring needs",
       body: "We build around everyday problems that come back again and again — in routines, at every life stage and for the pets we share our homes with. Recurring needs create the conditions for repeat demand.",
     },
@@ -20,21 +24,16 @@ export const investors = {
       title: "Digital-first, e-commerce-led",
       body: "Our initial focus is e-commerce in India: a direct line to consumers, fast learning from real behaviour and the discipline to scale only what earns repeat demand.",
     },
-    {
-      title: "A portfolio across life stages",
-      body: "Four consumer brands — nutraceuticals, kids' nutrition, men's grooming and intimate wellbeing — and three emerging verticals in Modern Ayurveda, Pet Care and Pharmaceuticals.",
-    },
   ],
 
   model: {
-    title: "Our business model, stated openly.",
+    title: "Our business model.",
     body: [
-      "Nuvexa does not currently operate in-house R&D or manufacturing facilities. Product development, testing and manufacturing are carried out with specialised, qualified external partners and managed closely by Nuvexa.",
-      "That focus lets us concentrate our effort where we believe it matters most today — consumer insight, responsible formulation, brand building and digital commerce — and to build further capabilities as our brands achieve product-market fit, repeat demand and sustainable scale.",
+      "Pharmaceutical science sits at the centre of Nuvexa, supported by consumer insight, responsible formulation, brand building and digital commerce.",
+      "We concentrate our effort where it creates the most value, and build further capabilities as our brands achieve product-market fit, repeat demand and sustainable scale.",
     ],
     pillars: [
-      { title: "What we own", items: ["Consumer insight", "Brand and communication", "Formulation direction", "Digital commerce"] },
-      { title: "Where we partner", items: ["Product development", "Testing", "Manufacturing"] },
+      { title: "What we focus on", items: ["Pharmaceutical science", "Consumer insight", "Formulation", "Brand building", "Digital commerce"] },
     ],
   },
 

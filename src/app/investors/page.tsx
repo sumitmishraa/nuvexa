@@ -18,10 +18,10 @@ import { slot } from "@/lib/slot";
 export const metadata: Metadata = {
   title: "Investors",
   description:
-    "Nuvexa's investment thesis, partner-led business model, growth roadmap and principles — and how to reach us about investor relations.",
+    "Nuvexa's investment thesis, with pharmaceuticals at the core: business model, growth roadmap and principles — and how to reach us about investor relations.",
 };
 
-const thesisPhotos = [slot("thesis-needs"), slot("thesis-flagship"), slot("thesis-digital"), slot("thesis-portfolio")];
+const thesisPhotos = [slot("thesis-pharma"), slot("thesis-needs"), slot("thesis-flagship"), slot("thesis-digital")];
 const numbers = slot("inv-numbers");
 
 export default function InvestorsPage() {
@@ -74,7 +74,7 @@ export default function InvestorsPage() {
               Business model
             </SectionLabel>
             <h2 id="model-heading" className="display-xl max-w-[14ch]">
-              Our business model, <em className="italic text-brass-soft">stated openly.</em>
+              Our business <em className="italic text-brass-soft">model.</em>
             </h2>
             <RevealGroup className="mt-10 space-y-5">
               {inv.model.body.map((p) => (
@@ -84,23 +84,14 @@ export default function InvestorsPage() {
               ))}
             </RevealGroup>
           </div>
-          <div className="col-span-12 mt-10 flex flex-col lg:col-span-5 lg:col-start-8 lg:mt-0">
-            {/* Moving pulses show the working link between what Nuvexa owns and where it partners. */}
-            <div aria-hidden="true" className="order-2 flex items-center justify-center gap-4 py-4">
-              <span className="relative block h-16 w-2 overflow-hidden rounded-full bg-ivory/12">
-                {[0, 1, 2].map((n) => (
-                  <span key={n} className="absolute left-0 top-0 block h-2 w-2 rounded-full bg-brass" style={{ animation: `flow-pulse 2.4s linear ${n * 0.8}s infinite` }} />
-                ))}
-              </span>
-              <span className="eyebrow text-ivory/78">Managed closely by Nuvexa</span>
-            </div>
+          <div className="col-span-12 mt-10 flex flex-col justify-center lg:col-span-5 lg:col-start-8 lg:mt-0">
             {inv.model.pillars.map((col, i) => (
-              <Reveal key={col.title} delay={i * 0.1} className={i === 0 ? "order-1 rounded-[1.5rem] bg-ivory p-8 text-ink" : "order-3 rounded-[1.5rem] border border-ivory/15 p-8"}>
-                <p className={i === 0 ? "eyebrow mb-5 text-[#74562f]" : "eyebrow mb-5 text-brass-soft"}>{col.title}</p>
+              <Reveal key={col.title} delay={i * 0.1} className="rounded-[1.5rem] bg-ivory p-8 text-ink">
+                <p className="eyebrow mb-5 text-[#74562f]">{col.title}</p>
                 <ul className="space-y-3">
                   {col.items.map((it) => (
                     <li key={it} className="flex items-center gap-3 text-lg font-medium">
-                      <span aria-hidden="true" className={i === 0 ? "h-1.5 w-1.5 rounded-full bg-brass" : "h-1.5 w-1.5 rounded-full bg-brass-soft"} />
+                      <span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-brass" />
                       {it}
                     </li>
                   ))}

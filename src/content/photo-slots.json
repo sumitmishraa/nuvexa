@@ -6,6 +6,13 @@
     "fallbackAlt": "A hand taking a capsule from a seven-day organiser",
     "prompt": "A calm morning in a modern Bengaluru apartment kitchen: a woman in her thirties pours a glass of water while her young son eats breakfast at the counter and a golden retriever rests nearby."
   },
+  "home-pharma": {
+    "ratio": 1.5,
+    "alt": "Laboratory glassware and a pipette on a clean bench",
+    "fallback": "lab-glassware",
+    "fallbackAlt": "Laboratory glassware and a pipette on a clean bench",
+    "prompt": "Clear laboratory beakers, a conical flask and a pipette on a clean white pharmaceutical laboratory bench, subject centred."
+  },
   "home-flagship": {
     "ratio": 1.5,
     "alt": "An unlabelled nutrition jar and scoop on a breakfast table beside oats and a glass of water",
@@ -50,10 +57,10 @@
   },
   "company-hero": {
     "ratio": 1.5,
-    "alt": "A small team talking around a table in a bright Bengaluru office",
-    "fallback": "microscope-study",
-    "fallbackAlt": "A scientist looking through a microscope",
-    "prompt": "A small Indian team of four in a bright modern Bengaluru office with large windows and plants, gathered around a wooden table with laptops, one person explaining, subject centred."
+    "alt": "A bright research laboratory bench with a microscope and sample racks",
+    "fallback": "lab-bench",
+    "fallbackAlt": "A bright research laboratory bench with a microscope and sample racks",
+    "prompt": "A bright, modern pharmaceutical research laboratory bench with a microscope, sample racks and reagent bottles, no people, subject centred."
   },
   "company-story": {
     "ratio": 1.5,
@@ -274,14 +281,14 @@
   },
   "step-formulation": {
     "ratio": 1.5,
-    "alt": "A partner scientist preparing a formulation with a pipette",
+    "alt": "A scientist preparing a formulation with a pipette",
     "fallback": "pipette-work",
     "fallbackAlt": "A gloved hand using a pipette over sample tubes",
     "prompt": "A scientist in a lab coat and gloves using a pipette to add a clear liquid into a glass beaker of pale mixture in a bright formulation laboratory, subject centred."
   },
   "step-manufacturing": {
     "ratio": 1.5,
-    "alt": "A capsule-filling machine at a manufacturing partner",
+    "alt": "A capsule-filling machine in a clean manufacturing facility",
     "fallback": "u83",
     "fallbackAlt": "Production staff in masks and hairnets at a manufacturing line",
     "prompt": "Close-up of a stainless steel capsule-filling machine with pale capsules in a clean manufacturing facility, an operator's gloved hand adjusting it, subject centred."
@@ -292,13 +299,6 @@
     "fallback": "u227",
     "fallbackAlt": "Open cardboard boxes ready for packing orders",
     "prompt": "A young Indian woman at her apartment door receiving a plain kraft delivery box from a courier, smiling, subject centred."
-  },
-  "fv-today": {
-    "ratio": 1.5,
-    "alt": "Technicians in protective suits working at a partner cleanroom",
-    "fallback": "cleanroom",
-    "fallbackAlt": "Technicians in protective suits in a cleanroom",
-    "prompt": "Two technicians in white protective suits, hoods and masks working at stainless steel equipment in a bright pharmaceutical cleanroom, subject centred."
   },
   "fv-science": {
     "ratio": 1.5,
@@ -335,6 +335,13 @@
     "fallbackAlt": "A meeting in a glass-walled boardroom",
     "prompt": "A calm modern boardroom with a long table and glass walls overlooking the Bengaluru skyline at golden hour, three executives in conversation at the far end, wide view."
   },
+  "thesis-pharma": {
+    "ratio": 1.778,
+    "alt": "A scientist in gloves working with sample tubes in a laboratory safety cabinet",
+    "fallback": "sample-rack",
+    "fallbackAlt": "A scientist in gloves working with sample tubes in a laboratory safety cabinet",
+    "prompt": "A gloved scientist in a lab coat working with sample tubes in a rack inside a laboratory biosafety cabinet, wide view."
+  },
   "thesis-needs": {
     "ratio": 1.778,
     "alt": "A family sharing breakfast on a weekday morning",
@@ -355,13 +362,6 @@
     "fallback": "u243",
     "fallbackAlt": "Hands typing on a laptop beside a stethoscope",
     "prompt": "Close-up of a young Indian woman's hands holding a smartphone showing an abstract shopping app checkout screen, on a sofa at home, no readable text, wide view."
-  },
-  "thesis-portfolio": {
-    "ratio": 1.778,
-    "alt": "A family of every age with their dog in a park",
-    "fallback": "u249",
-    "fallbackAlt": "A doctor talking with an older patient",
-    "prompt": "An Indian family of every age, grandparents, parents and a child, walking with their dog in a sunny park, wide view."
   },
   "inv-numbers": {
     "ratio": 1.778,

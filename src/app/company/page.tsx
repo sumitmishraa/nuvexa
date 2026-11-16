@@ -3,7 +3,6 @@ import { RevealPhoto } from "@/components/motion/RevealPhoto";
 import { Reveal, RevealGroup, RevealItem } from "@/components/motion/Reveal";
 import { SplitText } from "@/components/motion/SplitText";
 import { CtaPair } from "@/components/sections/CtaPair";
-import { OperatingModel } from "@/components/sections/OperatingModel";
 import { PhotoBand } from "@/components/sections/PhotoBand";
 import { PageHero } from "@/components/sections/PageHero";
 import { Roadmap } from "@/components/sections/Roadmap";
@@ -18,7 +17,7 @@ import { slot } from "@/lib/slot";
 
 export const metadata: Metadata = {
   title: "Company",
-  description: "Nuvexa is a digital-first consumer health and personal care company, building trusted brands around real, recurring needs.",
+  description: "Nuvexa is a science-led pharmaceutical and consumer health company, with pharmaceuticals at its core and trusted brands built around real, recurring needs.",
 };
 
 const valuePhotos = [slot("value-consumer"), slot("value-trust"), slot("value-execution"), slot("value-innovation"), slot("value-agility"), slot("value-longterm")];
@@ -32,7 +31,7 @@ export default function CompanyPage() {
       <PageHero
         variant="split"
         eyebrow="About Nuvexa"
-        title={"A digital-first\nconsumer health &\n*personal care* company."}
+        title={"A science-led\npharmaceutical &\n*consumer health* company."}
         lede={company.heroLede}
         photos={[hero]}
       />
@@ -154,8 +153,7 @@ export default function CompanyPage() {
         </div>
       </section>
 
-      <OperatingModel index="04" variant="line" />
-      <Roadmap index="05" />
+      <Roadmap index="04" />
 
       {/* Image interlude */}
       <PhotoBand src={band.src} label="Everyday health, thoughtfully built">

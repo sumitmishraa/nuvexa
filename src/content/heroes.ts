@@ -17,7 +17,7 @@ export const heroSizes = {
 export const routeHeroes: Record<string, { src: string; sizes: string }[]> = {
   "/": [{ src: "/media/pipette-plate.webp", sizes: heroSizes.home }],
   "/company": [{ src: "/media/company-hero.webp", sizes: heroSizes.split }],
-  "/brands": ["modern-ayurveda", "super-being", "super-titans", "pet-care", "rugd-men", "super-envi-intima", "pharmaceuticals"].map((name) => ({
+  "/brands": ["pharmaceuticals", "super-being", "super-titans", "modern-ayurveda", "rugd-men", "super-envi-intima", "pet-care"].map((name) => ({
     src: `/brands/${name}.webp`,
     sizes: heroSizes.mosaic,
   })),

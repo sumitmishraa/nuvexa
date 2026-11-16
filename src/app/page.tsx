@@ -5,7 +5,6 @@ import { RevealPhoto } from "@/components/motion/RevealPhoto";
 import { WordReveal } from "@/components/motion/WordReveal";
 import { CtaPair } from "@/components/sections/CtaPair";
 import { HomeHero } from "@/components/sections/HomeHero";
-import { OperatingModel } from "@/components/sections/OperatingModel";
 import { Marquee } from "@/components/motion/Marquee";
 import { Pillars } from "@/components/sections/Pillars";
 import { PortfolioScroll } from "@/components/sections/PortfolioScroll";
@@ -14,6 +13,7 @@ import { StatBand } from "@/components/sections/StatBand";
 import { ButtonLink } from "@/components/ui/ButtonLink";
 import { Mark } from "@/components/ui/Logo";
 import { SectionLabel } from "@/components/ui/SectionLabel";
+import { getBrand } from "@/content/brands";
 import { company } from "@/content/company";
 import { values } from "@/content/site";
 import { superbeing as sb } from "@/content/superbeing";
@@ -21,11 +21,43 @@ import { slot } from "@/lib/slot";
 
 const conviction = slot("home-conviction");
 const flagship = slot("home-flagship");
+const pharmaPhoto = slot("home-pharma");
 
 export default function HomePage() {
+  const pharma = getBrand("pharmaceuticals")!;
   return (
     <>
       <HomeHero />
+
+      {/* Pharmaceuticals: the core */}
+      <section data-theme="dark" aria-labelledby="pharma-heading" className="bg-ink text-ivory">
+        <div className="grid md:grid-cols-2">
+          <div className="flex flex-col items-start justify-center px-[var(--gutter)] py-14 md:py-20">
+            <p className="eyebrow mb-6 text-brass">Our core</p>
+            <h2 id="pharma-heading" className="display-lg">
+              Science-led <em className="italic text-brass-soft">pharmaceuticals.</em>
+            </h2>
+            <Reveal delay={0.1}>
+              <p className="lede mb-8 mt-6 max-w-[46ch] text-ivory/82">{pharma.intro[0]}</p>
+            </Reveal>
+            <Reveal delay={0.15}>
+              <ul className="mb-10 flex flex-wrap gap-2" aria-label="Focus areas">
+                {pharma.focusAreas!.map((f) => (
+                  <li key={f} className="rounded-full border border-ivory/25 px-4 py-2 text-[0.88rem]">
+                    {f}
+                  </li>
+                ))}
+              </ul>
+            </Reveal>
+            <ButtonLink href="/brands/pharmaceuticals" variant="ivory">
+              Explore Pharmaceuticals
+            </ButtonLink>
+          </div>
+          <div className="relative order-first aspect-[3/2] overflow-hidden md:order-none md:aspect-auto md:min-h-[32rem]">
+            <RevealPhoto src={pharmaPhoto.src} alt={pharmaPhoto.alt} sizes="(min-width: 768px) 50vw, 100vw" />
+          </div>
+        </div>
+      </section>
 
       <WordReveal
         eyebrow="01 — Our conviction"
@@ -48,16 +80,15 @@ export default function HomePage() {
               <div className="grid gap-6">
                 <Reveal>
                   <p className="body-copy text-ink-muted">
-                    Nuvexa Biotech Pvt. Ltd. is a next-generation healthcare and consumer company. We build differentiated brands around real, recurring needs
-                    — in nutrition, kids&rsquo; nutrition, men&rsquo;s grooming, intimate wellbeing, modern Ayurveda and pet care — and we design every one of
-                    them to earn trust over time.
+                    Nuvexa Biotech Pvt. Ltd. is a science-led pharmaceutical and consumer health company. Pharmaceuticals are at our core. Alongside them,
+                    we build differentiated brands around real, recurring needs — in nutrition, kids&rsquo; nutrition, men&rsquo;s grooming, intimate
+                    wellbeing, modern Ayurveda and pet care — and we design every one of them to earn trust over time.
                   </p>
                 </Reveal>
                 <Reveal delay={0.1}>
                   <p className="body-copy text-ink-muted">
-                    Our initial focus is digital-first, e-commerce-led growth in India, supported by specialised development and manufacturing partners. As
-                    our brands achieve product-market fit and sustainable scale, we plan to extend into offline retail, pharmacies, healthcare networks and
-                    international markets.
+                    Our consumer brands grow digital-first, through e-commerce in India. As they achieve product-market fit and sustainable scale, we plan to
+                    extend into offline retail, pharmacies, healthcare networks and international markets.
                   </p>
                 </Reveal>
               </div>
@@ -95,8 +126,7 @@ export default function HomePage() {
 
       <PortfolioScroll />
       <Pillars />
-      <OperatingModel variant="line" />
-      <Roadmap />
+      <Roadmap index="05" />
 
       {/* Values ribbon */}
       <section data-theme="light" aria-label="Our values" className="overflow-hidden border-y border-ink/10 bg-ivory-deep py-16 text-ink md:py-24">

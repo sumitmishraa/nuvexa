@@ -9,7 +9,7 @@ import { VideoLoop } from "@/components/ui/VideoLoop";
 import { heroSizes } from "@/content/heroes";
 import { EASE_OUT_EXPO } from "@/lib/cn";
 
-const SEAL = "Science · Consumer insight · Trust · Everyday health · ";
+const SEAL = "Pharmaceuticals · Science · Consumer insight · Trust · ";
 
 export function HomeHero() {
   const ref = useRef<HTMLElement>(null);
@@ -52,18 +52,18 @@ export function HomeHero() {
             <span className="h-px w-10 bg-brass" />
             Nuvexa Biotech · Bengaluru, India
           </motion.p>
-          <SplitText as="h1" trigger="load" delay={0.25} className="display-hero" text={"Building trusted brands.\n*Solving everyday*\nhealth needs."} />
+          <SplitText as="h1" trigger="load" delay={0.25} className="display-hero" text={"Science-led\n*pharmaceuticals.*\nTrusted everyday health."} />
           <div className="mt-12 grid grid-cols-12 items-end gap-6 border-t border-ivory/15 pt-8">
             <motion.p className="lede col-span-12 max-w-[46ch] text-ivory/80 md:col-span-6" {...appear(0.9)}>
-              A next-generation consumer health company building differentiated brands around real, recurring needs — across nutrition, grooming, intimate
-              wellbeing, modern Ayurveda and pet care.
+              A science-led pharmaceutical and consumer health company. Pharmaceuticals are our core, alongside differentiated brands in nutrition,
+              grooming, intimate wellbeing, modern Ayurveda and pet care.
             </motion.p>
             <motion.div className="col-span-12 flex flex-wrap items-center gap-4 md:col-span-6 md:justify-end" {...appear(1.05)}>
-              <ButtonLink href="/brands" variant="ivory">
-                Explore our brands
+              <ButtonLink href="/brands/pharmaceuticals" variant="ivory">
+                Our pharmaceuticals
               </ButtonLink>
-              <ButtonLink href="/approach" variant="outline-light">
-                Our approach
+              <ButtonLink href="/brands" variant="outline-light">
+                Explore our brands
               </ButtonLink>
             </motion.div>
           </div>

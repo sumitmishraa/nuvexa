@@ -1,9 +1,9 @@
 export const site = {
   name: "Nuvexa",
   legalName: "Nuvexa Biotech Pvt. Ltd.",
-  tagline: "Building trusted brands. Solving everyday health needs.",
+  tagline: "Science-led pharmaceuticals. Trusted everyday health.",
   description:
-    "Nuvexa is a digital-first consumer health and personal care company building trusted brands across nutrition, grooming, intimate wellbeing, modern Ayurveda and pet care, with a long-term ambition in pharmaceuticals and life sciences.",
+    "Nuvexa Biotech is a science-led pharmaceutical and consumer health company. Pharmaceuticals are at our core, alongside trusted brands across nutrition, grooming, intimate wellbeing, modern Ayurveda and pet care.",
   url: "https://www.nuvexabio.com",
   year: "2026",
   emails: {
@@ -22,6 +22,7 @@ export const site = {
 /** Primary navigation, in the order the client specified. Contact lives in the header button, menu and footer. */
 export const nav = [
   { label: "Company", href: "/company", note: "Who we are" },
+  { label: "Pharmaceuticals", href: "/brands/pharmaceuticals", note: "Our core focus" },
   { label: "Our Brands", href: "/brands", note: "The portfolio" },
   { label: "Superbeing Nutrition", href: "/superbeing", note: "The founder's story" },
   { label: "Approach", href: "/approach", note: "How we build" },
@@ -106,7 +107,7 @@ export const pillars = [
 export const operatingModel = [
   { step: "Insight", body: "Identify a real, recurring need through consumer research, market intelligence and data." },
   { step: "Formulation", body: "Develop the proposition with specialised product development partners, guided by evidence and responsible claims." },
-  { step: "Testing", body: "Product testing and quality checks are managed through qualified external partners." },
-  { step: "Manufacturing", body: "Production through trusted, qualified manufacturing partners — managed and overseen by Nuvexa." },
+  { step: "Testing", body: "Product testing and quality checks at every stage, before anything reaches a customer." },
+  { step: "Manufacturing", body: "Production to strict quality standards, overseen end to end by Nuvexa." },
   { step: "Commerce", body: "Launch and grow through e-commerce and digital-first channels in India, then scale what earns repeat demand." },
 ] as const;

@@ -35,6 +35,52 @@ export type Brand = {
 
 export const brands: Brand[] = [
   {
+    slug: "pharmaceuticals",
+    name: "Pharmaceuticals",
+    kind: "vertical",
+    status: "Core focus",
+    category: "New-age · Innovative · Science-led healthcare",
+    lifeStage: "Patients & healthcare",
+    quote: "New-age, innovative and science-led healthcare.",
+    summary:
+      "The core of Nuvexa: a science-led pharmaceutical business built around quality, innovation and meaningful patient needs.",
+    intro: [
+      "Pharmaceuticals are at the heart of Nuvexa — a science-led healthcare business focused on quality, innovation and meaningful patient needs.",
+      "We are building our pharmaceutical capabilities in R&D and manufacturing step by step, with an ambition to serve regulated and rest-of-world markets across complex generics, biologics, biosimilars and biotechnology.",
+    ],
+    need: {
+      title: "Meaningful patient needs, met with quality.",
+      body: [
+        "Access to high-quality medicines remains one of the most important challenges in healthcare, in India and around the world.",
+        "Pharmaceuticals are Nuvexa's central commitment to that challenge — built with quality and responsibility at their core.",
+      ],
+    },
+    philosophy:
+      "Pharmaceuticals demand patience, rigour and an uncompromising commitment to quality. That is the standard we hold ourselves to, and the reason we build deliberately — growing our R&D and manufacturing capabilities as the company grows.",
+    focusAreas: ["Complex generics", "Biologics", "Biosimilars", "Biotechnology"],
+    standsFor: [
+      "Quality",
+      "Innovation",
+      "Meaningful patient needs",
+      "Science-led development",
+      "Regulated & rest-of-world markets",
+      "Long-term capability building",
+    ],
+    audience: "Patients, healthcare professionals and partners in regulated and rest-of-world markets.",
+    approach: [
+      { title: "Science-led development", body: "Evidence, quality and patient need guide every decision we make." },
+      { title: "Building capability", body: "Growing our pharmaceutical R&D and manufacturing capabilities step by step." },
+      { title: "Global ambition", body: "Serving regulated and rest-of-world markets across advanced therapeutic areas." },
+    ],
+    closing:
+      "Pharmaceuticals are the core of Nuvexa — a science-led healthcare business with a clear focus on complex generics, biologics, biosimilars and biotechnology.",
+    logo: "/brands/pharmaceuticals.webp",
+    logoBg: "#3e6a9c",
+    mode: "photo",
+    tone: "ink",
+    motif: "flask",
+  },
+  {
     slug: "super-being",
     href: "/superbeing",
     name: "Superbeing Nutrition",
@@ -332,52 +378,6 @@ export const brands: Brand[] = [
     mode: "photo",
     tone: "sage",
     motif: "paw",
-  },
-  {
-    slug: "pharmaceuticals",
-    name: "Pharmaceuticals",
-    kind: "vertical",
-    status: "Long-term ambition",
-    category: "New-age · Innovative · Science-led healthcare",
-    lifeStage: "Patients & healthcare",
-    quote: "New-age, innovative and science-led healthcare.",
-    summary:
-      "A future-focused, science-led healthcare business built around quality, innovation and meaningful patient needs.",
-    intro: [
-      "Nuvexa's Pharmaceuticals vertical is envisioned as a science-led healthcare business focused on quality, innovation and meaningful patient needs.",
-      "Initially, Nuvexa intends to work through qualified development and manufacturing partners. Over time, the company intends to build its own capabilities in pharmaceutical R&D and manufacturing, with an ambition to serve regulated and rest-of-world markets.",
-    ],
-    need: {
-      title: "Meaningful patient needs, met with quality.",
-      body: [
-        "Access to high-quality medicines remains one of the most important challenges in healthcare, in India and around the world.",
-        "The Pharmaceuticals vertical is Nuvexa's long-term commitment to that challenge — built step by step, with quality and responsibility at its core.",
-      ],
-    },
-    philosophy:
-      "Pharmaceuticals demand patience, rigour and an uncompromising commitment to quality. Nuvexa intends to build this vertical deliberately: first through qualified partners, then through its own R&D and manufacturing capabilities as the company grows.",
-    focusAreas: ["Complex generics", "Biologics", "Biosimilars", "Biotechnology"],
-    standsFor: [
-      "Quality",
-      "Innovation",
-      "Meaningful patient needs",
-      "Science-led development",
-      "Regulated & rest-of-world markets",
-      "Long-term capability building",
-    ],
-    audience: "Patients, healthcare professionals and partners in regulated and rest-of-world markets.",
-    approach: [
-      { title: "Partner-led beginnings", body: "Working first with qualified development and manufacturing partners." },
-      { title: "Building capability", body: "Developing in-house pharmaceutical R&D and manufacturing over time." },
-      { title: "Global ambition", body: "Serving regulated and rest-of-world markets across advanced therapeutic areas." },
-    ],
-    closing:
-      "The Pharmaceuticals vertical is being developed as a future-focused healthcare business with a long-term ambition in complex generics, biologics, biosimilars and biotechnology.",
-    logo: "/brands/pharmaceuticals.webp",
-    logoBg: "#3e6a9c",
-    mode: "photo",
-    tone: "ink",
-    motif: "flask",
   },
 ];
 
