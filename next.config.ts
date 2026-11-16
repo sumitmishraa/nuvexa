@@ -16,8 +16,11 @@ const nextConfig: NextConfig = {
     ];
   },
   async redirects() {
-    // Superbeing Nutrition has its own flagship page.
-    return [{ source: "/brands/super-being", destination: "/superbeing", permanent: true }];
+    // Superbeing Nutrition has its own flagship page; pharmaceuticals are the whole company, told on Future Vision.
+    return [
+      { source: "/brands/super-being", destination: "/superbeing", permanent: true },
+      { source: "/brands/pharmaceuticals", destination: "/future-vision", permanent: true },
+    ];
   },
   partialPrefetching: true,
   turbopack: {

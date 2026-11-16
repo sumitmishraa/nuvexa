@@ -5,7 +5,7 @@
 export const investors = {
   heroTitle: "Building enduring value,\n*one real need at a time.*",
   heroLede:
-    "Nuvexa combines science, consumer insight, technology, artificial intelligence, disciplined execution and brand building to create trusted products for consumers — and scalable, enduring value for partners and shareholders.",
+    "Nuvexa is a science-led pharmaceutical and consumer health company. We combine pharmaceutical science, consumer insight, technology and disciplined execution to create trusted medicines and products — and scalable, enduring value for partners and shareholders.",
 
   thesis: [
     {

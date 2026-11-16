@@ -11,7 +11,7 @@ import { EASE_OUT_EXPO, cn, pad } from "@/lib/cn";
 const filters = [
   { id: "all", label: "All", count: brands.length },
   { id: "brand", label: "Consumer brands", count: brands.filter((b) => b.kind === "brand").length },
-  { id: "vertical", label: "Verticals", count: brands.filter((b) => b.kind === "vertical").length },
+  { id: "vertical", label: "Emerging verticals", count: brands.filter((b) => b.kind === "vertical").length },
 ] as const;
 
 type FilterId = (typeof filters)[number]["id"];
@@ -61,7 +61,7 @@ function InviteCard() {
   );
 }
 
-/** The full portfolio on one aligned grid, led by Pharmaceuticals, our core focus. */
+/** The consumer portfolio on one aligned grid: consumer brands on the first row, emerging verticals on the second. */
 export function BrandIndex() {
   const [filter, setFilter] = useState<FilterId>("all");
   const visible = brands.filter((b) => filter === "all" || b.kind === filter);
@@ -75,7 +75,7 @@ export function BrandIndex() {
               <span className="text-brass">01</span> — The portfolio
             </p>
             <h2 className="display-lg max-w-[18ch]">
-              Seven ways we serve <em className="italic text-brass">everyday health.</em>
+              Six ways we serve <em className="italic text-brass">everyday health.</em>
             </h2>
           </div>
           <LayoutGroup>

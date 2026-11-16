@@ -1,7 +1,7 @@
 export const approach = {
   heroTitle: "We do not start with products. We start with problems.",
   heroLede:
-    "Every Nuvexa brand begins as a question about everyday life — and Superbeing Nutrition shows how we answer it: start with the person's actual need, give every ingredient a reason and every product a purpose, and explain it all clearly.",
+    "Science-led pharmaceutical development starts with a patient's real need — and so does every Nuvexa consumer brand. We give every ingredient a reason, every product a purpose, and explain it all clearly.",
   method: [
     {
       step: "01",

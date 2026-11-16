@@ -12,7 +12,7 @@ const root = process.cwd();
 const MEDIA_WIDTHS = [384, 640, 1080, 1600, 2400];
 const slots = JSON.parse(fs.readFileSync(path.join(root, "src/content/photo-slots.json"), "utf8"));
 // Video posters stay as plain masters, uncropped.
-const posters = ["pipette-plate", "analyser-hall", "pipette-hood", "gloves-lab"];
+const posters = ["hero-scientist", "pipette-plate", "analyser-hall", "pipette-hood", "gloves-lab"];
 
 const manifest = {};
 const written = new Set();

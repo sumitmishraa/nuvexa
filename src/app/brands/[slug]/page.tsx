@@ -138,25 +138,6 @@ export default async function BrandPage({ params }: PageProps<"/brands/[slug]">)
         </div>
       </section>
 
-      {/* Focus areas (pharmaceuticals) */}
-      {brand.focusAreas ? (
-        <section data-theme="dark" aria-labelledby="focus-heading" className="bg-ink py-20 text-ivory md:py-28">
-          <div className="container-x">
-            <h2 id="focus-heading" className="eyebrow mb-12 text-ivory/75">
-              Long-term focus areas
-            </h2>
-            <RevealGroup className="grid gap-px overflow-hidden rounded-[1.5rem] bg-ivory/10 md:grid-cols-4">
-              {brand.focusAreas.map((f, i) => (
-                <RevealItem key={f} className="bg-ink p-8 md:min-h-64">
-                  <p className="eyebrow mb-16 text-brass">{pad(i + 1)}</p>
-                  <p className="display-md">{f}</p>
-                </RevealItem>
-              ))}
-            </RevealGroup>
-          </div>
-        </section>
-      ) : null}
-
       {/* What it stands for + who it's for */}
       <section data-theme="light" aria-labelledby="stands-heading" className="bg-ivory py-20 text-ink md:py-28">
         <div className="container-x grid grid-cols-12 gap-6">

@@ -25,7 +25,7 @@ export default function CareersPage() {
       <PageHero
         variant="overlap"
         eyebrow="Careers"
-        title={"Build brands that\n*matter* — with us."}
+        title={"Build the future\nof *healthcare* — with us."}
         lede={careers.heroLede}
         photos={[
           slot("careers-team"),

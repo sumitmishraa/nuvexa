@@ -19,7 +19,7 @@ export default function ContactPage() {
       variant="rise"
       eyebrow="Contact"
       title={"Let's start a\n*conversation.*"}
-      lede="For partnerships and business development, investor relations, media, medical information, careers or general questions — we would be glad to hear from you, here in Bengaluru."
+      lede="For pharmaceutical partnerships and business development, investor relations, media, medical information, careers or general questions — we would be glad to hear from you, here in Bengaluru."
       photos={[slot("contact-hero")]}
     />
     <section data-theme="light" className="bg-ivory pb-20 pt-14 text-ink md:pb-28 md:pt-20">

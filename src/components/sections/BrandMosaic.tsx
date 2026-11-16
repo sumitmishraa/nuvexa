@@ -8,9 +8,9 @@ import { getBrand } from "@/content/brands";
 import { heroSizes } from "@/content/heroes";
 import { EASE_OUT_EXPO } from "@/lib/cn";
 
-const slugs = ["pharmaceuticals", "super-being", "super-titans", "modern-ayurveda", "rugd-men", "super-envi-intima", "pet-care"];
+const slugs = ["super-being", "super-titans", "rugd-men", "super-envi-intima", "modern-ayurveda", "pet-care"];
 
-/* Seven brand visuals as one even wall of squares, matching the tiles' own shape, so nothing is cropped. */
+/* Six brand visuals as one even wall of squares, matching the tiles' own shape, so nothing is cropped. */
 export function BrandMosaic() {
   const ready = useSiteReady();
   const arrive = (i: number) => ({
@@ -29,10 +29,10 @@ export function BrandMosaic() {
           </motion.div>
         );
       })}
-      <motion.div className="flex aspect-square flex-col justify-between rounded-[1rem] bg-ink-soft p-5 md:p-7" {...arrive(slugs.length)}>
+      <motion.div className="col-span-2 flex flex-col justify-between rounded-[1rem] bg-ink-soft p-5 md:p-7" {...arrive(slugs.length)}>
         <Mark className="h-7 w-7 text-brass" strokeWidth={1.2} />
         <p className="display-md">
-          Seven ways we serve <em className="italic text-brass-soft">everyday health.</em>
+          Everyday health, <em className="italic text-brass-soft">alongside our pharmaceutical core.</em>
         </p>
       </motion.div>
     </div>

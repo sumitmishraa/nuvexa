@@ -13,8 +13,8 @@ import { StatBand } from "@/components/sections/StatBand";
 import { ButtonLink } from "@/components/ui/ButtonLink";
 import { Mark } from "@/components/ui/Logo";
 import { SectionLabel } from "@/components/ui/SectionLabel";
-import { getBrand } from "@/content/brands";
 import { company } from "@/content/company";
+import { pharma } from "@/content/pharma";
 import { values } from "@/content/site";
 import { superbeing as sb } from "@/content/superbeing";
 import { slot } from "@/lib/slot";
@@ -24,7 +24,6 @@ const flagship = slot("home-flagship");
 const pharmaPhoto = slot("home-pharma");
 
 export default function HomePage() {
-  const pharma = getBrand("pharmaceuticals")!;
   return (
     <>
       <HomeHero />
@@ -42,15 +41,15 @@ export default function HomePage() {
             </Reveal>
             <Reveal delay={0.15}>
               <ul className="mb-10 flex flex-wrap gap-2" aria-label="Focus areas">
-                {pharma.focusAreas!.map((f) => (
-                  <li key={f} className="rounded-full border border-ivory/25 px-4 py-2 text-[0.88rem]">
-                    {f}
+                {pharma.focusAreas.map((f) => (
+                  <li key={f.title} className="rounded-full border border-ivory/25 px-4 py-2 text-[0.88rem]">
+                    {f.title}
                   </li>
                 ))}
               </ul>
             </Reveal>
-            <ButtonLink href="/brands/pharmaceuticals" variant="ivory">
-              Explore Pharmaceuticals
+            <ButtonLink href="/contact" variant="ivory">
+              Partner with us
             </ButtonLink>
           </div>
           <div className="relative order-first aspect-[3/2] overflow-hidden md:order-none md:aspect-auto md:min-h-[32rem]">
@@ -61,7 +60,7 @@ export default function HomePage() {
 
       <WordReveal
         eyebrow="01 — Our conviction"
-        text="Everyday health is full of small, recurring *needs* — in our routines, at every life stage, and for the pets we share our homes with. That is where every Nuvexa brand begins."
+        text="Every patient deserves medicine made with *care* — and every family, everyday health they can trust. That is where everything at Nuvexa begins."
         image={conviction.src}
         imageAlt={conviction.alt}
       />

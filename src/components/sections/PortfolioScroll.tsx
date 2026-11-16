@@ -86,7 +86,7 @@ export function PortfolioScroll() {
           </h2>
         </div>
         <p className="max-w-[38ch] text-ivory/78">
-          Pharmaceuticals at our core, four consumer brands and two emerging verticals — each built around a real, recurring need, from patients to the pets we love.
+          Alongside our pharmaceutical core: four consumer health brands and two emerging verticals, each built around a real, recurring need.
         </p>
       </div>
 

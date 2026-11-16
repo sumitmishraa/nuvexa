@@ -29,10 +29,10 @@
   },
   "home-insight": {
     "ratio": 1.5,
-    "alt": "A researcher taking notes as a woman describes her daily routine at home",
-    "fallback": "consumer-conversation",
-    "fallbackAlt": "Two women in conversation, one taking notes",
-    "prompt": "Consumer research at home: an Indian woman researcher with an open notebook listens to a middle-aged Indian woman describing her daily routine, both seated on a sofa in a bright living room, subject centred."
+    "alt": "A clinician talking with a patient about her care",
+    "fallback": "u246",
+    "fallbackAlt": "A clinician talking with a patient about her care",
+    "prompt": "A warm Indian woman doctor in a white coat talking with a middle-aged woman patient in a bright, calm consulting room, subject centred."
   },
   "home-technology": {
     "ratio": 1.5,
@@ -71,10 +71,10 @@
   },
   "value-consumer": {
     "ratio": 1.5,
-    "alt": "A woman at home reading the back of a product jar from a delivery box",
-    "fallback": "u253",
-    "fallbackAlt": "A specialist listening closely as a young woman talks",
-    "prompt": "A young Indian woman at home opening a plain unbranded delivery box on her dining table, reading the back of a plain unlabelled product jar, subject centred."
+    "alt": "A doctor listening to a patient at her bedside",
+    "fallback": "u249",
+    "fallbackAlt": "A doctor listening to a patient at her bedside",
+    "prompt": "An Indian doctor in a white coat listening attentively to a patient sitting up in a hospital bed, calm daylight, subject centred."
   },
   "value-trust": {
     "ratio": 1.5,
@@ -85,10 +85,10 @@
   },
   "value-execution": {
     "ratio": 1.5,
-    "alt": "A team planning a launch timeline on a wall of notes",
-    "fallback": "team-office",
-    "fallbackAlt": "A small team planning at a pinboard in a sunlit office",
-    "prompt": "An Indian team of three in an office planning a product launch on a wall of sticky notes arranged in a clear timeline, one person moving a note, subject centred."
+    "alt": "Technicians in protective suits working in a cleanroom",
+    "fallback": "cleanroom",
+    "fallbackAlt": "Technicians in protective suits working in a cleanroom",
+    "prompt": "Two technicians in white protective suits, hoods and masks working at stainless steel equipment in a bright pharmaceutical cleanroom, subject centred."
   },
   "value-innovation": {
     "ratio": 1.5,
@@ -99,10 +99,10 @@
   },
   "value-agility": {
     "ratio": 1.5,
-    "alt": "A team in a quick standing huddle around a laptop",
-    "fallback": "u191",
-    "fallbackAlt": "A team gathered around a laptop, solving a problem together",
-    "prompt": "Four Indian colleagues in a quick standing huddle around a laptop on a high table in a bright office, energetic and focused, subject centred."
+    "alt": "A team of scientists reviewing results together in a laboratory",
+    "fallback": "u37",
+    "fallbackAlt": "A team of scientists reviewing results together in a laboratory",
+    "prompt": "A small team of Indian scientists in lab coats and safety glasses reviewing a binder of results together at a laboratory bench, subject centred."
   },
   "value-longterm": {
     "ratio": 1.5,
@@ -246,10 +246,10 @@
   },
   "approach-insight": {
     "ratio": 1.5,
-    "alt": "A small group discussing a product around a table",
-    "fallback": "u140",
-    "fallbackAlt": "A small group discussing ideas around a table",
-    "prompt": "A small focus group of five Indian adults of different ages around a table sharing opinions about plain unlabelled product samples, a moderator taking notes, subject centred."
+    "alt": "A scientist studying a sample through a microscope",
+    "fallback": "microscope-study",
+    "fallbackAlt": "A scientist studying a sample through a microscope",
+    "prompt": "An Indian scientist in a lab coat studying a sample through a microscope in a bright laboratory, subject centred."
   },
   "approach-technology": {
     "ratio": 1.5,

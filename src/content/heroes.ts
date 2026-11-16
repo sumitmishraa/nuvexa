@@ -13,11 +13,17 @@ export const heroSizes = {
   rise: "(min-width: 1024px) 46vw, 100vw",
 } as const;
 
+/** The home hero's background still, and a loop over it when one exists (null: the still drifts slowly instead). */
+export const homeHero: { video: string | null; poster: string } = {
+  video: null,
+  poster: "/media/hero-scientist.webp",
+};
+
 /** The first-screen images of each page, warmed before the visitor arrives. */
 export const routeHeroes: Record<string, { src: string; sizes: string }[]> = {
-  "/": [{ src: "/media/pipette-plate.webp", sizes: heroSizes.home }],
+  "/": [{ src: homeHero.poster, sizes: heroSizes.home }],
   "/company": [{ src: "/media/company-hero.webp", sizes: heroSizes.split }],
-  "/brands": ["pharmaceuticals", "super-being", "super-titans", "modern-ayurveda", "rugd-men", "super-envi-intima", "pet-care"].map((name) => ({
+  "/brands": ["super-being", "super-titans", "rugd-men", "super-envi-intima", "modern-ayurveda", "pet-care"].map((name) => ({
     src: `/brands/${name}.webp`,
     sizes: heroSizes.mosaic,
   })),

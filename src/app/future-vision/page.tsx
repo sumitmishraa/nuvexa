@@ -6,7 +6,7 @@ import { JourneyScroll } from "@/components/sections/JourneyScroll";
 import { PageHero } from "@/components/sections/PageHero";
 import { Roadmap } from "@/components/sections/Roadmap";
 import { SectionLabel } from "@/components/ui/SectionLabel";
-import { getBrand } from "@/content/brands";
+import { pharma } from "@/content/pharma";
 import { vision } from "@/content/vision";
 import { slot } from "@/lib/slot";
 
@@ -18,7 +18,6 @@ export const metadata: Metadata = {
 };
 
 export default function FutureVisionPage() {
-  const pharma = getBrand("pharmaceuticals")!;
   return (
     <>
       <PageHero
@@ -44,9 +43,9 @@ export default function FutureVisionPage() {
               <p className="lede mb-10 text-ink-muted">{pharma.intro[1]}</p>
             </Reveal>
             <ul className="grid gap-px overflow-hidden rounded-[1.25rem] bg-ink/10 sm:grid-cols-2">
-              {pharma.focusAreas!.map((f) => (
-                <li key={f} className="bg-ivory p-6">
-                  <span className="display-md">{f}</span>
+              {pharma.focusAreas.map((f) => (
+                <li key={f.title} className="bg-ivory p-6">
+                  <span className="display-md">{f.title}</span>
                 </li>
               ))}
             </ul>

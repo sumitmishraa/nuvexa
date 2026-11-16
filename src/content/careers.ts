@@ -1,7 +1,7 @@
 export const careers = {
   heroTitle: "Work with us.",
   heroLede:
-    "We are building an entrepreneurial, execution-focused team committed to long-term value creation. If you want to build brands that genuinely help people — and grow while you do it — we would like to hear from you.",
+    "We are building an entrepreneurial, science-led team across pharmaceuticals and consumer health, committed to long-term value creation. If you want to help bring better medicines and trusted health products to people — and grow while you do it — we would like to hear from you.",
   culture:
     "At Nuvexa, our culture is entrepreneurial, execution-focused, consumer-led and committed to building responsibly for the long term. We foster a collaborative and inclusive environment where innovation thrives, empowering our teams to take bold initiatives, drive meaningful impact and grow both personally and professionally.",
   principles: [

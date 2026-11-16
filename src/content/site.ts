@@ -22,7 +22,6 @@ export const site = {
 /** Primary navigation, in the order the client specified. Contact lives in the header button, menu and footer. */
 export const nav = [
   { label: "Company", href: "/company", note: "Who we are" },
-  { label: "Pharmaceuticals", href: "/brands/pharmaceuticals", note: "Our core focus" },
   { label: "Our Brands", href: "/brands", note: "The portfolio" },
   { label: "Superbeing Nutrition", href: "/superbeing", note: "The founder's story" },
   { label: "Approach", href: "/approach", note: "How we build" },
@@ -32,6 +31,7 @@ export const nav = [
 ] as const;
 
 export const enquiryTypes = [
+  "Pharmaceutical partnerships",
   "Superbeing feedback & ideas",
   "Partnering & business development",
   "Investor relations",
@@ -43,8 +43,8 @@ export const enquiryTypes = [
 
 /** True, countable facts only — never invented metrics. */
 export const facts = [
-  { value: 4, label: "Consumer brands in the portfolio", note: "Superbeing Nutrition, Super Titans, RUGD Men and Super Envi Intima." },
-  { value: 7, label: "Brands & verticals in development", note: "Including Modern Ayurveda, Pet Care and Pharmaceuticals." },
+  { value: 4, label: "Consumer health brands", note: "Superbeing Nutrition, Super Titans, RUGD Men and Super Envi Intima." },
+  { value: 4, label: "Pharmaceutical focus areas", note: "Complex generics, biologics, biosimilars and biotechnology." },
   { value: 15, label: "Months developing Superbeing", note: "One year and three months of formulation work with a pharmaceutical-background professional." },
   { value: 3, label: "Phases in our long-term roadmap", note: "From digital-first commerce to advanced healthcare." },
 ] as const;
@@ -80,7 +80,7 @@ export const pillars = [
   {
     index: "01",
     title: "Science",
-    body: "Evidence-led formulation, standardised ingredients and responsible claims. Science is how we turn good intentions into products people can rely on.",
+    body: "Pharmaceutical science, evidence-led formulation and uncompromising quality. Science is how we turn good intentions into medicines and products people can rely on.",
   },
   {
     index: "02",
