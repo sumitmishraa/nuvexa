@@ -11,7 +11,7 @@ import { heroSizes, homeHero } from "@/content/heroes";
 import { pharma } from "@/content/pharma";
 import { EASE_OUT_EXPO } from "@/lib/cn";
 
-const SEAL = "Pharmaceuticals · Science · Quality · Trust · ";
+const SEAL = "Pharmaceuticals · Research · Quality · Trust · ";
 
 /**
  * The first screen: a scientist at work behind a plain statement of who Nuvexa is, two clear next steps,
@@ -68,11 +68,11 @@ export function HomeHero() {
             <span className="h-px w-10 bg-brass" />
             Nuvexa Biotech, Bengaluru
           </motion.p>
-          <SplitText as="h1" trigger="load" delay={0.25} className="display-hero text-[clamp(2.5rem,5.2vw,6rem)]! leading-[1.02]!" text={"Science-led medicines.\n*Trusted everyday health.*"} />
+          <SplitText as="h1" trigger="load" delay={0.25} className="display-hero text-[clamp(2.5rem,5.2vw,6rem)]! leading-[1.1]!" text={"Research-driven medicines.\n*Trusted everyday health.*"} />
 
           <div className="mt-9 grid grid-cols-12 items-end gap-x-6 gap-y-7">
             <motion.p className="lede col-span-12 max-w-[50ch] text-ivory/85 lg:col-span-6" {...appear(0.85)}>
-              Nuvexa is a pharmaceutical company built on quality, innovation and meaningful patient needs — with consumer health brands people
+              Nuvexa is a pharmaceutical company built on quality, innovation and meaningful patient needs, with consumer health brands people
               use every day.
             </motion.p>
             <motion.div className="col-span-12 flex flex-wrap items-center gap-4 lg:col-span-6 lg:justify-end" {...appear(1)}>

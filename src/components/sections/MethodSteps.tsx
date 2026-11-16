@@ -23,7 +23,7 @@ export function MethodSteps() {
         {approach.method.map((m, i) => (
           <li key={m.step} className="group relative border-b border-ink/12 pl-10 last:border-b-0 md:pl-14">
             <span aria-hidden="true" className="absolute left-0 top-12 h-[13px] w-[13px] rounded-full border border-brass bg-ivory" />
-            <div className="grid grid-cols-12 items-center gap-x-6 gap-y-5 py-9 md:py-10">
+            <div className="grid grid-cols-12 items-start gap-x-6 gap-y-5 py-9 md:py-10">
               <Reveal className="col-span-12 grid grid-cols-12 gap-x-6 gap-y-3 md:col-span-8" y={20}>
                 <span className="col-span-2 font-serif text-4xl text-brass md:col-span-2 md:text-5xl">{m.step}</span>
                 <div className="col-span-10">

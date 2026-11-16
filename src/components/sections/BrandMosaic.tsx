@@ -32,7 +32,7 @@ export function BrandMosaic() {
       <motion.div className="col-span-2 flex flex-col justify-between rounded-[1rem] bg-ink-soft p-5 md:p-7" {...arrive(slugs.length)}>
         <Mark className="h-7 w-7 text-brass" strokeWidth={1.2} />
         <p className="display-md">
-          Everyday health, <em className="italic text-brass-soft">alongside our pharmaceutical core.</em>
+          Everyday health, alongside our pharmaceutical core.
         </p>
       </motion.div>
     </div>

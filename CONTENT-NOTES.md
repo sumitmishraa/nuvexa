@@ -61,3 +61,39 @@ Please also confirm that the people pictured are acceptable for a health brand's
 | `team-office.webp` | Careers hero | Sable Flow | [Unsplash](https://unsplash.com/photos/people-in-sunlit-office-workspace-meeting-KHpjeuaWOec) |
 | `team-review.webp` | Careers hero | Vitaly Gariev | [Unsplash](https://unsplash.com/photos/two-people-looking-at-data-on-a-laptop-screen-t3RACFVYRlk) |
 | `office-conversation.webp` | Contact hero | TienDat Nguyen | [Unsplash](https://unsplash.com/photos/2-women-sitting-on-black-sofa-WY5kuE0R4-k) |
+
+### People photography, updated 16 Nov 2026
+Every photograph that shows people now shows Indian people. These 28 replace the earlier stand-ins (masters in `assets/photos/in-<slot>.jpg`). Sources are Unsplash ([licence](https://unsplash.com/license)) and Pexels ([licence](https://www.pexels.com/license/)); both allow free commercial use without attribution, and neither includes model releases. As above, they are illustrative and do not show Nuvexa's own people or premises.
+
+| File | Slot | What it shows | Source |
+|---|---|---|---|
+| `in-home-insight.jpg` | home-insight | A doctor checking an older patient's breathing during a consultation | [Pexels](https://www.pexels.com/photo/18870282/) |
+| `in-home-brand.jpg` | home-brand | A colleague mapping a plan on a whiteboard while a teammate listens | [Pexels](https://www.pexels.com/photo/7581003/) |
+| `in-company-story.jpg` | company-story | Colleagues taking notes together at a planning meeting | [Pexels](https://www.pexels.com/photo/7580755/) |
+| `in-value-consumer.jpg` | value-consumer | A doctor listening to a patient's breathing with a stethoscope | [Pexels](https://www.pexels.com/photo/14558557/) |
+| `in-value-trust.jpg` | value-trust | A scientist checking samples carefully at a laboratory bench | [Pexels](https://www.pexels.com/photo/14797915/) |
+| `in-value-innovation.jpg` | value-innovation | Two young researchers running an experiment together in a laboratory | [Pexels](https://www.pexels.com/photo/37765899/) |
+| `in-value-agility.jpg` | value-agility | A team talking through progress at a planning board | [Pexels](https://www.pexels.com/photo/7581110/) |
+| `in-value-longterm.jpg` | value-longterm | Colleagues reviewing plans together in a bright office | [Pexels](https://www.pexels.com/photo/7580651/) |
+| `in-titans-band.jpg` | titans-band | A mother laughing with her young daughter on a sofa at home | [Unsplash](https://images.unsplash.com/photo-1589169011402-8b2cbd1ee593) |
+| `in-sb-origin.jpg` | sb-origin | A pharmacist reading the label on a product in a pharmacy | [Unsplash](https://images.unsplash.com/photo-1652376252883-1e3ebe136844) |
+| `in-lens-people.jpg` | lens-people | Two friends laughing together over a phone | [Unsplash](https://images.unsplash.com/photo-1625463006115-09f08489f591) |
+| `in-lens-measured.jpg` | lens-measured | A team reviewing printed charts during a meeting | [Pexels](https://www.pexels.com/photo/7580635/) |
+| `in-approach-need.jpg` | approach-need | A doctor checking a patient's blood pressure in a clinic | [Pexels](https://www.pexels.com/photo/14558560/) |
+| `in-method-need.jpg` | method-need | Two colleagues reading through notes together on a sofa | [Pexels](https://www.pexels.com/photo/7580781/) |
+| `in-method-reason.jpg` | method-reason | A researcher in his laboratory among instruments | [Unsplash](https://images.unsplash.com/photo-1581092916357-5896ebc48073) |
+| `in-method-listen.jpg` | method-listen | Two colleagues reading closely through feedback on a screen | [Unsplash](https://images.unsplash.com/photo-1765561667528-28e39c6174dd) |
+| `in-approach-science.jpg` | approach-science | A researcher in gloves and a hairnet holding up a sample in a laboratory | [Unsplash](https://images.unsplash.com/photo-1668243304131-87cb6634f85b) |
+| `in-approach-brand.jpg` | approach-brand | A team lead presenting a plan at a whiteboard to colleagues | [Pexels](https://www.pexels.com/photo/18870192/) |
+| `in-step-insight.jpg` | step-insight | A team around a conference table reviewing research on laptops | [Unsplash](https://images.unsplash.com/photo-1781246212288-7fa538344718) |
+| `in-step-manufacturing.jpg` | step-manufacturing | A production worker in a hairnet at a medical products manufacturing line | [Unsplash](https://images.unsplash.com/photo-1741591644946-6e57e11865b1) |
+| `in-inv-numbers.jpg` | inv-numbers | A team going through figures in folders during a meeting | [Pexels](https://www.pexels.com/photo/7581119/) |
+| `in-careers-team.jpg` | careers-team | A team in conversation in an open office | [Pexels](https://www.pexels.com/photo/7581120/) |
+| `in-careers-one.jpg` | careers-one | Two colleagues working side by side at their laptops | [Unsplash](https://images.unsplash.com/photo-1653923787829-bfdebad30bb6) |
+| `in-principle-outcome.jpg` | principle-outcome | A colleague briefing teammates in the office | [Pexels](https://www.pexels.com/photo/7581114/) |
+| `in-principle-consumer.jpg` | principle-consumer | Two men talking over tea in a kitchen | [Unsplash](https://images.unsplash.com/photo-1652428819364-3746be9f3955) |
+| `in-principle-discipline.jpg` | principle-discipline | An analyst working carefully through his laptop | [Unsplash](https://images.unsplash.com/photo-1758728119257-d88284600a48) |
+| `in-principle-together.jpg` | principle-together | Colleagues working side by side on laptops | [Unsplash](https://images.unsplash.com/photo-1681164315051-add1906a9b07) |
+| `in-contact-hero.jpg` | contact-hero | Three colleagues talking beside tall office windows | [Pexels](https://www.pexels.com/photo/7580644/) |
+
+Small print to check: the Superbeing origin photo (`in-sb-origin.jpg`) shows a pharmacist whose vest carries a small organisation logo; swap it if the client prefers no third-party marks.

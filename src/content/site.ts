@@ -1,9 +1,9 @@
 export const site = {
   name: "Nuvexa",
   legalName: "Nuvexa Biotech Pvt. Ltd.",
-  tagline: "Science-led pharmaceuticals. Trusted everyday health.",
+  tagline: "Research-driven pharmaceuticals. Trusted everyday health.",
   description:
-    "Nuvexa Biotech is a science-led pharmaceutical and consumer health company. Pharmaceuticals are at our core, alongside trusted brands across nutrition, grooming, intimate wellbeing, modern Ayurveda and pet care.",
+    "Nuvexa Biotech is a research-driven pharmaceutical and consumer health company. Pharmaceuticals are at our core, alongside trusted brands across nutrition, grooming, intimate wellbeing, modern Ayurveda and pet care.",
   url: "https://www.nuvexabio.com",
   year: "2026",
   emails: {
@@ -52,7 +52,7 @@ export const facts = [
 export const values = [
   {
     title: "Consumer focus",
-    body: "Every decision starts with a real person and a real, recurring need — not with a category we want to enter. We listen first, and we design around routines people actually live.",
+    body: "Every decision starts with a real person and a real, recurring need, not with a category we want to enter. We listen first, and we design around routines people actually live.",
   },
   {
     title: "Trust and quality",
@@ -64,7 +64,7 @@ export const values = [
   },
   {
     title: "Responsible innovation",
-    body: "We innovate for the long term — evidence-led, claim-conscious and respectful of the people who use what we make. Novelty is never a substitute for usefulness.",
+    body: "We innovate for the long term: evidence-led, claim-conscious and respectful of the people who use what we make. Novelty is never a substitute for usefulness.",
   },
   {
     title: "Agility",
@@ -72,20 +72,20 @@ export const values = [
   },
   {
     title: "Long-term value creation",
-    body: "We are building enduring brands and a durable company — value for consumers first, and through that, for our partners and shareholders.",
+    body: "We are building enduring brands and a durable company: value for consumers first, and through that, for our partners and shareholders.",
   },
 ] as const;
 
 export const pillars = [
   {
     index: "01",
-    title: "Science",
-    body: "Pharmaceutical science, evidence-led formulation and uncompromising quality. Science is how we turn good intentions into medicines and products people can rely on.",
+    title: "Research",
+    body: "Pharmaceutical research, evidence-led formulation and uncompromising quality. Research is how we turn good intentions into medicines and products people can rely on.",
   },
   {
     index: "02",
     title: "Consumer insight",
-    body: "We study the everyday — routines, life stages, frustrations and unmet needs — and let real problems decide what deserves to exist.",
+    body: "We study everyday routines, life stages, frustrations and unmet needs, and let real problems decide what deserves to exist.",
   },
   {
     index: "03",

@@ -70,7 +70,7 @@ export function Header() {
         )}
       >
         <div className="container-x flex h-18 items-center justify-between md:h-20">
-          <Link href="/" aria-label="Nuvexa — home" className="text-[0.95rem]">
+          <Link href="/" aria-label="Nuvexa home" className="text-[0.95rem]">
             <Wordmark />
           </Link>
 

@@ -14,12 +14,12 @@ const sections = [
 
 export default function TermsPage() {
   return (
-    <section data-theme="light" className="bg-ivory pb-20 pt-40 text-ink md:pt-48">
+    <section data-theme="light" className="bg-ivory pb-24 pt-40 text-ink md:pt-48">
       <div className="container-x grid grid-cols-12 gap-6">
         <div className="col-span-12 md:col-span-4">
           <p className="eyebrow mb-6 text-brass">Legal</p>
           <h1 className="display-lg">Terms of Service</h1>
-          <p className="mt-6 rounded-full border border-clay/40 px-4 py-2 text-[0.75rem] text-clay md:inline-block">Draft — pending legal review</p>
+          <p className="mt-6 rounded-full border border-clay/40 px-4 py-2 text-[0.75rem] text-clay md:inline-block">Draft: pending legal review</p>
         </div>
         <div className="col-span-12 space-y-12 md:col-span-7 md:col-start-6">
           {sections.map((s, i) => (

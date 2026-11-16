@@ -17,12 +17,14 @@ export function SplitText({
   className,
   trigger = "view",
   delay = 0,
+  id,
 }: {
   text: string;
   as?: Tag;
   className?: string;
   trigger?: "load" | "view";
   delay?: number;
+  id?: string;
 }) {
   const ready = useSiteReady();
   const lines = text.split("\n");
@@ -36,6 +38,7 @@ export function SplitText({
 
   return (
     <Tag
+      id={id}
       className={cn(className)}
       initial="hidden"
       {...animateProps}

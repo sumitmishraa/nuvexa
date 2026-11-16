@@ -6,6 +6,7 @@ import { AnimatePresence, LayoutGroup, motion } from "motion/react";
 import { BrandStage, useBrandReveal } from "@/components/ui/BrandStage";
 import { Mark } from "@/components/ui/Logo";
 import { brandHref, brands, type Brand } from "@/content/brands";
+import { SectionLabel } from "@/components/ui/SectionLabel";
 import { EASE_OUT_EXPO, cn, pad } from "@/lib/cn";
 
 const filters = [
@@ -50,7 +51,7 @@ function InviteCard() {
       <div>
         <p className="eyebrow mb-4 text-ivory/80">Build with us</p>
         <p className="display-md">
-          Partner on what <em className="italic text-brass-soft">comes next.</em>
+          Partner on what comes next.
         </p>
         <p className="mt-6 inline-flex items-center gap-3 text-[0.86rem] font-semibold">
           Start a conversation
@@ -67,15 +68,15 @@ export function BrandIndex() {
   const visible = brands.filter((b) => filter === "all" || b.kind === filter);
 
   return (
-    <section data-theme="light" aria-label="Brand portfolio" className="bg-ivory pb-20 pt-20 text-ink md:pb-28 md:pt-28">
+    <section data-theme="light" aria-label="Brand portfolio" className="bg-ivory pb-24 pt-24 text-ink md:pb-36 md:pt-36">
       <div className="container-x">
         <div className="mb-14 flex flex-wrap items-end justify-between gap-6 border-b border-ink/10 pb-8">
           <div>
-            <p className="eyebrow mb-4 text-ink-muted">
-              <span className="text-brass">01</span> — The portfolio
-            </p>
+            <SectionLabel index="01" className="mb-7 text-ink-muted">
+              The portfolio
+            </SectionLabel>
             <h2 className="display-lg max-w-[18ch]">
-              Six ways we serve <em className="italic text-brass">everyday health.</em>
+              Six ways we serve everyday health.
             </h2>
           </div>
           <LayoutGroup>

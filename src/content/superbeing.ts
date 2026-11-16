@@ -8,14 +8,14 @@ export const superbeing = {
   image: "/media/sb-hero.webp",
   imageAlt: "A scoop of fine nutrition powder beside an unlabelled jar on a pale stone surface.",
 
-  promise: "Hyper-specific, problem-solving products — not the same formulation with a different brand cover.",
+  promise: "Hyper-specific, problem-solving products, not the same formulation with a different brand cover.",
   headline: "Your need is specific. Your nutrition should be too.",
 
   origin: {
     eyebrow: "Where it began",
-    text: "Superbeing Nutrition began with a personal search. I wanted products developed around *specific* needs — to understand what each product was intended to support, why its ingredients were chosen and how it would fit into everyday life.",
+    text: "Superbeing Nutrition began with a personal search for products developed around *specific* needs.",
     body: [
-      "There were plenty of choices, but finding clear answers was difficult.",
+      "I wanted to understand what each product was intended to support, why its ingredients were chosen and how it would fit into everyday life. There were plenty of choices, but finding clear answers was difficult.",
       "I repeatedly encountered familiar formulations under different brand names. It made me ask:",
     ],
     question: "What would we formulate if we started with the person's actual need?",
@@ -32,13 +32,13 @@ export const superbeing = {
   },
 
   ingredients: {
-    title: "Patented ingredients, selected for their science.",
+    title: "Patented ingredients, selected on research.",
     intro:
-      "In selected formulations, we use patented, branded ingredients — ingredients their developers have standardised to defined specifications and studied in published human clinical trials. That standardisation also supports consistency from batch to batch.",
+      "In selected formulations, we use patented, branded ingredients: ingredients their developers have standardised to defined specifications and studied in published human clinical trials. That standardisation also supports consistency from batch to batch.",
     notForTheLabel:
-      "We did not choose them for the name on the label. For each one, we reviewed the clinical research behind it — and considered whether it suited the product's purpose and worked well with the rest of the formulation. Where the research identifies an effective amount, we formulated to reflect it.",
+      "We did not choose them for the name on the label. For each one, we reviewed the clinical research behind it, and considered whether it suited the product's purpose and worked well with the rest of the formulation. Where the research identifies an effective amount, we formulated to reflect it.",
     lenses: [
-      { title: "The amount studied", body: "What quantity the research actually examined — so the formulation can reflect it." },
+      { title: "The amount studied", body: "What quantity the research actually examined, so the formulation can reflect it." },
       { title: "Who it was studied in", body: "The people the research involved, and whether they match who the product is for." },
       { title: "What was measured", body: "The outcomes the studies looked at, read plainly rather than stretched." },
       { title: "Fit with the formulation", body: "Whether it suits the product's purpose and works well with everything else in it." },
@@ -50,7 +50,7 @@ export const superbeing = {
   biology: {
     title: "Built on biology, not just a label.",
     intro:
-      "Some of our products are formulated specifically for women or for men. A women's product is not a men's product in different packaging — or the reverse.",
+      "Some of our products are formulated specifically for women or for men. A women's product is not a men's product in different packaging, or the reverse.",
     differs: [
       "Hormonal patterns",
       "Body composition and muscle mass",
@@ -104,7 +104,7 @@ export const superbeing = {
 
   feedback: {
     title: "Honest feedback makes us better.",
-    intro: "We want to hear what worked — and what disappointed you.",
+    intro: "We want to hear what worked, and what disappointed you.",
     questions: [
       "Were the instructions clear?",
       "Was preparation convenient?",
@@ -120,7 +120,7 @@ export const superbeing = {
     title: "Clear information. Realistic expectations.",
     intro: "You should understand:",
     points: [
-      "Who a product is intended for — and, for women's or men's products, why.",
+      "Who a product is intended for and, for women's or men's products, why.",
       "Why its key ingredients were selected.",
       "How to use it appropriately.",
       "What benefits are supported by evidence.",
@@ -136,7 +136,7 @@ export const superbeing = {
     title: "Our commitment",
     body: "We are building a focused range in which every product earns its place through a clearly defined purpose.",
     founderNote:
-      "As a founder, my ambition is to build the brand I was searching for: thoughtful formulations, understandable science, dependable support and a willingness to keep improving.",
+      "As a founder, my ambition is to build the brand I was searching for: thoughtful formulations, understandable research, dependable support and a willingness to keep improving.",
     signoff: ["Built around your needs.", "Shaped by your voice.", "Formulated with purpose."],
     invitation: "Explore our products. Share your experience. Help shape what comes next.",
   },
@@ -145,7 +145,7 @@ export const superbeing = {
   standard: [
     { value: "15", unit: "months", title: "Of purposeful development", body: "One year and three months developing our formulations." },
     { value: "Pharma", unit: "", title: "Pharmaceutical expertise", body: "Formulated with a professional from a pharmaceutical background." },
-    { value: "®", unit: "", title: "Patented ingredients", body: "In selected formulations — standardised and studied in published human clinical trials." },
+    { value: "®", unit: "", title: "Patented ingredients", body: "In selected formulations, standardised and studied in published human clinical trials." },
     { value: "♀ ♂", unit: "", title: "Women's & men's formulas", body: "Where a product is for women or for men, the reason is inside the formula." },
   ],
 } as const;

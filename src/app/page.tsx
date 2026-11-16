@@ -31,10 +31,10 @@ export default function HomePage() {
       {/* Pharmaceuticals: the core */}
       <section data-theme="dark" aria-labelledby="pharma-heading" className="bg-ink text-ivory">
         <div className="grid md:grid-cols-2">
-          <div className="flex flex-col items-start justify-center px-[var(--gutter)] py-14 md:py-20">
+          <div className="flex flex-col items-start justify-center px-[var(--gutter)] py-14 md:py-24">
             <p className="eyebrow mb-6 text-brass">Our core</p>
             <h2 id="pharma-heading" className="display-lg">
-              Science-led <em className="italic text-brass-soft">pharmaceuticals.</em>
+              Research-driven pharmaceuticals.
             </h2>
             <Reveal delay={0.1}>
               <p className="lede mb-8 mt-6 max-w-[46ch] text-ivory/82">{pharma.intro[0]}</p>
@@ -59,29 +59,30 @@ export default function HomePage() {
       </section>
 
       <WordReveal
-        eyebrow="01 — Our conviction"
-        text="Every patient deserves medicine made with *care* — and every family, everyday health they can trust. That is where everything at Nuvexa begins."
+        eyebrow="Our conviction"
+        index="01"
+        text="Every patient deserves medicine made with care, and every family, everyday health they can trust."
         image={conviction.src}
         imageAlt={conviction.alt}
       />
 
       {/* Who we are */}
-      <section data-theme="light" aria-labelledby="about-heading" className="bg-ivory pb-20 text-ink md:pb-28">
+      <section data-theme="light" aria-labelledby="about-heading" className="bg-ivory pb-24 text-ink md:pb-36">
         <div className="container-x">
           <div className="grid grid-cols-12 gap-x-6 gap-y-8 border-t border-ink/12 pt-12 md:pt-16">
             <div className="col-span-12 lg:col-span-6">
-              <SectionLabel index="02" className="mb-8 text-ink-muted">
+              <SectionLabel index="02" className="mb-7 text-ink-muted">
                 Who we are
               </SectionLabel>
-              <SplitText as="h2" className="display-xl" text={"A house of brands\nfor *everyday health.*"} />
+              <SplitText as="h2" id="about-heading" className="display-lg max-w-[18ch]" text={"A house of brands\nfor *everyday health.*"} />
             </div>
-            <div className="col-span-12 lg:col-span-6 lg:pt-14">
+            <div className="col-span-12 lg:col-span-6 lg:pt-12">
               <div className="grid gap-6">
                 <Reveal>
                   <p className="body-copy text-ink-muted">
-                    Nuvexa Biotech Pvt. Ltd. is a science-led pharmaceutical and consumer health company. Pharmaceuticals are at our core. Alongside them,
-                    we build differentiated brands around real, recurring needs — in nutrition, kids&rsquo; nutrition, men&rsquo;s grooming, intimate
-                    wellbeing, modern Ayurveda and pet care — and we design every one of them to earn trust over time.
+                    Nuvexa Biotech Pvt. Ltd. is a research-driven pharmaceutical and consumer health company. Pharmaceuticals are at our core. Alongside them,
+                    we build differentiated brands around real, recurring needs in nutrition, kids&rsquo; nutrition, men&rsquo;s grooming, intimate
+                    wellbeing, modern Ayurveda and pet care, and we design every one of them to earn trust over time.
                   </p>
                 </Reveal>
                 <Reveal delay={0.1}>
@@ -108,10 +109,10 @@ export default function HomePage() {
           <div className="relative aspect-[3/2] overflow-hidden">
             <RevealPhoto src={flagship.src} alt={flagship.alt} sizes="(min-width: 768px) 50vw, 100vw" />
           </div>
-          <div className="flex flex-col items-start justify-center px-[var(--gutter)] py-14 md:py-20">
+          <div className="flex flex-col items-start justify-center px-[var(--gutter)] py-14 md:py-24">
             <p className="eyebrow mb-6 text-brass">Our flagship</p>
             <h2 id="flagship-heading" className="display-lg">
-              Your need is specific. <em className="italic text-brass-soft">Your nutrition should be too.</em>
+              Your need is specific. Your nutrition should be too.
             </h2>
             <Reveal delay={0.1}>
               <p className="lede mb-9 mt-6 max-w-[44ch] text-ivory/82">{sb.promise}</p>
@@ -133,16 +134,16 @@ export default function HomePage() {
       </section>
 
       {/* Founder's note */}
-      <section data-theme="dark" aria-labelledby="founder-heading" className="bg-ink-soft py-20 text-ivory md:py-28">
+      <section data-theme="dark" aria-labelledby="founder-heading" className="bg-ink-soft py-24 text-ivory md:py-36">
         <div className="container-x grid grid-cols-12 gap-6">
           <div className="col-span-12 md:col-span-2">
             <Mark className="h-12 w-12 text-brass" strokeWidth={1.1} />
           </div>
           <div className="col-span-12 md:col-span-9">
-            <p className="eyebrow mb-10 text-ivory/78" id="founder-heading">
+            <p className="eyebrow mb-6 text-ivory/78" id="founder-heading">
               A note from our founder
             </p>
-            <SplitText as="p" className="display-xl" text={"“We do not start\nwith products.\n*We start with problems.*”"} />
+            <SplitText as="p" className="display-lg" text={"“We do not start with products.\n*We start with problems.*”"} />
             <Reveal delay={0.2} className="mt-12 flex flex-wrap items-center justify-between gap-6 border-t border-ivory/10 pt-8">
               <div>
                 <p className="text-lg">{company.founder.name}</p>

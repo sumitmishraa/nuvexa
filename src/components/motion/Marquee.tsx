@@ -7,7 +7,7 @@ export function Marquee({ items, className, duration = 48 }: { items: readonly s
     <ul aria-hidden={hidden || undefined} className="flex shrink-0 items-center">
       {items.map((item) => (
         <li key={item} className="flex items-center">
-          <span className="display-lg whitespace-nowrap px-8 italic md:px-12">{item}</span>
+          <span className="display-lg whitespace-nowrap px-8 md:px-12">{item}</span>
           <Mark className="h-6 w-6 text-brass md:h-8 md:w-8" strokeWidth={1.2} />
         </li>
       ))}

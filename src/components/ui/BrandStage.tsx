@@ -105,7 +105,7 @@ export function BrandStage({
               isLogo ? "inset-[9%] group-hover/stage:scale-[1.04]" : "inset-0 group-hover/stage:scale-[1.06]",
             )}
           >
-            <Photo src={brand.logo} alt={isLogo ? `${brand.name} logo` : brand.imageAlt ?? `${brand.name} — ${brand.category}`} sizes={sizes} priority={priority} contain={isLogo} />
+            <Photo src={brand.logo} alt={isLogo ? `${brand.name} logo` : brand.imageAlt ?? `${brand.name}, ${brand.category}`} sizes={sizes} priority={priority} contain={isLogo} />
           </div>
         </motion.div>
 

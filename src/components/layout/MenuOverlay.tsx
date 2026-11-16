@@ -75,7 +75,7 @@ export function MenuOverlay({ open, onClose }: { open: boolean; onClose: () => v
                     >
                       <Link href={item.href} onClick={onClose} className="group flex items-baseline gap-5 py-1.5">
                         <span className="eyebrow w-8 shrink-0 text-brass">{pad(i)}</span>
-                        <span className="text-[clamp(2.4rem,6vw,5.2rem)] font-serif leading-[1.02] transition-[transform,color] duration-500 ease-[var(--ease-out-expo)] group-hover:translate-x-3 group-hover:italic group-hover:text-brass-soft">
+                        <span className="text-[clamp(2.4rem,6vw,5.2rem)] font-serif leading-[1.1] transition-[transform,color] duration-500 ease-[var(--ease-out-expo)] group-hover:translate-x-3 group-hover:text-brass-soft">
                           {item.label}
                         </span>
                         <span className="eyebrow hidden translate-y-1 text-ivory/0 transition-colors duration-500 group-hover:text-ivory/78 md:inline">

@@ -1,7 +1,7 @@
 export const careers = {
   heroTitle: "Work with us.",
   heroLede:
-    "We are building an entrepreneurial, science-led team across pharmaceuticals and consumer health, committed to long-term value creation. If you want to help bring better medicines and trusted health products to people — and grow while you do it — we would like to hear from you.",
+    "We are building an entrepreneurial, research-driven team across pharmaceuticals and consumer health, committed to long-term value creation. If you want to help bring better medicines and trusted health products to people, and grow while you do it, we would like to hear from you.",
   culture:
     "At Nuvexa, our culture is entrepreneurial, execution-focused, consumer-led and committed to building responsibly for the long term. We foster a collaborative and inclusive environment where innovation thrives, empowering our teams to take bold initiatives, drive meaningful impact and grow both personally and professionally.",
   principles: [
@@ -19,13 +19,13 @@ export const careers = {
     },
     {
       title: "Grow together",
-      body: "Collaborative, inclusive and generous with knowledge — we want people to leave every year more capable than they arrived.",
+      body: "Collaborative, inclusive and generous with knowledge. We want people to leave every year more capable than they arrived.",
     },
   ],
   lookingFor: [
     "Builders who enjoy ambiguity and early-stage momentum",
     "Consumer-obsessed thinkers with strong judgement",
     "People who combine creativity with disciplined execution",
-    "Curious minds across brand, digital commerce, product, science and operations",
+    "Curious minds across brand, digital commerce, product, research and operations",
   ],
 } as const;

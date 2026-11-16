@@ -13,7 +13,7 @@ type Photo = { src: string; alt: string; position?: string };
 
 type Copy = {
   eyebrow: string;
-  /** Lines separated by "\n"; wrap a phrase in *asterisks* for the brass italic accent. */
+  /** Lines separated by "\n"; asterisk markers are ignored (no italic accents). */
   title: string;
   lede: string;
 };
@@ -43,7 +43,7 @@ function useEntrance() {
 function Eyebrow({ text, dark, delay = 0 }: { text: string; dark?: boolean; delay?: number }) {
   const { enter } = useEntrance();
   return (
-    <motion.p className={cn("eyebrow mb-7 flex items-center gap-3", dark ? "text-ivory/80" : "text-ink-muted")} {...enter({ opacity: 0, y: 14 }, { opacity: 1, y: 0 }, 1, delay)}>
+    <motion.p className={cn("eyebrow mb-8 flex items-center gap-3", dark ? "text-ivory/80" : "text-ink-muted")} {...enter({ opacity: 0, y: 14 }, { opacity: 1, y: 0 }, 1, delay)}>
       <span className="h-px w-10 bg-brass" />
       {text}
     </motion.p>
@@ -72,7 +72,7 @@ function Split({ eyebrow, title, lede, photo }: Copy & { photo: Photo }) {
         <div className="col-span-12 md:col-span-6">
           <Eyebrow text={eyebrow} />
           <SplitText as="h1" trigger="load" delay={0.15} text={title} className="display-xl" />
-          <Lede text={lede} className="mt-8 max-w-[52ch]" />
+          <Lede text={lede} className="mt-8 max-w-[48ch]" />
         </div>
         <motion.div
           className="relative col-span-12 aspect-[3/2] overflow-hidden rounded-[1.5rem] bg-ivory-deep md:col-span-6"
@@ -96,7 +96,7 @@ function Mosaic({ eyebrow, title, lede, visual }: Copy & { visual?: React.ReactN
           <Eyebrow text={eyebrow} dark />
           <SplitText as="h1" trigger="load" delay={0.1} text={title} className="display-xl" />
         </div>
-        <Lede text={lede} dark delay={0.5} className="col-span-12 lg:col-span-5" />
+        <Lede text={lede} dark delay={0.5} className="col-span-12 max-w-[46ch] lg:col-span-5" />
       </div>
       <div className="container-x">{visual}</div>
     </section>
@@ -113,7 +113,7 @@ function Grow({ eyebrow, title, lede, photo }: Copy & { photo: Photo }) {
           <Eyebrow text={eyebrow} />
           <SplitText as="h1" trigger="load" delay={0.1} text={title} className="display-xl" />
         </div>
-        <Lede text={lede} delay={0.5} className="col-span-12 lg:col-span-4" />
+        <Lede text={lede} delay={0.5} className="col-span-12 max-w-[46ch] lg:col-span-4" />
       </div>
       <div className="container-x">
         <motion.div
@@ -141,7 +141,7 @@ function Trio({ eyebrow, title, lede, photos }: Copy & { photos: Photo[] }) {
         <div className="col-span-12 md:col-span-5">
           <Eyebrow text={eyebrow} />
           <SplitText as="h1" trigger="load" delay={0.15} text={title} className="display-xl" />
-          <Lede text={lede} className="mt-8" />
+          <Lede text={lede} className="mt-8 max-w-[48ch]" />
         </div>
         <div className="col-span-12 grid grid-cols-2 gap-3 md:col-span-7 md:gap-4">
           {photos.map((photo, i) => (

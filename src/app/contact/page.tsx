@@ -19,10 +19,10 @@ export default function ContactPage() {
       variant="rise"
       eyebrow="Contact"
       title={"Let's start a\n*conversation.*"}
-      lede="For pharmaceutical partnerships and business development, investor relations, media, medical information, careers or general questions — we would be glad to hear from you, here in Bengaluru."
+      lede="Write to us about pharmaceutical partnerships and business development, investor relations, media, medical information, careers or general questions. We would be glad to hear from you, here in Bengaluru."
       photos={[slot("contact-hero")]}
     />
-    <section data-theme="light" className="bg-ivory pb-20 pt-14 text-ink md:pb-28 md:pt-20">
+    <section data-theme="light" className="bg-ivory pb-24 pt-14 text-ink md:pb-36 md:pt-24">
       <div className="container-x grid grid-cols-12 gap-x-6 gap-y-16">
         <div className="col-span-12 lg:col-span-5">
           <Reveal>
@@ -66,7 +66,7 @@ export default function ContactPage() {
                   <br />
                   {site.address.line2}
                   <br />
-                  {site.address.city} – {site.address.postcode}
+                  {site.address.city} {site.address.postcode}
                   <br />
                   {site.address.region}
                 </address>

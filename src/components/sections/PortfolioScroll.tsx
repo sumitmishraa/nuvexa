@@ -24,7 +24,8 @@ function PortfolioCard({ brand, index }: { brand: Brand; index: number }) {
         <div className="mt-5 flex items-start justify-between gap-4">
           <div>
             <p className="eyebrow mb-2 text-ivory/78">
-              {pad(index + 1)} — {brand.lifeStage}
+              {pad(index + 1)}
+              <span className="ml-3">{brand.lifeStage}</span>
             </p>
             <h3 className="display-md transition-colors duration-500 group-hover:text-brass-soft">{brand.name}</h3>
             <p className="mt-2 max-w-[34ch] text-[0.95rem] italic text-ivory/78">&ldquo;{brand.quote}&rdquo;</p>
@@ -75,14 +76,14 @@ export function PortfolioScroll() {
   };
 
   return (
-    <section data-theme="dark" aria-labelledby="portfolio-heading" className="bg-ink py-20 text-ivory md:py-28">
+    <section data-theme="dark" aria-labelledby="portfolio-heading" className="bg-ink py-24 text-ivory md:py-36">
       <div className="container-x mb-10 flex flex-wrap items-end justify-between gap-6 md:mb-12">
         <div>
-          <SectionLabel index="03" className="mb-5 text-ivory/75">
+          <SectionLabel index="03" className="mb-7 text-ivory/75">
             The portfolio
           </SectionLabel>
           <h2 id="portfolio-heading" className="display-lg">
-            Brands for <em className="italic text-brass-soft">every life stage.</em>
+            Brands for every life stage.
           </h2>
         </div>
         <p className="max-w-[38ch] text-ivory/78">

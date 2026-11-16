@@ -9,6 +9,7 @@ import { Roadmap } from "@/components/sections/Roadmap";
 import { StatBand } from "@/components/sections/StatBand";
 import { Mark } from "@/components/ui/Logo";
 import { Photo } from "@/components/ui/Photo";
+import { SectionHead } from "@/components/ui/SectionHead";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { company } from "@/content/company";
 import { values } from "@/content/site";
@@ -17,7 +18,7 @@ import { slot } from "@/lib/slot";
 
 export const metadata: Metadata = {
   title: "Company",
-  description: "Nuvexa is a science-led pharmaceutical and consumer health company, with pharmaceuticals at its core and trusted brands built around real, recurring needs.",
+  description: "Nuvexa is a research-driven pharmaceutical and consumer health company, with pharmaceuticals at its core and trusted brands built around real, recurring needs.",
 };
 
 const valuePhotos = [slot("value-consumer"), slot("value-trust"), slot("value-execution"), slot("value-innovation"), slot("value-agility"), slot("value-longterm")];
@@ -31,33 +32,30 @@ export default function CompanyPage() {
       <PageHero
         variant="split"
         eyebrow="About Nuvexa"
-        title={"A science-led\npharmaceutical &\n*consumer health* company."}
+        title={"A research-driven\npharmaceutical &\n*consumer health* company."}
         lede={company.heroLede}
         photos={[hero]}
       />
 
       {/* Story */}
-      <section data-theme="light" aria-labelledby="story-heading" className="bg-ivory pb-20 text-ink md:pb-28">
-        <div className="container-x grid grid-cols-12 gap-6 border-t border-ink/12 pt-12 md:pt-16">
-          <div className="col-span-12 md:col-span-4">
-            <SectionLabel index="01" className="text-ink-muted">
-              Our story
-            </SectionLabel>
-            <div className="relative mt-8 hidden aspect-[3/2] overflow-hidden rounded-[1.25rem] bg-ivory-deep md:block">
-              <RevealPhoto src={story.src} alt={story.alt} sizes="(min-width: 768px) 30vw, 1px" />
-            </div>
-          </div>
-          <div className="col-span-12 md:col-span-8">
-            <h2 id="story-heading" className="sr-only">
-              Our story
+      <section data-theme="light" aria-labelledby="story-heading" className="bg-ivory pb-24 text-ink md:pb-36">
+        <div className="container-x border-t border-ink/12 pt-12 md:pt-16">
+          <SectionHead index="01" label="Our story" labelClassName="text-ink-muted">
+            <h2 id="story-heading" className="display-lg max-w-[18ch]">
+              Built around problems, not products.
             </h2>
-            <RevealGroup className="space-y-8">
+          </SectionHead>
+          <div className="grid grid-cols-12 gap-x-6 gap-y-10 md:items-start">
+            <RevealGroup className="col-span-12 space-y-6 md:col-span-7">
               {company.story.map((p, i) => (
                 <RevealItem key={i}>
-                  <p className={i === 0 ? "display-md max-w-[44ch]" : "lede max-w-[58ch] text-ink-muted"}>{p}</p>
+                  <p className={i === 0 ? "statement max-w-[34ch]" : "body-copy max-w-[60ch] text-ink-muted"}>{p}</p>
                 </RevealItem>
               ))}
             </RevealGroup>
+            <div className="relative col-span-12 aspect-[3/2] overflow-hidden rounded-[1.25rem] bg-ivory-deep md:col-span-5">
+              <RevealPhoto src={story.src} alt={story.alt} sizes="(min-width: 768px) 40vw, 92vw" />
+            </div>
           </div>
         </div>
         <div className="container-x">
@@ -73,13 +71,13 @@ export default function CompanyPage() {
             { label: "Vision", body: company.vision },
           ].map((item, i) => (
             <div key={item.label} className={i === 0 ? "border-b border-ivory/10 md:border-b-0 md:border-r" : ""}>
-              <div className="flex min-h-[46svh] flex-col justify-between p-[var(--gutter)] py-20 md:py-28">
+              <div className="flex flex-col p-[var(--gutter)] py-24 md:py-24">
                 <p className="eyebrow flex items-center gap-3 text-brass">
                   <Mark className="h-4 w-4" />
                   {item.label}
                 </p>
                 <Reveal>
-                  <p className="display-md mt-16 max-w-[24ch]">{item.body}</p>
+                  <p className="statement mt-8 max-w-[34ch] md:mt-10">{item.body}</p>
                 </Reveal>
               </div>
             </div>
@@ -88,14 +86,11 @@ export default function CompanyPage() {
       </section>
 
       {/* Values */}
-      <section data-theme="light" aria-labelledby="values-heading" className="bg-ivory py-20 text-ink md:py-28">
+      <section data-theme="light" aria-labelledby="values-heading" className="bg-ivory py-24 text-ink md:py-36">
         <div className="container-x">
-          <div className="mb-12 grid grid-cols-12 gap-6 md:mb-16">
-            <SectionLabel index="02" className="col-span-12 text-ink-muted md:col-span-4">
-              Core values
-            </SectionLabel>
-            <SplitText as="h2" className="display-xl col-span-12 max-w-[16ch] md:col-span-8" text={"The principles\nthat *guide us.*"} />
-          </div>
+          <SectionHead index="02" label="Core values" labelClassName="text-ink-muted">
+            <SplitText as="h2" id="values-heading" className="display-lg max-w-[18ch]" text={"The principles\nthat *guide us.*"} />
+          </SectionHead>
           <RevealGroup className="grid gap-x-6 gap-y-12 md:grid-cols-2 lg:grid-cols-3" stagger={0.14}>
             {values.map((v, i) => (
               <RevealItem key={v.title} className="group">
@@ -112,18 +107,18 @@ export default function CompanyPage() {
       </section>
 
       {/* Leadership */}
-      <section id="leadership" data-theme="light" aria-labelledby="leadership-heading" className="scroll-mt-24 bg-ivory-deep py-20 text-ink md:py-28">
+      <section id="leadership" data-theme="light" aria-labelledby="leadership-heading" className="scroll-mt-24 bg-ivory-deep py-24 text-ink md:py-36">
         <div className="container-x grid grid-cols-12 gap-6">
           <div className="col-span-12 lg:col-span-5">
             <div className="lg:sticky lg:top-32">
-              <SectionLabel index="03" className="mb-8 text-ink-muted">
+              <SectionLabel index="03" className="mb-7 text-ink-muted">
                 Leadership
               </SectionLabel>
               {/* Typographic monogram until an official portrait is supplied */}
               <div data-theme="dark" className="relative flex aspect-[4/5] flex-col justify-between overflow-hidden rounded-[1.5rem] bg-ink p-8 text-ivory md:p-10">
                 <Mark className="h-8 w-8 text-brass" strokeWidth={1.2} />
                 <p aria-hidden="true" className="font-serif text-[clamp(7rem,16vw,13rem)] font-medium leading-none tracking-[-0.04em] text-ivory/90">
-                  S<span className="italic text-brass">A</span>
+                  S<span className="text-brass">A</span>
                 </p>
                 <div className="border-t border-ivory/15 pt-5">
                   <p className="text-lg font-semibold">{company.founder.name}</p>
@@ -134,7 +129,7 @@ export default function CompanyPage() {
           </div>
           <div className="col-span-12 lg:col-span-6 lg:col-start-7">
             <p className="eyebrow mb-4 text-brass">{company.founder.role}</p>
-            <h2 id="leadership-heading" className="display-xl mb-12">
+            <h2 id="leadership-heading" className="display-lg mb-10">
               {company.founder.name}
             </h2>
             <Reveal>
@@ -157,7 +152,7 @@ export default function CompanyPage() {
 
       {/* Image interlude */}
       <PhotoBand src={band.src} label="Everyday health, thoughtfully built">
-        Everyday health, <em className="italic text-brass-soft">thoughtfully built.</em>
+        Everyday health, thoughtfully built.
       </PhotoBand>
 
       <CtaPair />

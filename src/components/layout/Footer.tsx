@@ -32,11 +32,11 @@ export function Footer() {
   return (
     <footer data-theme="dark" className="relative overflow-hidden bg-ink text-ivory">
       <div className="container-x pt-24 md:pt-32">
-        <div className="grid grid-cols-12 gap-y-12 border-b border-ivory/10 pb-20">
+        <div className="grid grid-cols-12 gap-y-12 border-b border-ivory/10 pb-24">
           <div className="col-span-12 lg:col-span-6">
             <p className="eyebrow mb-6 text-brass">Start a conversation</p>
             <h2 className="display-lg max-w-[14ch]">
-              Let&rsquo;s build what everyday health <em className="italic text-brass-soft">needs next.</em>
+              Let&rsquo;s build what everyday health needs next.
             </h2>
             <div className="mt-10 flex flex-wrap gap-3">
               <ButtonLink href="/contact" variant="ivory">
@@ -71,7 +71,7 @@ export function Footer() {
             <br />
             {site.address.line1}, {site.address.line2}
             <br />
-            {site.address.city} – {site.address.postcode}, {site.address.region}
+            {site.address.city} {site.address.postcode}, {site.address.region}
           </address>
           <div className="col-span-12 md:col-span-4">
             <a href={`mailto:${site.emails.general}`} className="block py-1 hover:text-ivory">

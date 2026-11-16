@@ -11,7 +11,7 @@ export default function NotFound() {
       <div className="container-x relative py-40">
         <p className="eyebrow mb-8 text-brass">Error 404</p>
         <h1 className="display-hero max-w-[12ch]">
-          This page has <em className="italic text-brass-soft">wandered off.</em>
+          This page has wandered off.
         </h1>
         <p className="lede mt-10 max-w-[44ch] text-ivory/85">The page you were looking for doesn&rsquo;t exist, or has moved. Let&rsquo;s get you somewhere useful.</p>
         <div className="mt-12 flex flex-wrap gap-3">

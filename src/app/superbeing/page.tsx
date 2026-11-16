@@ -3,7 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { RevealPhoto } from "@/components/motion/RevealPhoto";
 import { Reveal, RevealGroup, RevealItem } from "@/components/motion/Reveal";
-import { SplitText } from "@/components/motion/SplitText";
 import { PageHero } from "@/components/sections/PageHero";
 import { PhotoBand } from "@/components/sections/PhotoBand";
 import { Marquee } from "@/components/motion/Marquee";
@@ -12,6 +11,7 @@ import { WeDeclined } from "@/components/sections/superbeing/WeDeclined";
 import { ButtonLink } from "@/components/ui/ButtonLink";
 import { Mark } from "@/components/ui/Logo";
 import { Photo } from "@/components/ui/Photo";
+import { SectionHead } from "@/components/ui/SectionHead";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { brandHref, getBrand } from "@/content/brands";
 import { company } from "@/content/company";
@@ -45,44 +45,45 @@ export default function SuperbeingPage() {
       />
 
       {/* 01 · Origin */}
-      <section data-theme="light" aria-label={sb.origin.eyebrow} className="bg-ivory py-20 text-ink md:py-28">
-        <div className="container-x grid grid-cols-12 items-center gap-x-6 gap-y-10">
-          <div className="col-span-12 lg:col-span-7">
-            <p className="eyebrow mb-8 text-ink-muted">01 — {sb.origin.eyebrow}</p>
-            <Reveal>
-              <p className="display-lg max-w-[26ch]">{renderInline(sb.origin.text)}</p>
-            </Reveal>
-          </div>
-          <div className="relative col-span-12 aspect-[3/2] overflow-hidden rounded-[1.5rem] bg-ink lg:col-span-5">
-            <RevealPhoto src={origin.src} alt={origin.alt} sizes="(min-width: 1024px) 40vw, 100vw" />
-          </div>
-        </div>
-      </section>
-      <section data-theme="light" aria-labelledby="question-heading" className="bg-ivory pb-20 text-ink md:pb-28">
-        <div className="container-x grid grid-cols-12 gap-6 border-t border-ink/12 pt-12 md:pt-16">
-          <div className="col-span-12 md:col-span-4">
-            <div className="flex items-center gap-4">
-              <div className="relative h-16 w-16 overflow-hidden rounded-xl" style={{ background: "#ffffff" }}>
-                <Image src="/brands/super-being.webp" alt="Superbeing Nutrition logo" fill sizes="64px" className="object-contain p-1" />
-              </div>
-              <p className="eyebrow text-ink-muted">A personal search</p>
-            </div>
-          </div>
-          <div className="col-span-12 md:col-span-8">
-            <RevealGroup className="space-y-4">
-              {sb.origin.body.map((p) => (
-                <RevealItem key={p}>
-                  <p className="lede text-ink-muted">{p}</p>
-                </RevealItem>
-              ))}
-            </RevealGroup>
-            <h2 id="question-heading" className="sr-only">
-              {sb.origin.question}
+      <section data-theme="light" aria-labelledby="origin-heading" className="bg-ivory py-24 text-ink md:py-36">
+        <div className="container-x">
+          <SectionHead index="01" label={sb.origin.eyebrow} labelClassName="text-ink-muted">
+            <h2 id="origin-heading" className="display-lg max-w-[18ch]">
+              It began with a personal search.
             </h2>
-            <SplitText as="p" className="display-xl mt-12" text={"“What would we formulate\nif we started with the\n*person’s actual need?*”"} />
-            <Reveal delay={0.2}>
-              <p className="lede mt-10 font-semibold">{sb.origin.after}</p>
-            </Reveal>
+          </SectionHead>
+          <div className="grid grid-cols-12 gap-x-6 gap-y-10 md:items-start">
+            <div className="col-span-12 md:col-span-7">
+              <Reveal>
+                <p className="statement max-w-[34ch]">{renderInline(sb.origin.text)}</p>
+              </Reveal>
+              <RevealGroup className="mt-6 space-y-4">
+                {sb.origin.body.map((p) => (
+                  <RevealItem key={p}>
+                    <p className="body-copy max-w-[60ch] text-ink-muted">{p}</p>
+                  </RevealItem>
+                ))}
+              </RevealGroup>
+              <Reveal delay={0.1}>
+                <blockquote className="mt-10 border-l-2 border-brass pl-6 md:pl-8">
+                  <p className="display-md italic">&ldquo;What would we formulate if we started with the person&rsquo;s actual need?&rdquo;</p>
+                </blockquote>
+              </Reveal>
+              <Reveal delay={0.2}>
+                <p className="body-copy mt-8 font-semibold">{sb.origin.after}</p>
+              </Reveal>
+            </div>
+            <div className="col-span-12 md:col-span-5">
+              <div className="relative aspect-[3/2] overflow-hidden rounded-[1.25rem] bg-ink">
+                <RevealPhoto src={origin.src} alt={origin.alt} sizes="(min-width: 768px) 40vw, 92vw" />
+              </div>
+              <div className="mt-5 flex items-center gap-4">
+                <div className="relative h-12 w-12 shrink-0 overflow-hidden rounded-lg" style={{ background: "#ffffff" }}>
+                  <Image src="/brands/super-being.webp" alt="Superbeing Nutrition logo" fill sizes="48px" className="object-contain p-1" />
+                </div>
+                <p className="eyebrow text-ink-muted">A personal search</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -90,28 +91,25 @@ export default function SuperbeingPage() {
       {/* 02 · Fifteen months */}
       <MonthsRail />
 
-      {/* 03 · Selected for their science */}
+      {/* 03 · Selected on research */}
       <PhotoBand src="/media/pipette-hood.webp" video="/media/video/pipette-hood.mp4" />
-      <section data-theme="light" aria-labelledby="science-heading" className="bg-ivory py-20 text-ink md:py-28">
+      <section data-theme="light" aria-labelledby="science-heading" className="bg-ivory py-24 text-ink md:py-36">
         <div className="container-x">
-          <div className="grid grid-cols-12 gap-6">
-            <SectionLabel index="03" className="col-span-12 mb-6 text-ink-muted md:col-span-4">
-              Selected for their science
-            </SectionLabel>
-            <div className="col-span-12 md:col-span-8">
-              <h2 id="science-heading" className="display-xl max-w-[16ch]">
-                Patented ingredients, <em className="italic text-brass">selected for their science.</em>
-              </h2>
-              <Reveal>
-                <p className="lede mt-8 text-ink-muted">{sb.ingredients.intro}</p>
-              </Reveal>
-              <Reveal delay={0.1}>
-                <p className="body-copy mt-5 text-ink-muted">{sb.ingredients.notForTheLabel}</p>
-              </Reveal>
-            </div>
+          <SectionHead index="03" label="Selected on research" labelClassName="text-ink-muted" className="mb-0 md:mb-0">
+            <h2 id="science-heading" className="display-lg max-w-[18ch]">
+              Patented ingredients, selected on research.
+            </h2>
+          </SectionHead>
+          <div className="mt-8 grid gap-x-6 gap-y-5 md:grid-cols-2">
+            <Reveal>
+              <p className="body-copy text-ink-muted">{sb.ingredients.intro}</p>
+            </Reveal>
+            <Reveal delay={0.1}>
+              <p className="body-copy text-ink-muted">{sb.ingredients.notForTheLabel}</p>
+            </Reveal>
           </div>
 
-          <p className="eyebrow mb-6 mt-20 text-ink-muted">For every ingredient, we reviewed</p>
+          <p className="eyebrow mb-6 mt-16 text-ink-muted">For every ingredient, we reviewed</p>
           <RevealGroup className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {sb.ingredients.lenses.map((l, i) => (
               <RevealItem key={l.title} className="group overflow-hidden rounded-[1.25rem] border border-ink/12 bg-paper">
@@ -120,7 +118,7 @@ export default function SuperbeingPage() {
                 </div>
                 <div className="p-6">
                   <span className="font-serif text-3xl font-semibold text-brass">{pad(i + 1)}</span>
-                  <h3 className="display-md mb-3 mt-3">{l.title}</h3>
+                  <h3 className="mb-2 mt-3 font-serif text-[1.35rem] font-semibold leading-tight">{l.title}</h3>
                   <p className="text-ink-muted">{l.body}</p>
                 </div>
               </RevealItem>
@@ -143,7 +141,7 @@ export default function SuperbeingPage() {
             </div>
             <Reveal className="col-span-12 lg:col-span-6 lg:col-start-7">
               <blockquote className="border-l-2 border-brass pl-8">
-                <p className="display-lg">{sb.ingredients.principle}</p>
+                <p className="display-md">{sb.ingredients.principle}</p>
               </blockquote>
             </Reveal>
           </div>
@@ -151,27 +149,19 @@ export default function SuperbeingPage() {
       </section>
 
       {/* 04 · Built on biology */}
-      <section data-theme="light" aria-labelledby="biology-heading" className="bg-ivory-deep py-20 text-ink md:py-28">
+      <section data-theme="light" aria-labelledby="biology-heading" className="bg-ivory-deep py-24 text-ink md:py-36">
         <div className="container-x">
-          <div className="mb-16 grid grid-cols-12 gap-6">
-            <SectionLabel index="04" className="col-span-12 mb-6 text-ink-muted md:col-span-4">
-              For women · for men
-            </SectionLabel>
-            <div className="col-span-12 md:col-span-8">
-              <h2 id="biology-heading" className="display-xl max-w-[14ch]">
-                Built on biology, <em className="italic text-brass">not just a label.</em>
-              </h2>
-              <Reveal>
-                <p className="lede mt-8 text-ink-muted">{sb.biology.intro}</p>
-              </Reveal>
-            </div>
-          </div>
+          <SectionHead index="04" label="For women · for men" labelClassName="text-ink-muted" lede={sb.biology.intro} ledeClassName="text-ink-muted">
+            <h2 id="biology-heading" className="display-lg max-w-[18ch]">
+              Built on biology, not just a label.
+            </h2>
+          </SectionHead>
           <div className="grid gap-5 md:grid-cols-2">
             <Reveal className="rounded-[1.5rem] bg-paper p-8 md:p-12">
               <p className="eyebrow mb-6 text-brass">What differs</p>
               <ul className="divide-y divide-ink/10">
                 {sb.biology.differs.map((d) => (
-                  <li key={d} className="display-md py-4">
+                  <li key={d} className="statement py-3.5">
                     {d}
                   </li>
                 ))}
@@ -182,7 +172,7 @@ export default function SuperbeingPage() {
               <p className="eyebrow mb-6 text-brass-soft">What shapes everyday life</p>
               <ul className="divide-y divide-ivory/10">
                 {sb.biology.lifeFactors.map((d) => (
-                  <li key={d} className="display-md py-4">
+                  <li key={d} className="statement py-3.5">
                     {d}
                   </li>
                 ))}
@@ -190,8 +180,8 @@ export default function SuperbeingPage() {
               <p className="body-copy mt-6 text-ivory/80">Biology is only part of the picture.</p>
             </Reveal>
           </div>
-          <Reveal className="mt-14 rounded-[1.5rem] border border-brass/50 p-8 md:p-12">
-            <p className="display-lg max-w-[34ch]">{sb.biology.statement}</p>
+          <Reveal className="mt-5 rounded-[1.5rem] border border-brass/50 p-8 md:p-12">
+            <p className="statement max-w-[48ch]">{sb.biology.statement}</p>
           </Reveal>
         </div>
       </section>
@@ -200,25 +190,22 @@ export default function SuperbeingPage() {
       <WeDeclined />
 
       {/* 06 · Everyday life */}
-      <section data-theme="light" aria-labelledby="everyday-heading" className="bg-ivory pt-20 text-ink md:pt-28">
-        <div className="container-x grid grid-cols-12 gap-6">
-          <SectionLabel index="06" className="col-span-12 mb-6 text-ink-muted md:col-span-4">
-            Everyday life
-          </SectionLabel>
-          <div className="col-span-12 md:col-span-8">
-            <h2 id="everyday-heading" className="display-xl max-w-[14ch]">
-              Built around <em className="italic text-brass">everyday life.</em>
+      <section data-theme="light" aria-labelledby="everyday-heading" className="bg-ivory pt-24 text-ink md:pt-36">
+        <div className="container-x">
+          <SectionHead index="06" label="Everyday life" labelClassName="text-ink-muted" className="mb-0 md:mb-0">
+            <h2 id="everyday-heading" className="display-lg max-w-[18ch]">
+              Built around everyday life.
             </h2>
-            <RevealGroup className="mt-8 space-y-5">
-              {sb.everyday.body.map((p) => (
-                <RevealItem key={p}>
-                  <p className="lede text-ink-muted">{p}</p>
-                </RevealItem>
-              ))}
-            </RevealGroup>
-          </div>
+          </SectionHead>
+          <RevealGroup className="mt-8 grid gap-x-6 gap-y-5 md:grid-cols-2">
+            {sb.everyday.body.map((p) => (
+              <RevealItem key={p}>
+                <p className="body-copy text-ink-muted">{p}</p>
+              </RevealItem>
+            ))}
+          </RevealGroup>
         </div>
-        <div className="container-x mt-16">
+        <div className="container-x mt-12 md:mt-16">
           <div className="relative aspect-[16/9] overflow-hidden rounded-[1.5rem] bg-ink">
             <RevealPhoto src={everyday.src} alt={everyday.alt} sizes="(min-width: 768px) 92vw, 100vw" />
           </div>
@@ -226,36 +213,31 @@ export default function SuperbeingPage() {
         <div className="mt-16 overflow-hidden border-y border-ink/10 bg-ivory-deep py-12">
           <Marquee items={sb.everyday.fragments} duration={60} />
         </div>
-        <div className="container-x py-16 md:py-20">
+        <div className="container-x py-16 md:py-24">
           <Reveal>
-            <p className="display-lg text-center">{sb.everyday.principle}</p>
+            <p className="display-md">{sb.everyday.principle}</p>
           </Reveal>
         </div>
       </section>
 
       {/* 07 · Your voice */}
-      <section data-theme="dark" aria-labelledby="voice-heading" className="bg-ink-soft py-20 text-ivory md:py-28">
+      <section data-theme="dark" aria-labelledby="voice-heading" className="bg-ink-soft py-24 text-ivory md:py-36">
         <div className="container-x">
-          <div className="mb-16 grid grid-cols-12 gap-6">
-            <SectionLabel index="07" className="col-span-12 mb-6 text-ivory/78 md:col-span-4">
-              Your voice
-            </SectionLabel>
-            <div className="col-span-12 md:col-span-8">
-              <h2 id="voice-heading" className="display-xl max-w-[16ch]">
-                Your voice helps shape <em className="italic text-brass-soft">what comes next.</em>
-              </h2>
-              <RevealGroup className="mt-8 space-y-5">
-                {sb.voice.intro.map((p) => (
-                  <RevealItem key={p}>
-                    <p className="lede text-ivory/80">{p}</p>
-                  </RevealItem>
-                ))}
-              </RevealGroup>
-            </div>
-          </div>
+          <SectionHead index="07" label="Your voice" labelClassName="text-ivory/78" className="mb-0 md:mb-0">
+            <h2 id="voice-heading" className="display-lg max-w-[18ch]">
+              Your voice helps shape what comes next.
+            </h2>
+          </SectionHead>
+          <RevealGroup className="mb-12 mt-8 grid gap-x-6 gap-y-5 md:mb-16 md:grid-cols-2">
+            {sb.voice.intro.map((p) => (
+              <RevealItem key={p}>
+                <p className="body-copy text-ivory/80">{p}</p>
+              </RevealItem>
+            ))}
+          </RevealGroup>
           <RevealGroup className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
             {sb.voice.ways.map((w, i) => (
-              <RevealItem key={w.title} className="flex min-h-60 flex-col justify-between rounded-[1.25rem] border border-ivory/12 bg-ink p-6">
+              <RevealItem key={w.title} className="flex min-h-44 flex-col justify-between md:min-h-60 rounded-[1.25rem] border border-ivory/12 bg-ink p-6">
                 <span className="font-serif text-4xl font-semibold text-brass">{pad(i + 1)}</span>
                 <div>
                   <h3 className="mb-2 text-lg font-semibold">{w.title}</h3>
@@ -266,7 +248,7 @@ export default function SuperbeingPage() {
           </RevealGroup>
           <div className="mt-16 grid grid-cols-12 gap-6 border-t border-ivory/12 pt-10">
             <Reveal className="col-span-12 md:col-span-7">
-              <p className="display-lg">{sb.voice.principle}</p>
+              <p className="display-md max-w-[30ch]">{sb.voice.principle}</p>
             </Reveal>
             <Reveal delay={0.1} className="col-span-12 flex flex-col justify-end gap-6 md:col-span-4 md:col-start-9">
               <p className="text-ivory/80">{sb.voice.guide}</p>
@@ -279,26 +261,26 @@ export default function SuperbeingPage() {
       </section>
 
       {/* 08 · Honest feedback */}
-      <section data-theme="light" aria-labelledby="feedback-heading" className="bg-ivory py-20 text-ink md:py-28">
+      <section data-theme="light" aria-labelledby="feedback-heading" className="bg-ivory py-24 text-ink md:py-36">
         <div className="container-x grid grid-cols-12 gap-6">
           <div className="col-span-12 lg:col-span-5">
             <div className="lg:sticky lg:top-32">
-              <SectionLabel index="08" className="mb-8 text-ink-muted">
+              <SectionLabel index="08" className="mb-7 text-ink-muted">
                 Honest feedback
               </SectionLabel>
-              <h2 id="feedback-heading" className="display-xl max-w-[12ch]">
-                Honest feedback <em className="italic text-brass">makes us better.</em>
+              <h2 id="feedback-heading" className="display-lg max-w-[14ch]">
+                Honest feedback makes us better.
               </h2>
-              <p className="lede mt-8 text-ink-muted">{sb.feedback.intro}</p>
+              <p className="lede mt-6 text-ink-muted">{sb.feedback.intro}</p>
             </div>
           </div>
           <div className="col-span-12 lg:col-span-6 lg:col-start-7">
             <ol className="border-t border-ink/12">
               {sb.feedback.questions.map((q, i) => (
-                <li key={q} className="border-b border-ink/12 py-7">
+                <li key={q} className="border-b border-ink/12 py-5">
                   <Reveal className="flex items-baseline gap-6">
                     <span className="eyebrow text-brass">{pad(i + 1)}</span>
-                    <p className="display-md">{q}</p>
+                    <p className="statement">{q}</p>
                   </Reveal>
                 </li>
               ))}
@@ -311,16 +293,13 @@ export default function SuperbeingPage() {
       </section>
 
       {/* 09 · Clear information */}
-      <section data-theme="light" aria-labelledby="clarity-heading" className="bg-ivory-deep py-20 text-ink md:py-28">
+      <section data-theme="light" aria-labelledby="clarity-heading" className="bg-ivory-deep py-24 text-ink md:py-36">
         <div className="container-x">
-          <div className="mb-14 grid grid-cols-12 gap-6">
-            <SectionLabel index="09" className="col-span-12 mb-6 text-ink-muted md:col-span-4">
-              Our promise to you
-            </SectionLabel>
-            <h2 id="clarity-heading" className="display-xl col-span-12 max-w-[16ch] md:col-span-8">
-              Clear information. <em className="italic text-brass">Realistic expectations.</em>
+          <SectionHead index="09" label="Our promise to you" labelClassName="text-ink-muted">
+            <h2 id="clarity-heading" className="display-lg max-w-[18ch]">
+              Clear information. Realistic expectations.
             </h2>
-          </div>
+          </SectionHead>
           <p className="eyebrow mb-6 text-ink-muted">{sb.clarity.intro}</p>
           <RevealGroup className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {sb.clarity.points.map((p) => (
@@ -347,20 +326,22 @@ export default function SuperbeingPage() {
       </section>
 
       {/* 10 · Commitment */}
-      <section data-theme="dark" aria-labelledby="commitment-heading" className="bg-ink py-20 text-ivory md:py-28">
+      <section data-theme="dark" aria-labelledby="commitment-heading" className="bg-ink py-24 text-ivory md:py-36">
         <div className="container-x grid grid-cols-12 gap-6">
           <div className="col-span-12 md:col-span-2">
             <Mark className="h-12 w-12 text-brass" strokeWidth={1.1} />
           </div>
           <div className="col-span-12 md:col-span-9">
-            <p className="eyebrow mb-6 text-ivory/78" id="commitment-heading">
-              10 — {sb.commitment.title}
-            </p>
+            <SectionLabel index="10" className="mb-7 text-ivory/78">
+              <span id="commitment-heading">{sb.commitment.title}</span>
+            </SectionLabel>
             <Reveal>
               <p className="lede mb-12 max-w-[52ch] text-ivory/85">{sb.commitment.body}</p>
             </Reveal>
             <blockquote>
-              <SplitText as="p" className="display-lg max-w-[30ch]" text={`“${sb.commitment.founderNote}”`} />
+              <Reveal>
+                <p className="display-md max-w-[36ch] italic">&ldquo;{sb.commitment.founderNote}&rdquo;</p>
+              </Reveal>
               <Reveal delay={0.2} className="mt-10 flex items-center gap-4 border-t border-ivory/10 pt-8">
                 <div>
                   <p className="text-lg font-semibold">{company.founder.name}</p>
@@ -368,10 +349,10 @@ export default function SuperbeingPage() {
                 </div>
               </Reveal>
             </blockquote>
-            <div className="mt-20">
+            <div className="mt-16">
               {sb.commitment.signoff.map((line, i) => (
                 <Reveal key={line} delay={i * 0.12}>
-                  <p className={i === 2 ? "display-xl italic text-brass-soft" : "display-xl"}>{line}</p>
+                  <p className="display-lg">{line}</p>
                 </Reveal>
               ))}
               <Reveal delay={0.4}>
@@ -392,10 +373,10 @@ export default function SuperbeingPage() {
 
       {/* Next brand */}
       <section data-theme="light" aria-label="Next brand" className="bg-ivory text-ink">
-        <Link href={brandHref(next)} data-cursor="Next" className="group container-x grid grid-cols-12 items-center gap-6 py-20 md:py-28">
+        <Link href={brandHref(next)} data-cursor="Next" className="group container-x grid grid-cols-12 items-center gap-6 py-24 md:py-36">
           <div className="col-span-12 md:col-span-8">
             <p className="eyebrow mb-6 text-ink-muted">Next in the portfolio</p>
-            <p className="display-xl transition-colors duration-500 group-hover:text-brass">
+            <p className="display-lg transition-colors duration-500 group-hover:text-brass">
               {next.name} <span className="inline-block transition-transform duration-700 group-hover:translate-x-4">→</span>
             </p>
             <p className="mt-4 italic text-ink-muted">&ldquo;{next.quote}&rdquo;</p>

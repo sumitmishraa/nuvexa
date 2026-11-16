@@ -4,6 +4,7 @@ import { useRef, useState } from "react";
 import { motion, useScroll } from "motion/react";
 import { Reveal } from "@/components/motion/Reveal";
 import { vision } from "@/content/vision";
+import { SectionLabel } from "@/components/ui/SectionLabel";
 import { EASE_OUT_EXPO, cn, pad } from "@/lib/cn";
 
 const stageFill: Record<string, string> = {
@@ -27,14 +28,14 @@ export function JourneyScroll() {
   const [focus, setFocus] = useState(0);
 
   return (
-    <section data-theme="dark" aria-labelledby="journey-heading" className="bg-ink py-20 text-ivory md:py-28">
+    <section data-theme="dark" aria-labelledby="journey-heading" className="bg-ink py-24 text-ivory md:py-36">
       <div className="container-x">
         <div className="mb-14 md:mb-20">
-          <p className="eyebrow mb-6 text-ivory/75">
-            <span className="text-brass">02</span> — The journey
-          </p>
-          <h2 id="journey-heading" className="display-xl max-w-[18ch]">
-            From digital-first brands to <em className="italic text-brass-soft">advanced life sciences.</em>
+          <SectionLabel index="02" className="mb-7 text-ivory/75">
+            The journey
+          </SectionLabel>
+          <h2 id="journey-heading" className="display-lg max-w-[20ch]">
+            From digital-first brands to advanced life sciences.
           </h2>
         </div>
 
@@ -69,7 +70,7 @@ export function JourneyScroll() {
           </p>
         </div>
 
-        <div ref={ref} className="relative md:pb-28">
+        <div ref={ref} className="relative md:pb-36">
           <div aria-hidden="true" className="absolute bottom-0 left-[6px] top-0 w-px bg-ivory/12 md:left-1/2">
             <motion.div className="h-full w-full origin-top bg-brass" data-scroll-linked style={{ scaleY: scrollYProgress }} />
           </div>
@@ -105,7 +106,7 @@ export function JourneyScroll() {
         </div>
 
         <Reveal className="mt-14">
-          <p className="eyebrow text-ivory/78">Phases, not promises of dates — each stage is earned by the one before it.</p>
+          <p className="eyebrow text-ivory/78">Phases, not promises of dates. Each stage is earned by the one before it.</p>
         </Reveal>
       </div>
     </section>

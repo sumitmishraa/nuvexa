@@ -3,6 +3,7 @@
 import { Fragment, useRef } from "react";
 import { motion, useScroll, useTransform, type MotionValue } from "motion/react";
 import { RevealPhoto } from "@/components/motion/RevealPhoto";
+import { SectionLabel } from "@/components/ui/SectionLabel";
 import { cn } from "@/lib/cn";
 
 /*
@@ -22,7 +23,7 @@ function Word({ word, progress, index, count, accent }: { word: string; progress
   const [start, end] = range(index, count);
   const opacity = useTransform(progress, [start, end], [REST_OPACITY, 1]);
   return (
-    <motion.span aria-hidden="true" data-scroll-linked style={{ opacity }} className={cn(accent && "italic text-brass")}>
+    <motion.span aria-hidden="true" data-scroll-linked style={{ opacity }} className={accent ? "text-brass" : undefined}>
       {word}
     </motion.span>
   );
@@ -31,13 +32,15 @@ function Word({ word, progress, index, count, accent }: { word: string; progress
 export function WordReveal({
   text,
   eyebrow,
+  index,
   image,
   imageAlt,
   className,
 }: {
-  /** Wrap words in *asterisks* to set them as brass italics. */
+  /** Words wrapped in *asterisks* are shown in brass (upright, no italics). */
   text: string;
   eyebrow?: string;
+  index?: string;
   image: string;
   imageAlt: string;
   className?: string;
@@ -48,11 +51,15 @@ export function WordReveal({
   const plain = text.replace(/\*/g, "");
 
   return (
-    <section data-theme="light" className={cn("bg-ivory py-20 text-ink md:py-28", className)}>
-      <div className="container-x grid grid-cols-12 items-center gap-x-6 gap-y-10">
+    <section data-theme="light" className={cn("bg-ivory py-24 text-ink md:py-36", className)}>
+      <div className="container-x grid grid-cols-12 items-start gap-x-6 gap-y-10">
         <div className="col-span-12 lg:col-span-7">
-          {eyebrow ? <p className="eyebrow mb-8 text-ink-muted">{eyebrow}</p> : null}
-          <p ref={ref} className="display-lg max-w-[24ch]">
+          {eyebrow ? (
+            <SectionLabel index={index} className="mb-7 text-ink-muted">
+              {eyebrow}
+            </SectionLabel>
+          ) : null}
+          <p ref={ref} className="display-md max-w-[28ch]">
             <span className="sr-only">{plain}</span>
             {tokens.map((token, i) => {
               const accent = token.startsWith("*") || token.endsWith("*") || token.endsWith("*.") || token.endsWith("*,");
@@ -66,7 +73,7 @@ export function WordReveal({
             })}
           </p>
         </div>
-        <div className="relative col-span-12 aspect-[3/2] overflow-hidden rounded-[1.5rem] bg-ink lg:col-span-5">
+        <div className="relative col-span-12 aspect-[3/2] overflow-hidden rounded-[1.25rem] bg-ink lg:col-span-5">
           <RevealPhoto src={image} alt={imageAlt} sizes="(min-width: 1024px) 40vw, 100vw" />
         </div>
       </div>

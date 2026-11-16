@@ -30,22 +30,22 @@ export default function FutureVisionPage() {
       />
 
       {/* Pharmaceuticals: the core */}
-      <section data-theme="light" aria-labelledby="pharma-heading" className="bg-ivory py-20 text-ink md:py-28">
-        <div className="container-x grid grid-cols-12 items-center gap-x-6 gap-y-10">
+      <section data-theme="light" aria-labelledby="pharma-heading" className="bg-ivory py-24 text-ink md:py-36">
+        <div className="container-x grid grid-cols-12 items-start gap-x-6 gap-y-10">
           <div className="col-span-12 lg:col-span-7">
-            <SectionLabel index="01" className="mb-8 text-ink-muted">
+            <SectionLabel index="01" className="mb-7 text-ink-muted">
               Our core focus
             </SectionLabel>
-            <h2 id="pharma-heading" className="display-xl mb-10 max-w-[14ch]">
-              Science-led <em className="italic text-brass">pharmaceuticals.</em>
+            <h2 id="pharma-heading" className="display-lg mb-6 max-w-[16ch]">
+              Research-driven pharmaceuticals.
             </h2>
             <Reveal>
-              <p className="lede mb-10 text-ink-muted">{pharma.intro[1]}</p>
+              <p className="body-copy mb-8 max-w-[60ch] text-ink-muted">{pharma.intro[1]}</p>
             </Reveal>
             <ul className="grid gap-px overflow-hidden rounded-[1.25rem] bg-ink/10 sm:grid-cols-2">
               {pharma.focusAreas.map((f) => (
                 <li key={f.title} className="bg-ivory p-6">
-                  <span className="display-md">{f.title}</span>
+                  <span className="statement">{f.title}</span>
                 </li>
               ))}
             </ul>
@@ -63,7 +63,7 @@ export default function FutureVisionPage() {
       <section data-theme="light" aria-label="Closing thought" className="bg-ivory py-24 text-ink md:py-32">
         <div className="container-x">
           <Reveal>
-            <p className="display-lg max-w-[30ch]">{vision.closing}</p>
+            <p className="display-md max-w-[34ch]">{vision.closing}</p>
           </Reveal>
         </div>
       </section>

@@ -31,25 +31,25 @@ export function MonthsRail() {
   const { months, title, body } = superbeing.development;
 
   return (
-    <section data-theme="light" aria-labelledby="months-heading" className="bg-ivory-deep py-20 text-ink md:py-28">
+    <section data-theme="light" aria-labelledby="months-heading" className="bg-ivory-deep py-24 text-ink md:py-36">
       <div className="container-x">
-        <div className="grid grid-cols-12 items-end gap-6">
-          <div className="col-span-12 lg:col-span-5">
-            <SectionLabel index="02" className="mb-8 text-ink-muted">
-              The development
-            </SectionLabel>
-            <p className="font-serif text-[clamp(7rem,18vw,15rem)] font-semibold leading-[0.82] tracking-[-0.05em] text-brass">
+        <SectionLabel index="02" className="mb-7 text-ink-muted">
+          The development
+        </SectionLabel>
+        <h2 id="months-heading" className="display-lg max-w-[18ch]">
+          {title}
+        </h2>
+        <div className="mt-10 grid grid-cols-12 items-start gap-x-6 gap-y-8 md:mt-12">
+          <div className="col-span-12 md:col-span-5">
+            <p className="font-serif text-[clamp(6rem,13vw,11rem)] font-semibold leading-[0.82] tracking-[-0.05em] text-brass">
               <Counter value={months} />
             </p>
             <p className="eyebrow mt-4 text-ink-muted">Months · one year and three</p>
           </div>
-          <div className="col-span-12 lg:col-span-6 lg:col-start-7">
-            <h2 id="months-heading" className="display-lg mb-8 max-w-[16ch]">
-              {title}
-            </h2>
+          <div className="col-span-12 md:col-span-7">
             {body.map((p, i) => (
               <Reveal key={i} delay={i * 0.1}>
-                <p className={i === 0 ? "lede mb-5 text-ink" : "body-copy text-ink-muted"}>{p}</p>
+                <p className={i === 0 ? "statement mb-5 max-w-[40ch] text-ink" : "body-copy max-w-[60ch] text-ink-muted"}>{p}</p>
               </Reveal>
             ))}
           </div>

@@ -29,9 +29,9 @@
   },
   "home-insight": {
     "ratio": 1.5,
-    "alt": "A clinician talking with a patient about her care",
-    "fallback": "u246",
-    "fallbackAlt": "A clinician talking with a patient about her care",
+    "alt": "A doctor checking an older patient's breathing during a consultation",
+    "fallback": "in-home-insight",
+    "fallbackAlt": "A doctor checking an older patient's breathing during a consultation",
     "prompt": "A warm Indian woman doctor in a white coat talking with a middle-aged woman patient in a bright, calm consulting room, subject centred."
   },
   "home-technology": {
@@ -50,9 +50,9 @@
   },
   "home-brand": {
     "ratio": 1.5,
-    "alt": "A brand team reviewing blank packaging mock-ups and colour swatches",
-    "fallback": "brand-strategy",
-    "fallbackAlt": "Two colleagues planning in front of a chalkboard of notes",
+    "alt": "A colleague mapping a plan on a whiteboard while a teammate listens",
+    "fallback": "in-home-brand",
+    "fallbackAlt": "A colleague mapping a plan on a whiteboard while a teammate listens",
     "prompt": "A small Indian brand team of three around a studio table reviewing blank packaging mock-up boxes and colour swatches in sage, ivory and brass, pointing and discussing, subject centred."
   },
   "company-hero": {
@@ -64,23 +64,23 @@
   },
   "company-story": {
     "ratio": 1.5,
-    "alt": "A founder's desk with sketches of product ideas, a laptop and a glass of chai",
-    "fallback": "u128",
-    "fallbackAlt": "Hands taking notes around a wooden table in a planning meeting",
+    "alt": "Colleagues taking notes together at a planning meeting",
+    "fallback": "in-company-story",
+    "fallbackAlt": "Colleagues taking notes together at a planning meeting",
     "prompt": "A founder's desk by a window in early morning, no people: an open notebook with hand-drawn product sketches and arrows, a pen, a laptop, chai in a glass, a few plain unlabelled sample jars, subject centred."
   },
   "value-consumer": {
     "ratio": 1.5,
-    "alt": "A doctor listening to a patient at her bedside",
-    "fallback": "u249",
-    "fallbackAlt": "A doctor listening to a patient at her bedside",
+    "alt": "A doctor listening to a patient's breathing with a stethoscope",
+    "fallback": "in-value-consumer",
+    "fallbackAlt": "A doctor listening to a patient's breathing with a stethoscope",
     "prompt": "An Indian doctor in a white coat listening attentively to a patient sitting up in a hospital bed, calm daylight, subject centred."
   },
   "value-trust": {
     "ratio": 1.5,
-    "alt": "A quality specialist holding a sample vial up to the light",
-    "fallback": "beaker",
-    "fallbackAlt": "A gloved hand holding up a glass beaker",
+    "alt": "A scientist checking samples carefully at a laboratory bench",
+    "fallback": "in-value-trust",
+    "fallbackAlt": "A scientist checking samples carefully at a laboratory bench",
     "prompt": "A quality-control specialist in a white coat and gloves holds a small clear glass sample vial up to the window light to inspect it, in a calm bright quality laboratory, subject centred."
   },
   "value-execution": {
@@ -92,23 +92,23 @@
   },
   "value-innovation": {
     "ratio": 1.5,
-    "alt": "A researcher reading and marking printed studies at a desk",
-    "fallback": "u39",
-    "fallbackAlt": "Scientists in a laboratory reviewing equipment together",
+    "alt": "Two young researchers running an experiment together in a laboratory",
+    "fallback": "in-value-innovation",
+    "fallbackAlt": "Two young researchers running an experiment together in a laboratory",
     "prompt": "An Indian woman researcher in glasses at a desk reading printed scientific study papers and marking passages with a pencil, books and a laptop beside her, subject centred."
   },
   "value-agility": {
     "ratio": 1.5,
-    "alt": "A team of scientists reviewing results together in a laboratory",
-    "fallback": "u37",
-    "fallbackAlt": "A team of scientists reviewing results together in a laboratory",
+    "alt": "A team talking through progress at a planning board",
+    "fallback": "in-value-agility",
+    "fallbackAlt": "A team talking through progress at a planning board",
     "prompt": "A small team of Indian scientists in lab coats and safety glasses reviewing a binder of results together at a laboratory bench, subject centred."
   },
   "value-longterm": {
     "ratio": 1.5,
-    "alt": "An experienced leader mentoring a younger colleague over plans",
-    "fallback": "u141",
-    "fallbackAlt": "Colleagues in a calm, long-range planning discussion",
+    "alt": "Colleagues reviewing plans together in a bright office",
+    "fallback": "in-value-longterm",
+    "fallbackAlt": "Colleagues reviewing plans together in a bright office",
     "prompt": "A senior Indian businessman mentoring a young Indian woman colleague, both looking at printed plans on a table in a calm office by a window, subject centred."
   },
   "company-band": {
@@ -127,9 +127,9 @@
   },
   "titans-band": {
     "ratio": 1.778,
-    "alt": "A young girl drinking a glass of milk at breakfast with fruit on the table",
-    "fallback": "u247",
-    "fallbackAlt": "A doctor talking with a mother and her young son",
+    "alt": "A mother laughing with her young daughter on a sofa at home",
+    "fallback": "in-titans-band",
+    "fallbackAlt": "A mother laughing with her young daughter on a sofa at home",
     "prompt": "A cheerful Indian girl of about eight drinking a glass of chocolate milk at a breakfast table with fruit and a school bag beside her, morning light, wide view."
   },
   "sb-hero": {
@@ -141,9 +141,9 @@
   },
   "sb-origin": {
     "ratio": 1.5,
-    "alt": "A man reading the back of a supplement tub closely",
-    "fallback": "u265",
-    "fallbackAlt": "A pharmacist reading a product label in a pharmacy aisle",
+    "alt": "A pharmacist reading the label on a product in a pharmacy",
+    "fallback": "in-sb-origin",
+    "fallbackAlt": "A pharmacist reading the label on a product in a pharmacy",
     "prompt": "An Indian man in his thirties at his kitchen counter reading the back of a plain unlabelled supplement tub closely, thoughtful expression, subject centred."
   },
   "lens-amount": {
@@ -155,16 +155,16 @@
   },
   "lens-people": {
     "ratio": 1.5,
-    "alt": "Adults of different ages walking together in a park in the morning",
-    "fallback": "u147",
-    "fallbackAlt": "Adults of different ages talking together in a bright lounge",
+    "alt": "Two friends laughing together over a phone",
+    "fallback": "in-lens-people",
+    "fallbackAlt": "Two friends laughing together over a phone",
     "prompt": "A group of Indian adults of different ages, men and women, walking together in a green city park in the morning, natural and relaxed, subject centred."
   },
   "lens-measured": {
     "ratio": 1.5,
-    "alt": "A researcher reviewing charts in a printed study",
-    "fallback": "u204",
-    "fallbackAlt": "A team reviewing printed charts on a table",
+    "alt": "A team reviewing printed charts during a meeting",
+    "fallback": "in-lens-measured",
+    "fallbackAlt": "A team reviewing printed charts during a meeting",
     "prompt": "Close-up of a researcher's hands holding a pen over printed study pages with simple bar charts and graphs on a desk, no readable text, subject centred."
   },
   "lens-fit": {
@@ -183,9 +183,9 @@
   },
   "approach-need": {
     "ratio": 1.5,
-    "alt": "A woman thinking about her health at the start of her day",
-    "fallback": "u248",
-    "fallbackAlt": "A doctor talking with a smiling patient",
+    "alt": "A doctor checking a patient's blood pressure in a clinic",
+    "fallback": "in-approach-need",
+    "fallbackAlt": "A doctor checking a patient's blood pressure in a clinic",
     "prompt": "An Indian woman sitting by a window in the morning with a cup of tea, looking thoughtful as she checks her phone, calm home setting, subject centred."
   },
   "approach-ingredient": {
@@ -204,16 +204,16 @@
   },
   "method-need": {
     "ratio": 1.5,
-    "alt": "A researcher listening to a family describe their routines",
-    "fallback": "u258",
-    "fallbackAlt": "A clinician listening to a woman's questions",
+    "alt": "Two colleagues reading through notes together on a sofa",
+    "fallback": "in-method-need",
+    "fallbackAlt": "Two colleagues reading through notes together on a sofa",
     "prompt": "An Indian researcher with a notebook listening to a couple describe their family's daily routines at their dining table, subject centred."
   },
   "method-reason": {
     "ratio": 1.5,
-    "alt": "A scientist comparing ingredient samples and taking notes",
-    "fallback": "u29",
-    "fallbackAlt": "A scientist examining a separating funnel in a fume hood",
+    "alt": "A researcher in his laboratory among instruments",
+    "fallback": "in-method-reason",
+    "fallbackAlt": "A researcher in his laboratory among instruments",
     "prompt": "An Indian male scientist in a lab coat comparing two ingredient samples in small glass jars and writing notes in a notebook at a laboratory bench, subject centred."
   },
   "method-difference": {
@@ -232,16 +232,16 @@
   },
   "method-listen": {
     "ratio": 1.5,
-    "alt": "A team reading customer feedback together on a laptop",
-    "fallback": "u197",
-    "fallbackAlt": "A team reading feedback together on a screen",
+    "alt": "Two colleagues reading closely through feedback on a screen",
+    "fallback": "in-method-listen",
+    "fallbackAlt": "Two colleagues reading closely through feedback on a screen",
     "prompt": "Two Indian colleagues reading customer feedback messages together on a laptop in a bright office, one pointing at the screen, no readable text, subject centred."
   },
   "approach-science": {
     "ratio": 1.5,
-    "alt": "A researcher examining a sample through a microscope",
-    "fallback": "u32",
-    "fallbackAlt": "Two scientists working at a microscope",
+    "alt": "A researcher in gloves and a hairnet holding up a sample in a laboratory",
+    "fallback": "in-approach-science",
+    "fallbackAlt": "A researcher in gloves and a hairnet holding up a sample in a laboratory",
     "prompt": "An Indian male researcher in a lab coat and gloves adjusting a modern microscope to examine a sample slide in a bright laboratory, subject centred."
   },
   "approach-insight": {
@@ -267,16 +267,16 @@
   },
   "approach-brand": {
     "ratio": 1.5,
-    "alt": "A product being photographed in a studio",
-    "fallback": "u136",
-    "fallbackAlt": "A team presenting a plan at a whiteboard",
+    "alt": "A team lead presenting a plan at a whiteboard to colleagues",
+    "fallback": "in-approach-brand",
+    "fallbackAlt": "A team lead presenting a plan at a whiteboard to colleagues",
     "prompt": "A photographer in a small studio photographing a plain unlabelled product jar on a pale set with softboxes, seen from behind the camera, subject centred."
   },
   "step-insight": {
     "ratio": 1.5,
-    "alt": "A researcher showing a short survey on a tablet to a shopper",
-    "fallback": "u198",
-    "fallbackAlt": "A team gathered around a laptop reviewing research",
+    "alt": "A team around a conference table reviewing research on laptops",
+    "fallback": "in-step-insight",
+    "fallbackAlt": "A team around a conference table reviewing research on laptops",
     "prompt": "An Indian researcher showing a short survey on a tablet to a young Indian woman shopper in a bright cafe, both engaged, no readable text, subject centred."
   },
   "step-formulation": {
@@ -288,9 +288,9 @@
   },
   "step-manufacturing": {
     "ratio": 1.5,
-    "alt": "A capsule-filling machine in a clean manufacturing facility",
-    "fallback": "u83",
-    "fallbackAlt": "Production staff in masks and hairnets at a manufacturing line",
+    "alt": "A production worker in a hairnet at a medical products manufacturing line",
+    "fallback": "in-step-manufacturing",
+    "fallbackAlt": "A production worker in a hairnet at a medical products manufacturing line",
     "prompt": "Close-up of a stainless steel capsule-filling machine with pale capsules in a clean manufacturing facility, an operator's gloved hand adjusting it, subject centred."
   },
   "step-commerce": {
@@ -365,58 +365,58 @@
   },
   "inv-numbers": {
     "ratio": 1.778,
-    "alt": "Leaders reviewing a printed report around a table",
-    "fallback": "boardroom-table",
-    "fallbackAlt": "A team along a long table in a meeting room",
+    "alt": "A team going through figures in folders during a meeting",
+    "fallback": "in-inv-numbers",
+    "fallbackAlt": "A team going through figures in folders during a meeting",
     "prompt": "Three Indian business leaders reviewing a printed report with charts around a table in a bright meeting room, no readable text, wide view."
   },
   "careers-team": {
     "ratio": 1.778,
-    "alt": "A young team collaborating around a whiteboard",
-    "fallback": "u199",
-    "fallbackAlt": "A team meeting around a long table with laptops",
+    "alt": "A team in conversation in an open office",
+    "fallback": "in-careers-team",
+    "fallbackAlt": "A team in conversation in an open office",
     "prompt": "A young diverse Indian team of four collaborating around a whiteboard of diagrams in a bright modern office, laughing naturally, wide view."
   },
   "careers-one": {
     "ratio": 1.778,
-    "alt": "Two colleagues working through an idea at a laptop",
-    "fallback": "team-review",
-    "fallbackAlt": "Two colleagues reviewing charts on a laptop",
+    "alt": "Two colleagues working side by side at their laptops",
+    "fallback": "in-careers-one",
+    "fallbackAlt": "Two colleagues working side by side at their laptops",
     "prompt": "Two young Indian colleagues, a man and a woman, working through an idea together at a laptop in a sunlit office corner, wide view."
   },
   "principle-outcome": {
     "ratio": 1.778,
-    "alt": "A team member presenting her plan to colleagues",
-    "fallback": "u134",
-    "fallbackAlt": "A colleague presenting to a full meeting room",
+    "alt": "A colleague briefing teammates in the office",
+    "fallback": "in-principle-outcome",
+    "fallbackAlt": "A colleague briefing teammates in the office",
     "prompt": "A young Indian woman confidently presenting her plan to three colleagues in a small bright meeting room, wide view."
   },
   "principle-consumer": {
     "ratio": 1.778,
-    "alt": "A team member talking with a shopper",
-    "fallback": "u131",
-    "fallbackAlt": "A team talking with people over a meal",
+    "alt": "Two men talking over tea in a kitchen",
+    "fallback": "in-principle-consumer",
+    "fallbackAlt": "Two men talking over tea in a kitchen",
     "prompt": "A young Indian team member in smart casual clothes talking with an older woman shopper outside a neighbourhood store, listening attentively, wide view."
   },
   "principle-discipline": {
     "ratio": 1.778,
-    "alt": "A planner working through a weekly plan at her desk",
-    "fallback": "u220",
-    "fallbackAlt": "An analyst working through data at his desk",
+    "alt": "An analyst working carefully through his laptop",
+    "fallback": "in-principle-discipline",
+    "fallbackAlt": "An analyst working carefully through his laptop",
     "prompt": "A focused young Indian woman at a tidy desk working through a weekly plan in a notebook beside a laptop, calm office, wide view."
   },
   "principle-together": {
     "ratio": 1.778,
-    "alt": "Colleagues sharing lunch and conversation",
-    "fallback": "u201",
+    "alt": "Colleagues working side by side on laptops",
+    "fallback": "in-principle-together",
     "fallbackAlt": "Colleagues working side by side on laptops",
     "prompt": "A group of young Indian colleagues sharing lunch and conversation at a long table in a bright office cafe, relaxed, wide view."
   },
   "contact-hero": {
     "ratio": 1.5,
-    "alt": "A welcoming meeting lounge in a bright office",
-    "fallback": "office-conversation",
-    "fallbackAlt": "Three colleagues talking on low sofas beside tall windows",
+    "alt": "Three colleagues talking beside tall office windows",
+    "fallback": "in-contact-hero",
+    "fallbackAlt": "Three colleagues talking beside tall office windows",
     "prompt": "A welcoming, bright meeting lounge in a modern Bengaluru office with soft sofas, plants and a coffee table, two people about to greet a visitor, subject centred."
   }
 }

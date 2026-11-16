@@ -26,18 +26,18 @@ export function Roadmap({ index = "06", showLink = true, photos = false }: { ind
   });
 
   return (
-    <section data-theme="dark" aria-labelledby="roadmap-heading" className="bg-ink py-20 text-ivory md:py-28">
+    <section data-theme="dark" aria-labelledby="roadmap-heading" className="bg-ink py-24 text-ivory md:py-36">
       <div className="container-x grid grid-cols-12 gap-x-6">
         <div className="col-span-12 lg:col-span-5">
           <div className="lg:sticky lg:top-24">
-            <SectionLabel index={index} className="mb-6 text-ivory/75">
+            <SectionLabel index={index} className="mb-7 text-ivory/75">
               Strategic roadmap
             </SectionLabel>
             <h2 id="roadmap-heading" className="display-lg">
-              Built in phases. <em className="italic text-brass-soft">Earned step by step.</em>
+              Built in phases. Earned step by step.
             </h2>
             <p className="mt-5 max-w-[46ch] text-ivory/78">
-              Each phase is unlocked by the one before it — as our brands achieve product-market fit, repeat demand and sustainable scale.
+              Each phase is unlocked by the one before it, as our brands achieve product-market fit, repeat demand and sustainable scale.
             </p>
             {photos ? (
               <div className="relative mt-7 hidden aspect-[3/2] overflow-hidden rounded-[1.25rem] bg-ink-soft lg:block">
@@ -62,11 +62,11 @@ export function Roadmap({ index = "06", showLink = true, photos = false }: { ind
             <motion.div className="h-full w-full origin-top bg-brass" data-scroll-linked style={{ scaleY: scrollYProgress }} />
           </div>
           {company.roadmap.map((p, i) => (
-            <li key={p.phase} className={cn("relative pb-20 pl-10 last:pb-0 md:pl-16", photos && "lg:flex lg:min-h-[62svh] lg:flex-col lg:justify-center lg:pb-0")}>
+            <li key={p.phase} className={cn("relative pb-24 pl-10 last:pb-0 md:pl-16", photos && "lg:flex lg:min-h-[62svh] lg:flex-col lg:justify-center lg:pb-0")}>
               <span aria-hidden="true" className={cn("absolute -left-[5px] top-3 h-[11px] w-[11px] rounded-full border border-brass transition-colors duration-500", photos && "lg:top-1/2", i <= active ? "bg-brass" : "bg-ink")} />
               <Reveal>
                 <p className="eyebrow mb-4 text-brass">{p.phase}</p>
-                <h3 className="display-lg mb-5">{p.title}</h3>
+                <h3 className="display-md mb-4">{p.title}</h3>
                 <p className="lede max-w-[44ch] text-ivory/80">{p.body}</p>
                 {photos ? (
                   <div className="relative mt-6 aspect-[3/2] overflow-hidden rounded-[1.25rem] bg-ink-soft lg:hidden">

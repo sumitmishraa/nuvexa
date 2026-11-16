@@ -4,6 +4,7 @@ import { motion } from "motion/react";
 import { Reveal } from "@/components/motion/Reveal";
 import { SplitText } from "@/components/motion/SplitText";
 import { ButtonLink } from "@/components/ui/ButtonLink";
+import { SectionLabel } from "@/components/ui/SectionLabel";
 import { superbeing } from "@/content/superbeing";
 import { EASE_OUT_EXPO } from "@/lib/cn";
 
@@ -15,11 +16,11 @@ export function WeDeclined({ compact = false, index = "05" }: { compact?: boolea
   const { title, setup, answer, after, commitment } = superbeing.declined;
 
   return (
-    <section data-theme="dark" aria-labelledby="declined-heading" className="relative overflow-hidden bg-ink py-20 text-ivory md:py-28">
+    <section data-theme="dark" aria-labelledby="declined-heading" className="relative overflow-hidden bg-ink py-24 text-ivory md:py-36">
       <div className="container-x">
-        <p className="eyebrow mb-10 text-ivory/78">
-          <span className="text-brass">{index}</span> — {title}
-        </p>
+        <SectionLabel index={index} className="mb-10 text-ivory/78">
+          {title}
+        </SectionLabel>
 
         <div className="grid grid-cols-12 gap-6">
           <div className="col-span-12 lg:col-span-6">

@@ -6,6 +6,7 @@ import { PageHero } from "@/components/sections/PageHero";
 import { Marquee } from "@/components/motion/Marquee";
 import { ButtonLink } from "@/components/ui/ButtonLink";
 import { Photo } from "@/components/ui/Photo";
+import { SectionHead } from "@/components/ui/SectionHead";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { careers } from "@/content/careers";
 import { site, values } from "@/content/site";
@@ -25,7 +26,7 @@ export default function CareersPage() {
       <PageHero
         variant="overlap"
         eyebrow="Careers"
-        title={"Build the future\nof *healthcare* — with us."}
+        title={"Build the future\nof *healthcare* with us."}
         lede={careers.heroLede}
         photos={[
           slot("careers-team"),
@@ -34,31 +35,25 @@ export default function CareersPage() {
       />
 
       {/* Culture */}
-      <section data-theme="dark" aria-labelledby="culture-heading" className="bg-ink py-20 text-ivory md:py-28">
-        <div className="container-x grid grid-cols-12 gap-6">
-          <SectionLabel index="01" className="col-span-12 mb-6 text-ivory/75 md:col-span-4">
-            Culture &amp; work philosophy
-          </SectionLabel>
-          <div className="col-span-12 md:col-span-8">
+      <section data-theme="dark" aria-labelledby="culture-heading" className="bg-ink py-24 text-ivory md:py-36">
+        <div className="container-x">
+          <SectionHead index="01" label="Culture & work philosophy" labelClassName="text-ivory/75" className="mb-0 md:mb-0">
             <h2 id="culture-heading" className="sr-only">
               Culture and work philosophy
             </h2>
             <Reveal>
-              <p className="display-md max-w-[50ch]">{careers.culture}</p>
+              <p className="statement max-w-[46ch]">{careers.culture}</p>
             </Reveal>
-          </div>
+          </SectionHead>
         </div>
       </section>
 
       {/* Principles */}
-      <section data-theme="light" aria-labelledby="principles-heading" className="bg-ivory py-20 text-ink md:py-28">
+      <section data-theme="light" aria-labelledby="principles-heading" className="bg-ivory py-24 text-ink md:py-36">
         <div className="container-x">
-          <div className="mb-16 grid grid-cols-12 gap-6">
-            <SectionLabel index="02" className="col-span-12 text-ink-muted md:col-span-4">
-              How we work
-            </SectionLabel>
-            <SplitText as="h2" className="display-xl col-span-12 max-w-[16ch] md:col-span-8" text={"Entrepreneurial.\n*Execution-focused.*"} />
-          </div>
+          <SectionHead index="02" label="How we work" labelClassName="text-ink-muted">
+            <SplitText as="h2" id="principles-heading" className="display-lg max-w-[18ch]" text={"Entrepreneurial.\n*Execution-focused.*"} />
+          </SectionHead>
           <div className="grid gap-5 md:grid-cols-2">
             {careers.principles.map((p, i) => (
               <Reveal key={p.title} y={0} delay={i * 0.15} className="group overflow-hidden rounded-[1.5rem] bg-ivory-deep">
@@ -81,17 +76,17 @@ export default function CareersPage() {
       </section>
 
       {/* Who we look for + open application */}
-      <section data-theme="light" aria-labelledby="join-heading" className="bg-ivory py-20 text-ink md:py-28">
+      <section data-theme="light" aria-labelledby="join-heading" className="bg-ivory py-24 text-ink md:py-36">
         <div className="container-x grid grid-cols-12 gap-6">
           <div className="col-span-12 lg:col-span-6">
-            <SectionLabel index="03" className="mb-8 text-ink-muted">
+            <SectionLabel index="03" className="mb-7 text-ink-muted">
               Who we look for
             </SectionLabel>
             <ul className="border-t border-ink/12">
               {careers.lookingFor.map((l) => (
-                <li key={l} className="border-b border-ink/12 py-6">
+                <li key={l} className="border-b border-ink/12 py-5">
                   <Reveal>
-                    <p className="display-md">{l}</p>
+                    <p className="statement">{l}</p>
                   </Reveal>
                 </li>
               ))}
@@ -101,10 +96,10 @@ export default function CareersPage() {
             <div className="rounded-[1.5rem] bg-ink p-8 text-ivory md:p-12 lg:sticky lg:top-32">
               <p className="eyebrow mb-8 text-brass">Join the team</p>
               <h2 id="join-heading" className="display-lg mb-6">
-                Open applications, <em className="italic text-brass-soft">always.</em>
+                Open applications, always.
               </h2>
               <p className="mb-10 text-ivory/80">
-                We are always looking for passionate people who share our culture and philosophy. There are no listed roles right now — but if you see
+                We are always looking for passionate people who share our culture and philosophy. There are no listed roles right now, but if you see
                 yourself here, tell us what you would build with us.
               </p>
               <ButtonLink href={`mailto:${site.emails.careers}?subject=Open%20application`} variant="ivory">

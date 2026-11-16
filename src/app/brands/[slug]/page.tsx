@@ -8,6 +8,7 @@ import { PhotoBand } from "@/components/sections/PhotoBand";
 import { photoFile } from "@/lib/photoFile";
 import { BrandStage } from "@/components/ui/BrandStage";
 import { ButtonLink } from "@/components/ui/ButtonLink";
+import { SectionHead } from "@/components/ui/SectionHead";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { brandHref, brands, getBrand, toneStyles } from "@/content/brands";
 import { pad } from "@/lib/cn";
@@ -42,7 +43,7 @@ export default async function BrandPage({ params }: PageProps<"/brands/[slug]">)
   return (
     <>
       {/* Hero */}
-      <section data-theme="light" className="bg-ivory pb-20 pt-32 text-ink md:pt-28">
+      <section data-theme="light" className="bg-ivory pb-24 pt-32 text-ink md:pt-36">
         <div className="container-x grid grid-cols-12 gap-x-6 gap-y-12">
           <div className="col-span-12 flex flex-col lg:col-span-6">
             <div>
@@ -78,15 +79,17 @@ export default async function BrandPage({ params }: PageProps<"/brands/[slug]">)
       {brand.image ? <PhotoBand src={brand.image} /> : null}
 
       {/* Introduction */}
-      <section data-theme="light" aria-labelledby="intro-heading" className="bg-ivory pb-20 text-ink md:pb-36">
-        <div className="container-x grid grid-cols-12 gap-6 border-t border-ink/12 pt-16">
-          <SectionLabel index="01" className="col-span-12 text-ink-muted md:col-span-4">
-            <span id="intro-heading">Introducing {brand.name}</span>
-          </SectionLabel>
-          <RevealGroup className="col-span-12 space-y-8 md:col-span-8">
+      <section data-theme="light" aria-labelledby="intro-heading" className="bg-ivory pb-24 text-ink md:pb-36">
+        <div className="container-x border-t border-ink/12 pt-12 md:pt-16">
+          <SectionHead index="01" label="Introduction" labelClassName="text-ink-muted">
+            <h2 id="intro-heading" className="display-lg max-w-[18ch]">
+              Introducing {brand.name}.
+            </h2>
+          </SectionHead>
+          <RevealGroup className="space-y-6">
             {brand.intro.map((p, i) => (
               <RevealItem key={i}>
-                <p className={i === 0 ? "display-md max-w-[32ch]" : "lede max-w-[58ch] text-ink-muted"}>{p}</p>
+                <p className={i === 0 ? "statement max-w-[40ch]" : "body-copy max-w-[62ch] text-ink-muted"}>{p}</p>
               </RevealItem>
             ))}
           </RevealGroup>
@@ -94,32 +97,29 @@ export default async function BrandPage({ params }: PageProps<"/brands/[slug]">)
       </section>
 
       {/* The need */}
-      <section data-theme="dark" aria-labelledby="need-heading" className="py-20 md:py-28" style={{ background: "#0e1e19", color: "#f2ede3" }}>
-        <div className="container-x grid grid-cols-12 gap-6">
-          <SectionLabel index="02" className="col-span-12 mb-6 text-ivory/75 md:col-span-4">
-            The need
-          </SectionLabel>
-          <div className="col-span-12 md:col-span-8">
-            <SplitText as="h2" className="display-xl max-w-[18ch]" text={brand.need.title} />
-            <div className="mt-12 grid gap-8 md:grid-cols-2">
-              {brand.need.body.map((p, i) => (
-                <Reveal key={i} delay={i * 0.1}>
-                  <p className="body-copy text-ivory/80">{p}</p>
-                </Reveal>
-              ))}
-            </div>
+      <section data-theme="dark" aria-labelledby="need-heading" className="py-24 md:py-36" style={{ background: "#0e1e19", color: "#f2ede3" }}>
+        <div className="container-x">
+          <SectionHead index="02" label="The need" labelClassName="text-ivory/75" className="mb-0 md:mb-0">
+            <SplitText as="h2" id="need-heading" className="display-lg max-w-[20ch]" text={brand.need.title} />
+          </SectionHead>
+          <div className="mt-8 grid gap-x-6 gap-y-5 md:grid-cols-2">
+            {brand.need.body.map((p, i) => (
+              <Reveal key={i} delay={i * 0.1}>
+                <p className="body-copy text-ivory/80">{p}</p>
+              </Reveal>
+            ))}
           </div>
         </div>
       </section>
 
       {/* Philosophy */}
-      <section data-theme={philosophyTheme} aria-labelledby="philosophy-heading" className="py-20 md:py-28" style={{ background: philosophy.bg, color: philosophy.fg }}>
+      <section data-theme={philosophyTheme} aria-labelledby="philosophy-heading" className="py-24 md:py-36" style={{ background: philosophy.bg, color: philosophy.fg }}>
         <div className="container-x">
-          <p id="philosophy-heading" className="eyebrow mb-12 opacity-85">
-            <span className={philosophyTheme === "light" ? "text-brass" : ""}>03</span> — Brand philosophy
-          </p>
+          <SectionLabel index="03" className="mb-7 opacity-85">
+            <span id="philosophy-heading">Brand philosophy</span>
+          </SectionLabel>
           <Reveal>
-            <p className="display-lg max-w-[30ch]">{brand.philosophy}</p>
+            <p className="display-md max-w-[34ch]">{brand.philosophy}</p>
           </Reveal>
           {brand.formula ? (
             <RevealGroup className="mt-16 flex flex-wrap items-center gap-3">
@@ -139,16 +139,16 @@ export default async function BrandPage({ params }: PageProps<"/brands/[slug]">)
       </section>
 
       {/* What it stands for + who it's for */}
-      <section data-theme="light" aria-labelledby="stands-heading" className="bg-ivory py-20 text-ink md:py-28">
+      <section data-theme="light" aria-labelledby="stands-heading" className="bg-ivory py-24 text-ink md:py-36">
         <div className="container-x grid grid-cols-12 gap-6">
           <div className="col-span-12 lg:col-span-5">
-            <SectionLabel index="04" className="mb-8 text-ink-muted">
+            <SectionLabel index="04" className="mb-7 text-ink-muted">
               What it stands for
             </SectionLabel>
             <h2 id="stands-heading" className="display-lg max-w-[14ch]">
-              What {brand.name} <em className="italic text-brass">stands for.</em>
+              What {brand.name} stands for.
             </h2>
-            <Reveal className="mt-12 rounded-[1.25rem] bg-ivory-deep p-8">
+            <Reveal className="mt-10 rounded-[1.25rem] bg-ivory-deep p-8">
               <p className="eyebrow mb-4 text-brass">Who it&rsquo;s for</p>
               <p className="text-ink-muted">{brand.audience}</p>
             </Reveal>
@@ -167,18 +167,13 @@ export default async function BrandPage({ params }: PageProps<"/brands/[slug]">)
       </section>
 
       {/* The Nuvexa way */}
-      <section data-theme="light" aria-labelledby="way-heading" className="bg-ivory-deep py-20 text-ink md:py-28">
+      <section data-theme="light" aria-labelledby="way-heading" className="bg-ivory-deep py-24 text-ink md:py-36">
         <div className="container-x">
-          <div className="mb-14 flex flex-wrap items-end justify-between gap-6">
-            <div>
-              <SectionLabel index="05" className="mb-6 text-ink-muted">
-                The Nuvexa way
-              </SectionLabel>
-              <h2 id="way-heading" className="display-lg">
-                How we&rsquo;re building it.
-              </h2>
-            </div>
-          </div>
+          <SectionHead index="05" label="The Nuvexa way" labelClassName="text-ink-muted">
+            <h2 id="way-heading" className="display-lg">
+              How we&rsquo;re building it.
+            </h2>
+          </SectionHead>
           <RevealGroup className="grid gap-5 md:grid-cols-3">
             {brand.approach.map((a, i) => (
               <RevealItem key={a.title} className="rounded-[1.25rem] bg-paper p-8 md:p-10">
@@ -199,10 +194,10 @@ export default async function BrandPage({ params }: PageProps<"/brands/[slug]">)
 
       {/* Next brand */}
       <section data-theme="dark" aria-label="Next brand" className="bg-ink text-ivory">
-        <Link href={brandHref(next)} data-cursor="Next" className="group container-x grid grid-cols-12 items-center gap-6 py-20 md:py-28">
+        <Link href={brandHref(next)} data-cursor="Next" className="group container-x grid grid-cols-12 items-center gap-6 py-24 md:py-36">
           <div className="col-span-12 md:col-span-8">
             <p className="eyebrow mb-6 text-ivory/78">Next in the portfolio</p>
-            <p className="display-xl transition-colors duration-500 group-hover:text-brass-soft">
+            <p className="display-lg transition-colors duration-500 group-hover:text-brass-soft">
               {next.name} <span className="inline-block transition-transform duration-700 group-hover:translate-x-4">→</span>
             </p>
             <p className="mt-4 italic text-ivory/75">&ldquo;{next.quote}&rdquo;</p>

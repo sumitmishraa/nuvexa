@@ -6,7 +6,7 @@ const cards = [
   {
     eyebrow: "Partners & investors",
     title: "Build with Nuvexa",
-    body: "Development and manufacturing partners, distribution and retail, investors and institutions — let's talk about what we could build together.",
+    body: "Development and manufacturing partners, distribution and retail, investors and institutions. Let's talk about what we could build together.",
     href: "/contact",
     cta: "Start a conversation",
   },

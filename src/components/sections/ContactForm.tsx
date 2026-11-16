@@ -104,7 +104,7 @@ export function ContactForm() {
             </svg>
             <h3 className="display-lg mb-5">Thank you, {sentName}.</h3>
             <p className="lede max-w-[46ch] text-ink-muted">
-              This is a preview of the new site — online form delivery will be connected before launch. In the meantime, please write to us directly at{" "}
+              This is a preview of the new site. Online form delivery will be connected before launch. In the meantime, please write to us directly at{" "}
               <a className="text-ink underline decoration-brass underline-offset-4" href={`mailto:${site.emails.general}`}>
                 {site.emails.general}
               </a>

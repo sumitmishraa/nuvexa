@@ -22,21 +22,21 @@ export function Pillars({ index = "04", set = "home" }: { index?: string; set?: 
   const baseId = useId();
 
   return (
-    <section data-theme="light" aria-labelledby="pillars-heading" className="bg-ivory py-20 text-ink md:py-28">
+    <section data-theme="light" aria-labelledby="pillars-heading" className="bg-ivory py-24 text-ink md:py-36">
       <div className="container-x">
         <div className="grid grid-cols-12 items-end gap-x-6 gap-y-8">
           <div className="col-span-12 lg:col-span-7">
-            <SectionLabel index={index} className="mb-8 text-ink-muted">
+            <SectionLabel index={index} className="mb-7 text-ink-muted">
               How we build
             </SectionLabel>
-            <h2 id="pillars-heading" className="display-xl">
+            <h2 id="pillars-heading" className="display-lg">
               Five disciplines.
               <br />
-              <em className="italic text-brass">One standard.</em>
+              One standard.
             </h2>
           </div>
           <p className="lede col-span-12 text-ink-muted lg:col-span-5">
-            Nuvexa combines science, consumer insight, technology and artificial intelligence, disciplined execution and brand building — to create trusted
+            Nuvexa combines research, consumer insight, technology and artificial intelligence, disciplined execution and brand building, to create trusted
             products for consumers and enduring value for partners and shareholders.
           </p>
         </div>

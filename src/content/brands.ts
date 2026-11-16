@@ -43,10 +43,10 @@ export const brands: Brand[] = [
     lifeStage: "Women & men",
     quote: "Your need is specific. Your nutrition should be too.",
     summary:
-      "Hyper-specific, problem-solving nutrition — not the same formulation with a different brand cover. Fifteen months of development, built around the person's actual need.",
+      "Hyper-specific, problem-solving nutrition, not the same formulation with a different brand cover. Fifteen months of development, built around the person's actual need.",
     intro: [
       "Superbeing Nutrition began with a personal search: for products developed around specific needs, with clear answers about what each one is for, why its ingredients were chosen and how it fits into everyday life.",
-      "Developed over fifteen months with a professional from a pharmaceutical background, every Superbeing product needs a defined purpose — and, where a product is for women or for men, the reason is inside the formula.",
+      "Developed over fifteen months with a professional from a pharmaceutical background, every Superbeing product needs a defined purpose, and, where a product is for women or for men, the reason is inside the formula.",
     ],
     need: {
       title: "Familiar formulations under different brand names.",
@@ -71,10 +71,10 @@ export const brands: Brand[] = [
     approach: [
       { title: "Thoughtful formulation", body: "Developed with specialised partners, guided by evidence and a disciplined approach to ingredients and claims." },
       { title: "Formats that fit", body: "Convenient formats designed around real routines, so consistency feels natural rather than effortful." },
-      { title: "Honest communication", body: "Plain-language guidance on what each product is for and how to use it — no exaggerated promises." },
+      { title: "Honest communication", body: "Plain-language guidance on what each product is for and how to use it, without exaggerated promises." },
     ],
     closing:
-      "Superbeing Nutrition is built around your needs, shaped by your voice and formulated with purpose — a focused range in which every product earns its place.",
+      "Superbeing Nutrition is built around your needs, shaped by your voice and formulated with purpose: a focused range in which every product earns its place.",
     logo: "/brands/super-being.webp",
     logoBg: "#ffffff",
     mode: "logo",
@@ -92,15 +92,15 @@ export const brands: Brand[] = [
     lifeStage: "Children & families",
     quote: "Thoughtful nutrition for growing generations.",
     summary:
-      "A kids' nutrition brand built around the evolving needs of growing children — and the confidence today's parents are looking for.",
+      "A kids' nutrition brand built around the evolving needs of growing children, and the confidence today's parents are looking for.",
     intro: [
       "Super Titans is Nuvexa's kids' nutrition brand, created around the evolving nutritional needs of growing children and the expectations of today's parents. It combines responsible nutrition, child-friendly experiences and straightforward communication.",
-      "Parents are more informed, and more discerning, than ever. They read labels, compare options and expect brands to be transparent. Super Titans is designed to meet that standard — and to make the experience genuinely enjoyable for children.",
+      "Parents are more informed, and more discerning, than ever. They read labels, compare options and expect brands to be transparent. Super Titans is designed to meet that standard, and to make the experience genuinely enjoyable for children.",
     ],
     need: {
       title: "Parents want confidence. Children want something they enjoy.",
       body: [
-        "Children's nutrition sits at a delicate intersection. A product has to earn a parent's trust and a child's acceptance at the same time — and it has to do both every single day.",
+        "Children's nutrition sits at a delicate intersection. A product has to earn a parent's trust and a child's acceptance at the same time, and it has to do both every single day.",
         "Super Titans is built around that balance: responsible formulation that parents can understand, and experiences designed to feel approachable and fun for children.",
       ],
     },
@@ -149,12 +149,12 @@ export const brands: Brand[] = [
     need: {
       title: "Self-care shouldn't feel complicated.",
       body: [
-        "Men's grooming is often either over-engineered or under-considered — ten-step regimens on one side, an afterthought on the other.",
+        "Men's grooming is often either over-engineered or under-considered: ten-step regimens on one side, an afterthought on the other.",
         "RUGD Men takes the middle path: a small number of focused, relevant products and a direct, uncomplicated voice that makes looking after yourself feel natural.",
       ],
     },
     philosophy:
-      "Men's grooming doesn't need to be complicated. RUGD Men is built around focused routines, relevant products and an uncomplicated approach to self-care — performance without the pretence.",
+      "Men's grooming doesn't need to be complicated. RUGD Men is built around focused routines, relevant products and an uncomplicated approach to self-care: performance without the pretence.",
     standsFor: [
       "Men's grooming",
       "Personal care",
@@ -173,7 +173,7 @@ export const brands: Brand[] = [
       { title: "A direct voice", body: "Uncomplicated communication that respects a man's time and intelligence." },
     ],
     closing:
-      "RUGD Men brings a contemporary approach to grooming — focused routines, modern sensibility and performance-oriented personal care for today's man.",
+      "RUGD Men brings a contemporary approach to grooming: focused routines, modern sensibility and performance-oriented personal care for today's man.",
     logo: "/brands/rugd-men.webp",
     logoBg: "#000000",
     mode: "logo",
@@ -192,13 +192,13 @@ export const brands: Brand[] = [
       "An intimate hygiene and wellbeing brand built on comfort, confidence, discretion and respect.",
     intro: [
       "Super Envi Intima is Nuvexa's intimate hygiene, intimacy and personal wellbeing brand. It is built around comfort, confidence, discretion and respect, with an ambition to bring responsible, modern communication to a category that has historically been surrounded by discomfort and stigma.",
-      "Intimate wellbeing is part of overall wellbeing — and it deserves the same care, quality and openness as any other part of a person's routine.",
+      "Intimate wellbeing is part of overall wellbeing, and it deserves the same care, quality and openness as any other part of a person's routine.",
     ],
     need: {
       title: "A category that deserves openness.",
       body: [
         "For too long, intimate hygiene and intimacy have been discussed in whispers, if at all. That silence makes it harder for people to find information, ask questions or choose products confidently.",
-        "Super Envi Intima aims to change the tone of the conversation — respectful, discreet and modern, without embarrassment and without sensationalism.",
+        "Super Envi Intima aims to change the tone of the conversation: respectful, discreet and modern, without embarrassment and without sensationalism.",
       ],
     },
     philosophy:
@@ -215,7 +215,7 @@ export const brands: Brand[] = [
       "Freedom from stigma",
     ],
     audience:
-      "Adults who want comfortable, trustworthy intimate care — and a brand that speaks to them with respect and discretion.",
+      "Adults who want comfortable, trustworthy intimate care, and a brand that speaks to them with respect and discretion.",
     approach: [
       { title: "Comfort and care", body: "Products developed with qualified partners, with comfort and gentleness as non-negotiables." },
       { title: "Discretion by default", body: "Thoughtful experiences from discovery to delivery, designed to respect privacy." },
@@ -234,14 +234,14 @@ export const brands: Brand[] = [
     name: "Modern Ayurveda",
     kind: "vertical",
     status: "Future vertical",
-    category: "Traditional wisdom · Modern science",
+    category: "Traditional wisdom · Modern research",
     lifeStage: "Holistic wellbeing",
-    quote: "Traditional wisdom, translated through modern science.",
+    quote: "Traditional wisdom, translated through modern research.",
     summary:
       "Authentic Ayurvedic principles, reinterpreted for contemporary lifestyles through evidence-led formulation and modern formats.",
     intro: [
       "Nuvexa's Modern Ayurveda vertical will reinterpret authentic Ayurvedic principles for contemporary lifestyles. It brings centuries of traditional knowledge together with the disciplines of modern product development.",
-      "The objective is an Ayurveda proposition that is credible, relevant and easier for today's consumers to adopt — respectful of its roots and rigorous in its execution.",
+      "The objective is an Ayurveda proposition that is credible, relevant and easier for today's consumers to adopt, respectful of its roots and rigorous in its execution.",
     ],
     need: {
       title: "Ayurveda deserves rigour and relevance.",
@@ -251,7 +251,7 @@ export const brands: Brand[] = [
       ],
     },
     philosophy:
-      "Tradition and science are not opposites. The Modern Ayurveda vertical treats traditional knowledge as a starting point and applies modern standards of evidence, consistency and communication to make it credible and easy to adopt.",
+      "Tradition and research are not opposites. The Modern Ayurveda vertical treats traditional knowledge as a starting point and applies modern standards of evidence, consistency and communication to make it credible and easy to adopt.",
     formula: [
       "Traditional knowledge",
       "Evidence-led formulation",
@@ -267,7 +267,7 @@ export const brands: Brand[] = [
       "Responsible claims",
       "Modern product formats",
       "Consumer relevance",
-      "Science-informed development",
+      "Research-informed development",
     ],
     audience:
       "Consumers who value Ayurveda's heritage but expect the consistency, transparency and convenience of modern products.",
@@ -296,12 +296,12 @@ export const brands: Brand[] = [
       "Responsibly developed solutions for companion animals and the people who care for them.",
     intro: [
       "Nuvexa's Pet Care vertical will focus on unique, relevant and responsibly developed solutions for the evolving needs of companion animals and their caregivers.",
-      "Pets are family. Modern pet parents expect the same quality, transparency and convenience for their companions that they expect for themselves — and this vertical is designed around that expectation.",
+      "Pets are family. Modern pet parents expect the same quality, transparency and convenience for their companions that they expect for themselves, and this vertical is designed around that expectation.",
     ],
     need: {
       title: "Pets are family. Their care should reflect that.",
       body: [
-        "As more households welcome companion animals, pet parents are looking for products they can trust — thoughtfully developed, clearly explained and easy to use.",
+        "As more households welcome companion animals, pet parents are looking for products they can trust: thoughtfully developed, clearly explained and easy to use.",
         "The Pet Care vertical will bring practical innovation, quality and clear communication to everyday pet care.",
       ],
     },

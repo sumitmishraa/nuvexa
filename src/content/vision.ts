@@ -45,5 +45,5 @@ export const vision = {
     },
   ],
   closing:
-    "Each stage is earned by the one before it. We will move forward as our brands achieve product-market fit, repeat demand and sustainable scale — with discipline, patience and a long-term view.",
+    "Each stage is earned by the one before it. We will move forward as our brands achieve product-market fit, repeat demand and sustainable scale, with discipline, patience and a long-term view.",
 } as const;
